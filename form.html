@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get your bin calendar — UK Bin Cal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1><a href="index.html" style="text-decoration:none;color:inherit">&#x1F5D1; UK Bin Cal</a></h1>
+  <p>Enter your address to generate your subscribable calendar</p>
+</header>
+
+<div class="page">
+
+  <div class="uprn-callout" id="uprnNote" style="display:none">
+    Your council may require your <strong>UPRN</strong> (a 12-digit property reference number).
+    Find yours free at <a href="https://uprn.uk" target="_blank" rel="noopener">uprn.uk</a>
+    &mdash; enter your postcode and select your address. Have it ready before submitting.
+  </div>
+
+  <div class="card">
+    <h2>Your address details</h2>
+
+    <form id="binForm" novalidate>
+
+      <!-- Honeypot — must stay empty -->
+      <div class="honeypot" aria-hidden="true">
+        <label for="website">Leave this blank</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="councilSearch">Your council</label>
+        <input type="search" id="councilSearch" placeholder="Type to search councils..." autocomplete="off" required>
+        <input type="hidden" id="councilId" name="council_id">
+        <input type="hidden" id="councilTitle" name="council_title">
+        <div id="councilDropdown" role="listbox" aria-label="Council suggestions" style="
+          display:none;
+          position:absolute;
+          background:#fff;
+          border:1px solid #d0d7de;
+          border-radius:6px;
+          max-height:240px;
+          overflow-y:auto;
+          z-index:100;
+          width:100%;
+          box-shadow:0 4px 12px rgba(0,0,0,.12);
+        "></div>
+        <div style="position:relative" id="dropdownAnchor"></div>
+      </div>
+
+      <!-- Dynamic arg fields rendered here by JS -->
+      <div id="dynamicFields"></div>
+
+      <div id="formError" class="alert alert-error" style="display:none"></div>
+
+      <button type="submit" class="btn btn-full" id="submitBtn" disabled>
+        Generate my calendar &rarr;
+      </button>
+    </form>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+<script>
+let councils = [];
+let selectedCouncil = null;
+
+// ── Load councils ────────────────────────────────────────────────────────
+
+fetch("councils.json")
+  .then(r => r.json())
+  .then(data => { councils = data; })
+  .catch(() => showError("Failed to load council list. Please reload the page."));
+
+// ── Council search autocomplete ──────────────────────────────────────────
+
+const councilSearch = document.getElementById("councilSearch");
+const councilId     = document.getElementById("councilId");
+const councilTitle  = document.getElementById("councilTitle");
+const dropdown      = document.getElementById("councilDropdown");
+const anchor        = document.getElementById("dropdownAnchor");
+const submitBtn     = document.getElementById("submitBtn");
+
+// Position dropdown below the search input
+councilSearch.addEventListener("focus", positionDropdown);
+window.addEventListener("resize", positionDropdown);
+
+function positionDropdown() {
+  const rect = councilSearch.getBoundingClientRect();
+  dropdown.style.top  = (rect.bottom + window.scrollY) + "px";
+  dropdown.style.left = rect.left + "px";
+  dropdown.style.width = rect.width + "px";
+  dropdown.style.position = "fixed";
+  dropdown.style.top = (rect.bottom) + "px";
+}
+
+councilSearch.addEventListener("input", () => {
+  const q = councilSearch.value.trim().toLowerCase();
+  clearCouncilSelection();
+  if (q.length < 2) { dropdown.style.display = "none"; return; }
+
+  const matches = councils
+    .filter(c => c.title.toLowerCase().includes(q))
+    .slice(0, 12);
+
+  if (!matches.length) { dropdown.style.display = "none"; return; }
+
+  dropdown.innerHTML = matches.map(c => `
+    <div role="option" data-id="${esc(c.id)}" style="
+      padding:.6rem .9rem;
+      cursor:pointer;
+      font-size:.92rem;
+      border-bottom:1px solid #f0f0f0;
+    " onmouseover="this.style.background='#e8f5ed'" onmouseout="this.style.background=''"
+       onclick="selectCouncil('${esc(c.id)}')">
+      ${esc(c.title)}
+    </div>
+  `).join("");
+
+  dropdown.style.display = "block";
+  positionDropdown();
+});
+
+document.addEventListener("click", e => {
+  if (!dropdown.contains(e.target) && e.target !== councilSearch) {
+    dropdown.style.display = "none";
+  }
+});
+
+function selectCouncil(id) {
+  const c = councils.find(x => x.id === id);
+  if (!c) return;
+  selectedCouncil = c;
+  councilSearch.value = c.title;
+  councilId.value = c.id;
+  councilTitle.value = c.title;
+  dropdown.style.display = "none";
+  renderDynamicFields(c);
+  checkFormValid();
+}
+
+function clearCouncilSelection() {
+  selectedCouncil = null;
+  councilId.value = "";
+  councilTitle.value = "";
+  document.getElementById("dynamicFields").innerHTML = "";
+  document.getElementById("uprnNote").style.display = "none";
+  submitBtn.disabled = true;
+}
+
+// ── Dynamic fields ───────────────────────────────────────────────────────
+
+const FIELD_LABELS = {
+  postcode:     "Postcode",
+  door_num:     "Door / house number",
+  house_number: "House number",
+  house_no:     "House number",
+  number:       "House number",
+  uprn:         "UPRN",
+  uprn_number:  "UPRN",
+  street:       "Street name",
+  town:         "Town",
+  city:         "City",
+};
+
+const FIELD_HINTS = {
+  postcode: "e.g. HD9 6RJ",
+  door_num: "e.g. 1 or 1A",
+  uprn:     'Find yours at <a href="https://uprn.uk" target="_blank" rel="noopener">uprn.uk</a>',
+  uprn_number: 'Find yours at <a href="https://uprn.uk" target="_blank" rel="noopener">uprn.uk</a>',
+};
+
+function renderDynamicFields(council) {
+  const container = document.getElementById("dynamicFields");
+  const hasUprn = council.args.some(a => a.name.toLowerCase().includes("uprn"));
+  document.getElementById("uprnNote").style.display = hasUprn ? "block" : "none";
+
+  container.innerHTML = council.args.map(arg => {
+    const label = FIELD_LABELS[arg.name] || arg.name.replace(/_/g, " ");
+    const hint  = FIELD_HINTS[arg.name] || "";
+    const req   = arg.required;
+    return `
+      <div class="form-group">
+        <label for="arg_${esc(arg.name)}">
+          ${esc(label)}
+          ${!req ? '<span class="optional">(optional)</span>' : ""}
+        </label>
+        <input type="text" id="arg_${esc(arg.name)}" name="arg_${esc(arg.name)}"
+          data-argname="${esc(arg.name)}"
+          ${req ? "required" : ""}
+          autocomplete="off"
+          placeholder="${esc(arg.required ? "Required" : "Optional")}">
+        ${hint ? `<div class="hint">${hint}</div>` : ""}
+      </div>
+    `;
+  }).join("");
+
+  container.querySelectorAll("input").forEach(i => i.addEventListener("input", checkFormValid));
+}
+
+// ── Validation ───────────────────────────────────────────────────────────
+
+function checkFormValid() {
+  if (!selectedCouncil) { submitBtn.disabled = true; return; }
+  const allRequired = Array.from(
+    document.querySelectorAll("#dynamicFields input[required]")
+  ).every(i => i.value.trim() !== "");
+  submitBtn.disabled = !allRequired;
+}
+
+// ── Submit ───────────────────────────────────────────────────────────────
+
+document.getElementById("binForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  hideError();
+
+  const honeypot = document.getElementById("website").value;
+  // Silently fail if honeypot filled (bot)
+  if (honeypot) { window.location.href = "waiting.html?hash=00000000"; return; }
+
+  if (!selectedCouncil) { showError("Please select your council."); return; }
+
+  const args = {};
+  document.querySelectorAll("#dynamicFields input[data-argname]").forEach(i => {
+    const v = i.value.trim();
+    if (v) args[i.dataset.argname] = v;
+  });
+
+  const hash = await computeHash(selectedCouncil.id, args);
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = "Submitting…";
+
+  try {
+    const res = await fetch(CONFIG.WORKER_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        hash,
+        council_id:    selectedCouncil.id,
+        council_title: selectedCouncil.title,
+        args_json:     JSON.stringify(args),
+        website:       honeypot,
+      }),
+    });
+
+    const data = await res.json().catch(() => ({}));
+
+    if (!res.ok) {
+      showError(data.error || "Something went wrong. Please try again.");
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Generate my calendar →";
+      return;
+    }
+
+    // Also store default_params if any (these are fixed per council and not from user input)
+    if (selectedCouncil.default_params) {
+      Object.assign(args, selectedCouncil.default_params);
+    }
+
+    window.location.href = `waiting.html?hash=${hash}&council=${encodeURIComponent(selectedCouncil.title)}`;
+  } catch (err) {
+    showError("Could not reach the submission service. Please try again.");
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Generate my calendar →";
+  }
+});
+
+// ── Utilities ────────────────────────────────────────────────────────────
+
+function showError(msg) {
+  const el = document.getElementById("formError");
+  el.textContent = msg;
+  el.style.display = "block";
+}
+function hideError() {
+  document.getElementById("formError").style.display = "none";
+}
+function esc(s) {
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+                  .replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+name = "bin-cal-proxy"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "RATE_LIMIT_KV"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+
+# Set these as secrets via: wrangler secret put GITHUB_TOKEN
+# [vars]
+# GITHUB_OWNER = "your-github-username"
+# GITHUB_REPO  = "bin-cal"

@@ -1,0 +1,35 @@
+name: Weekly — Regenerate councils.json
+
+on:
+  schedule:
+    - cron: "0 3 * * 0"  # 3am UTC every Sunday
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Clone latest waste_collection_schedule
+        run: |
+          git clone --depth=1 https://github.com/mampfes/hacs_waste_collection_schedule.git wcs_repo
+
+      - name: Regenerate councils.json
+        env:
+          WCS_REPO: wcs_repo
+        run: |
+          python3 scripts/generate_councils.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add councils.json
+          git diff --cached --quiet && echo "councils.json unchanged" && exit 0
+          git commit -m "Update councils.json from upstream $(date -u +%Y-%m-%d)"
+          git push

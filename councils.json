@@ -1,0 +1,5119 @@
+[
+  {
+    "id": "aberdeenshire_gov_uk",
+    "module": "aberdeenshire_gov_uk",
+    "title": "Aberdeenshire Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "adur_worthing_gov_uk",
+    "module": "adur_worthing_gov_uk",
+    "title": "Adur & Worthing Councils",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "address",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "allerdale_gov_uk",
+    "module": "allerdale_gov_uk",
+    "title": "Allerdale Borough Council",
+    "args": [
+      {
+        "name": "ADDRESS_POSTCODE",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "ADDRESS_NAME_NUMBER",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "ambervalley_gov_uk",
+    "module": "ambervalley_gov_uk",
+    "title": "Amber Valley Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "predict",
+        "type": "boolean",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "ics_anglesey_gov_wales",
+    "module": "ics",
+    "title": "Anglesey",
+    "args": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "file",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "offset",
+        "type": "int",
+        "required": false
+      },
+      {
+        "name": "method",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "params",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "year_field",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "regex",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "split_at",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "version",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "name": "verify_ssl",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "headers",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "title_template",
+        "type": "str",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "angus_gov_uk",
+    "module": "angus_gov_uk",
+    "title": "Angus Council",
+    "args": []
+  },
+  {
+    "id": "antrimandnewtownabbey_gov_uk",
+    "module": "antrimandnewtownabbey_gov_uk",
+    "title": "Antrim and Newtownabbey",
+    "args": [
+      {
+        "name": "id",
+        "type": "Integer",
+        "required": false
+      },
+      {
+        "name": "uprn",
+        "type": "Integer",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "apps_imactivate_com",
+    "module": "apps_imactivate_com",
+    "title": "Apps by imactivate",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "town",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "street",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "number",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "ardsandnorthdown_gov_uk",
+    "module": "ardsandnorthdown_gov_uk",
+    "title": "Ards and North Down Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "armaghbanbridgecraigavon_gov_uk",
+    "module": "armaghbanbridgecraigavon_gov_uk",
+    "title": "Armagh City Banbridge & Craigavon",
+    "args": [
+      {
+        "name": "address_id",
+        "type": "Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "arun_gov_uk",
+    "module": "arun_gov_uk",
+    "title": "Arun District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "ashfield_gov_uk",
+    "module": "ashfield_gov_uk",
+    "title": "Ashfield District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "number",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "post_code",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "ashford_gov_uk",
+    "module": "ashford_gov_uk",
+    "title": "Ashford Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "postcode",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "iapp_itouchvision_com",
+    "module": "iapp_itouchvision_com",
+    "title": "Aylesbury Vale District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "municipality",
+        "type": "String",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "municipality": "AYLESBURY VALE"
+    }
+  },
+  {
+    "id": "bcp_gov_uk",
+    "module": "bcp_gov_uk",
+    "title": "BCP Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "barnsley_gov_uk",
+    "module": "barnsley_gov_uk",
+    "title": "Barnsley Metropolitan Borough Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "basildon_gov_uk",
+    "module": "basildon_gov_uk",
+    "title": "Basildon Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "address",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "basingstoke_gov_uk",
+    "module": "basingstoke_gov_uk",
+    "title": "Basingstoke and Deane Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "bathnes_gov_uk",
+    "module": "bathnes_gov_uk",
+    "title": "Bath & North East Somerset Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "bedford_gov_uk",
+    "module": "bedford_gov_uk",
+    "title": "Bedford Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "belfast_city_gov_uk",
+    "module": "belfast_city_gov_uk",
+    "title": "Belfast City Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "binzone_uk",
+    "module": "binzone_uk",
+    "title": "Binzone",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "birmingham_gov_uk",
+    "module": "birmingham_gov_uk",
+    "title": "Birmingham City Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "blaby_gov_uk",
+    "module": "blaby_gov_uk",
+    "title": "Blaby District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "blackburn_gov_uk",
+    "module": "blackburn_gov_uk",
+    "title": "Blackburn with Darwen Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "blackpool_gov_uk",
+    "module": "blackpool_gov_uk",
+    "title": "Blackpool Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "iapp_itouchvision_com",
+    "module": "iapp_itouchvision_com",
+    "title": "Blaenau Gwent County Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "municipality",
+        "type": "String",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "municipality": "BLAENAU GWENT"
+    }
+  },
+  {
+    "id": "bolsover_gov_uk",
+    "module": "bolsover_gov_uk",
+    "title": "Bolsover District Council",
+    "args": [
+      {
+        "name": "calendar",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "collection_day",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "bolton_gov_uk",
+    "module": "bolton_gov_uk",
+    "title": "Bolton Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "house_number",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "west_norfolk_gov_uk",
+    "module": "west_norfolk_gov_uk",
+    "title": "Borough Council of King's Lynn & West Norfolk",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "broxbourne_gov_uk",
+    "module": "broxbourne_gov_uk",
+    "title": "Borough of Broxbourne Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "bracknell_forest_gov_uk",
+    "module": "bracknell_forest_gov_uk",
+    "title": "Bracknell Forest Council",
+    "args": [
+      {
+        "name": "post_code",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "house_number",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "bradford_gov_uk",
+    "module": "bradford_gov_uk",
+    "title": "Bradford Metropolitan District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "braintree_gov_uk",
+    "module": "braintree_gov_uk",
+    "title": "Braintree District Council",
+    "args": [
+      {
+        "name": "post_code",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "house_number",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "breckland_gov_uk",
+    "module": "breckland_gov_uk",
+    "title": "Breckland Council",
+    "args": [
+      {
+        "name": "POSTCODE",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "ADDRESS",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "UPRN",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "ics_brent_gov_uk",
+    "module": "ics",
+    "title": "Brent Council",
+    "args": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "file",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "offset",
+        "type": "int",
+        "required": false
+      },
+      {
+        "name": "method",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "params",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "year_field",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "regex",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "split_at",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "version",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "name": "verify_ssl",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "headers",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "title_template",
+        "type": "str",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "bridgend_gov_uk",
+    "module": "bridgend_gov_uk",
+    "title": "Bridgend County Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "bristol_gov_uk",
+    "module": "bristol_gov_uk",
+    "title": "Bristol City Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "south_norfolk_and_broadland_gov_uk",
+    "module": "south_norfolk_and_broadland_gov_uk",
+    "title": "Broadland District Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "String",
+        "required": false
+      },
+      {
+        "name": "address_payload",
+        "type": "dict",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "bromsgrove_gov_uk",
+    "module": "bromsgrove_gov_uk",
+    "title": "Bromsgrove City Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "broxtowe_gov_uk",
+    "module": "broxtowe_gov_uk",
+    "title": "Broxtowe Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "postcode",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "iapp_itouchvision_com",
+    "module": "iapp_itouchvision_com",
+    "title": "Buckinghamshire: Formerly (Chiltern, South Bucks, Wycombe)",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "municipality",
+        "type": "String",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "municipality": "BUCKINGHAMSHIRE"
+    }
+  },
+  {
+    "id": "burnley_gov_uk",
+    "module": "burnley_gov_uk",
+    "title": "Burnley Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "bury_gov_uk",
+    "module": "bury_gov_uk",
+    "title": "Bury Council",
+    "args": [
+      {
+        "name": "id",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "address",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "ics_recollect",
+    "module": "ics",
+    "title": "Caerphilly, Wales",
+    "args": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "file",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "offset",
+        "type": "int",
+        "required": false
+      },
+      {
+        "name": "method",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "params",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "year_field",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "regex",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "split_at",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "version",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "name": "verify_ssl",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "headers",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "title_template",
+        "type": "str",
+        "required": false
+      }
+    ],
+    "default_params": {
+      "split_at": "\\, (?:and )?|(?: and )"
+    }
+  },
+  {
+    "id": "calderdale_gov_uk",
+    "module": "calderdale_gov_uk",
+    "title": "Calderdale Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string | integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "greater_cambridge_waste_org",
+    "module": "greater_cambridge_waste_org",
+    "title": "Cambridge City Council",
+    "args": [
+      {
+        "name": "POST_CODE",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "NAME_OR_NUMBER",
+        "type": "integer | string",
+        "required": false
+      },
+      {
+        "name": "UPRN",
+        "type": "integrer | string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "cambridge_gov_uk",
+    "module": "cambridge_gov_uk",
+    "title": "Cambridge City Council (Deprecated)",
+    "args": [
+      {
+        "name": "POST_CODE",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "NUMBER",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "cannock_chase_dc_gov_uk",
+    "module": "cannock_chase_dc_gov_uk",
+    "title": "Cannock Chase Council",
+    "args": [
+      {
+        "name": "post_code",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "canterbury_gov_uk",
+    "module": "canterbury_gov_uk",
+    "title": "Canterbury City Council",
+    "args": [
+      {
+        "name": "POST_CODE",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "NUMBER",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "cardiff_gov_uk",
+    "module": "cardiff_gov_uk",
+    "title": "Cardiff Council",
+    "args": [
+      {
+        "name": "UPRN",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "carmarthenshire_gov_wales",
+    "module": "carmarthenshire_gov_wales",
+    "title": "Carmarthenshire County Council",
+    "args": [
+      {
+        "name": "UPRN",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "centralbedfordshire_gov_uk",
+    "module": "centralbedfordshire_gov_uk",
+    "title": "Central Bedfordshire Council",
+    "args": [
+      {
+        "name": "POSTCODE",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "HOUSE_NAME",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "charnwood_gov_uk",
+    "module": "charnwood_gov_uk",
+    "title": "Charnwood",
+    "args": [
+      {
+        "name": "address",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "chelmsford_gov_uk",
+    "module": "chelmsford_gov_uk",
+    "title": "Chelmsford City Council",
+    "args": [
+      {
+        "name": "collection_round",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "cherwell_gov_uk",
+    "module": "cherwell_gov_uk",
+    "title": "Cherwell District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "cheshire_east_gov_uk",
+    "module": "cheshire_east_gov_uk",
+    "title": "Cheshire East Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "name_number",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "cheshire_west_and_chester_gov_uk",
+    "module": "cheshire_west_and_chester_gov_uk",
+    "title": "Cheshire West and Chester Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "chesterfield_gov_uk",
+    "module": "chesterfield_gov_uk",
+    "title": "Chesterfield Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "chichester_gov_uk",
+    "module": "chichester_gov_uk",
+    "title": "Chichester District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "chorley_gov_uk",
+    "module": "chorley_gov_uk",
+    "title": "Chorley Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "lincoln_gov_uk",
+    "module": "lincoln_gov_uk",
+    "title": "City Of Lincoln Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "doncaster_gov_uk",
+    "module": "doncaster_gov_uk",
+    "title": "City of Doncaster Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "york_gov_uk",
+    "module": "york_gov_uk",
+    "title": "City of York Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "colchester_gov_uk",
+    "module": "colchester_gov_uk",
+    "title": "Colchester City Council",
+    "args": [
+      {
+        "name": "llpgid",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "conwy_gov_uk",
+    "module": "conwy_gov_uk",
+    "title": "Conwy County Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "cornwall_gov_uk",
+    "module": "cornwall_gov_uk",
+    "title": "Cornwall Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "housenumberorname",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "coventry_gov_uk",
+    "module": "coventry_gov_uk",
+    "title": "Coventry City Council",
+    "args": [
+      {
+        "name": "street",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "crawley_gov_uk",
+    "module": "crawley_gov_uk",
+    "title": "Crawley Borough Council (myCrawley)",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "croydon_gov_uk",
+    "module": "croydon_gov_uk",
+    "title": "Croydon Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "houseID",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "cumberland_gov_uk",
+    "module": "cumberland_gov_uk",
+    "title": "Cumberland Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "dacorum_gov_uk",
+    "module": "dacorum_gov_uk",
+    "title": "Dacorum Borough Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "darlington_gov_uk",
+    "module": "darlington_gov_uk",
+    "title": "Darlington Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "dartford_gov_uk",
+    "module": "dartford_gov_uk",
+    "title": "Dartford Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "denbighshire_gov_uk",
+    "module": "denbighshire_gov_uk",
+    "title": "Denbighshire County Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "chiltern_gov_uk",
+    "module": "chiltern_gov_uk",
+    "title": "Deprecated: Buckinghamshire",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "derby_gov_uk",
+    "module": "derby_gov_uk",
+    "title": "Derby City Council",
+    "args": [
+      {
+        "name": "premises_id",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "dorset_gov_uk",
+    "module": "dorset_gov_uk",
+    "title": "Dorset Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "dover_gov_uk",
+    "module": "dover_gov_uk",
+    "title": "Dover District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "dudley_gov_uk",
+    "module": "dudley_gov_uk",
+    "title": "Dudley Metropolitan Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "dundeecity_gov_uk",
+    "module": "dundeecity_gov_uk",
+    "title": "Dundee City Council",
+    "args": [
+      {
+        "name": "UPRN",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "durham_gov_uk",
+    "module": "durham_gov_uk",
+    "title": "Durham County Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "ealing_gov_uk",
+    "module": "ealing_gov_uk",
+    "title": "Ealing Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "east_ayrshire_gov_uk",
+    "module": "east_ayrshire_gov_uk",
+    "title": "East Ayrshire Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "eastcambs_gov_uk",
+    "module": "eastcambs_gov_uk",
+    "title": "East Cambridgeshire District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "eastdevon_gov_uk",
+    "module": "eastdevon_gov_uk",
+    "title": "East Devon District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "eastdunbarton_gov_uk",
+    "module": "eastdunbarton_gov_uk",
+    "title": "East Dunbartonshire Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "eastherts_gov_uk",
+    "module": "eastherts_gov_uk",
+    "title": "East Herts Council",
+    "args": [
+      {
+        "name": "UPRN",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "ADDRESS_POSTCODE",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "ADDRESS_NAME_NUMBER",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "eastlothian_gov_uk",
+    "module": "eastlothian_gov_uk",
+    "title": "East Lothian",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "String",
+        "required": false
+      },
+      {
+        "name": "address",
+        "type": "String",
+        "required": false
+      },
+      {
+        "name": "address_id",
+        "type": "String",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "east_northamptonshire_gov_uk",
+    "module": "east_northamptonshire_gov_uk",
+    "title": "East Northamptonshire and Wellingborough",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "east_renfrewshire_gov_uk",
+    "module": "east_renfrewshire_gov_uk",
+    "title": "East Renfrewshire Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "eastriding_gov_uk",
+    "module": "eastriding_gov_uk",
+    "title": "East Riding of Yorkshire Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "environmentfirst_co_uk",
+    "module": "environmentfirst_co_uk",
+    "title": "Eastbourne Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "post_code",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "number",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "eastleigh_gov_uk",
+    "module": "eastleigh_gov_uk",
+    "title": "Eastleigh Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "elmbridge_gov_uk",
+    "module": "elmbridge_gov_uk",
+    "title": "Elmbridge Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "erewash_gov_uk",
+    "module": "erewash_gov_uk",
+    "title": "Erewash Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string | integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "exeter_gov_uk",
+    "module": "exeter_gov_uk",
+    "title": "Exeter City Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "fccenvironment_co_uk",
+    "module": "fccenvironment_co_uk",
+    "title": "FCC Environment",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "region",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "ics_falkirk_gov_uk",
+    "module": "ics",
+    "title": "Falkirk",
+    "args": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "file",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "offset",
+        "type": "int",
+        "required": false
+      },
+      {
+        "name": "method",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "params",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "year_field",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "regex",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "split_at",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "version",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "name": "verify_ssl",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "headers",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "title_template",
+        "type": "str",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "fareham_gov_uk",
+    "module": "fareham_gov_uk",
+    "title": "Fareham Borough Council",
+    "args": [
+      {
+        "name": "road_name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "fenland_gov_uk",
+    "module": "fenland_gov_uk",
+    "title": "Fenland District Council",
+    "args": [
+      {
+        "name": "POST_CODE",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "HOUSE_NUMBER",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "fife_gov_uk",
+    "module": "fife_gov_uk",
+    "title": "Fife Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "flintshire_gov_uk",
+    "module": "flintshire_gov_uk",
+    "title": "Flintshire",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "folkestone_hythe_gov_uk",
+    "module": "folkestone_hythe_gov_uk",
+    "title": "Folkestone and Hythe District Councol",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "fylde_gov_uk",
+    "module": "fylde_gov_uk",
+    "title": "Fylde Council",
+    "args": [
+      {
+        "name": "email",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "password",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string | int",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "gateshead_gov_uk",
+    "module": "gateshead_gov_uk",
+    "title": "Gateshead Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "ics_gedling_gov_uk",
+    "module": "ics",
+    "title": "Gedling Borough Council (unofficial)",
+    "args": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "file",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "offset",
+        "type": "int",
+        "required": false
+      },
+      {
+        "name": "method",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "params",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "year_field",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "regex",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "split_at",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "version",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "name": "verify_ssl",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "headers",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "title_template",
+        "type": "str",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "glasgow_gov_uk",
+    "module": "glasgow_gov_uk",
+    "title": "Glasgow City Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "guildford_gov_uk",
+    "module": "guildford_gov_uk",
+    "title": "Guildford Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "gwynedd_gov_uk",
+    "module": "gwynedd_gov_uk",
+    "title": "Gwynedd",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "fccenvironment_co_uk",
+    "module": "fccenvironment_co_uk",
+    "title": "Harborough District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "region",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "default_params": {
+      "region": "harborough"
+    }
+  },
+  {
+    "id": "haringey_gov_uk",
+    "module": "haringey_gov_uk",
+    "title": "Haringey Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "harlow_gov_uk",
+    "module": "harlow_gov_uk",
+    "title": "Harlow Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "hart_gov_uk",
+    "module": "hart_gov_uk",
+    "title": "Hart District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "hartlepool_gov_uk",
+    "module": "hartlepool_gov_uk",
+    "title": "Hartlepool Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "hastings_gov_uk",
+    "module": "hastings_gov_uk",
+    "title": "Hastings Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "herefordshire_gov_uk",
+    "module": "herefordshire_gov_uk",
+    "title": "Herefordshire City Council",
+    "args": [
+      {
+        "name": "POST_CODE",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "NUMBER",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "highpeak_gov_uk",
+    "module": "highpeak_gov_uk",
+    "title": "High Peak Borough Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "highland_gov_uk",
+    "module": "highland_gov_uk",
+    "title": "Highland",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "predict",
+        "type": "Boolean",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "horsham_gov_uk",
+    "module": "horsham_gov_uk",
+    "title": "Horsham District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "hull_gov_uk",
+    "module": "hull_gov_uk",
+    "title": "Hull City Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "huntingdonshire_gov_uk",
+    "module": "huntingdonshire_gov_uk",
+    "title": "Huntingdonshire District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "iapp_itouchvision_com",
+    "module": "iapp_itouchvision_com",
+    "title": "Hyndburn Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "municipality",
+        "type": "String",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "municipality": "HYNDBURN"
+    }
+  },
+  {
+    "id": "islington_gov_uk",
+    "module": "islington_gov_uk",
+    "title": "Islington Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "jointwastesolutions_org",
+    "module": "jointwastesolutions_org",
+    "title": "Joint Waste Solutions",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "house",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "borough",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "kirklees_gov_uk",
+    "module": "kirklees_gov_uk",
+    "title": "Kirklees Council",
+    "args": [
+      {
+        "name": "door_num",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "knowsley_gov_uk",
+    "module": "knowsley_gov_uk",
+    "title": "Knowsley Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "lancaster_gov_uk",
+    "module": "lancaster_gov_uk",
+    "title": "Lancaster City Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "house_number",
+        "type": "int or string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "apps_imactivate_com",
+    "module": "apps_imactivate_com",
+    "title": "Leeds",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "town",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "street",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "number",
+        "type": "String | Integer",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "town": "Leeds"
+    }
+  },
+  {
+    "id": "biffaleicester_co_uk",
+    "module": "biffaleicester_co_uk",
+    "title": "Leicester City Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "number",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "post_code",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "lichfielddc_gov_uk",
+    "module": "lichfielddc_gov_uk",
+    "title": "Lichfield District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "lisburn_castlereagh_gov_uk",
+    "module": "lisburn_castlereagh_gov_uk",
+    "title": "Lisburn and Castlereagh City Council",
+    "args": [
+      {
+        "name": "property_id",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "post_code",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "house_number",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "liverpool_gov_uk",
+    "module": "liverpool_gov_uk",
+    "title": "Liverpool City Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "lbbd_gov_uk",
+    "module": "lbbd_gov_uk",
+    "title": "London Borough of Barking and Dagenham",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "bexley_gov_uk",
+    "module": "bexley_gov_uk",
+    "title": "London Borough of Bexley",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "bromley_gov_uk",
+    "module": "bromley_gov_uk",
+    "title": "London Borough of Bromley",
+    "args": [
+      {
+        "name": "property",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "camden_gov_uk",
+    "module": "camden_gov_uk",
+    "title": "London Borough of Camden",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "harrow_gov_uk",
+    "module": "harrow_gov_uk",
+    "title": "London Borough of Harrow",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "havering_gov_uk",
+    "module": "havering_gov_uk",
+    "title": "London Borough of Havering",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "hounslow_gov_uk",
+    "module": "hounslow_gov_uk",
+    "title": "London Borough of Hounslow",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "lewisham_gov_uk",
+    "module": "lewisham_gov_uk",
+    "title": "London Borough of Lewisham",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "number",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "post_code",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "ics_merton_gov_uk",
+    "module": "ics",
+    "title": "London Borough of Merton (New)",
+    "args": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "file",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "offset",
+        "type": "int",
+        "required": false
+      },
+      {
+        "name": "method",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "params",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "year_field",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "regex",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "split_at",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "version",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "name": "verify_ssl",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "headers",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "title_template",
+        "type": "str",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "merton_gov_uk",
+    "module": "merton_gov_uk",
+    "title": "London Borough of Merton (Old)",
+    "args": [
+      {
+        "name": "property",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "newham_gov_uk",
+    "module": "newham_gov_uk",
+    "title": "London Borough of Newham",
+    "args": [
+      {
+        "name": "property",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "apps_imactivate_com",
+    "module": "apps_imactivate_com",
+    "title": "Luton",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "town",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "street",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "number",
+        "type": "String | Integer",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "town": "Luton"
+    }
+  },
+  {
+    "id": "maidstone_gov_uk",
+    "module": "maidstone_gov_uk",
+    "title": "Maidstone Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "maldon_gov_uk",
+    "module": "maldon_gov_uk",
+    "title": "Maldon District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "roundlookup_uk",
+    "module": "roundlookup_uk",
+    "title": "Malvern Hills",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "council",
+        "type": "String",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "council": "Malvern Hills"
+    }
+  },
+  {
+    "id": "manchester_uk",
+    "module": "manchester_uk",
+    "title": "Manchester City Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "mansfield_gov_uk",
+    "module": "mansfield_gov_uk",
+    "title": "Mansfield District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "medway_gov_uk",
+    "module": "medway_gov_uk",
+    "title": "Medway Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "melton_gov_uk",
+    "module": "melton_gov_uk",
+    "title": "Melton Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "iapp_itouchvision_com",
+    "module": "iapp_itouchvision_com",
+    "title": "Mendip District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "municipality",
+        "type": "String",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "municipality": "MENDIP"
+    }
+  },
+  {
+    "id": "mid_devon_gov_uk",
+    "module": "mid_devon_gov_uk",
+    "title": "Mid Devon District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "midsussex_gov_uk",
+    "module": "midsussex_gov_uk",
+    "title": "Mid Sussex District Council (Whitespace WRP)",
+    "args": [
+      {
+        "name": "address",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "house_name",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "house_number",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "street",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "midandeastantrim_gov_uk",
+    "module": "midandeastantrim_gov_uk",
+    "title": "Mid and East Antrim",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "ics_recollect",
+    "module": "ics",
+    "title": "Middlesbrough Council",
+    "args": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "file",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "offset",
+        "type": "int",
+        "required": false
+      },
+      {
+        "name": "method",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "params",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "year_field",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "regex",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "split_at",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "version",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "name": "verify_ssl",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "headers",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "title_template",
+        "type": "str",
+        "required": false
+      }
+    ],
+    "default_params": {
+      "split_at": "\\, (?:and )?|(?: and )"
+    }
+  },
+  {
+    "id": "midlothian_gov_uk",
+    "module": "midlothian_gov_uk",
+    "title": "Midlothian Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "milton_keynes_gov_uk",
+    "module": "milton_keynes_gov_uk",
+    "title": "Milton Keynes council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "mole_valley_gov_uk",
+    "module": "mole_valley_gov_uk",
+    "title": "Mole Valley District Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "house_number",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "monmouthshire_gov_uk",
+    "module": "monmouthshire_gov_uk",
+    "title": "Monmouthshire Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "moray_gov_uk",
+    "module": "moray_gov_uk",
+    "title": "Moray Council",
+    "args": [
+      {
+        "name": "id",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "neath_port_talbot_gov_uk",
+    "module": "neath_port_talbot_gov_uk",
+    "title": "Neath Port Talbot Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "postcode",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "newark_sherwooddc_gov_uk",
+    "module": "newark_sherwooddc_gov_uk",
+    "title": "Newark & Sherwood District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "newcastle_gov_uk",
+    "module": "newcastle_gov_uk",
+    "title": "Newcastle City Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "newcastle_staffs_gov_uk",
+    "module": "newcastle_staffs_gov_uk",
+    "title": "Newcastle Under Lyme Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "iapp_itouchvision_com",
+    "module": "iapp_itouchvision_com",
+    "title": "Newport City Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "municipality",
+        "type": "String",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "municipality": "NEWPORT"
+    }
+  },
+  {
+    "id": "north_ayrshire_gov_uk",
+    "module": "north_ayrshire_gov_uk",
+    "title": "North Ayrshire Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "nelincs_gov_uk",
+    "module": "nelincs_gov_uk",
+    "title": "North East Lincolnshire Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "northherts_gov_uk",
+    "module": "northherts_gov_uk",
+    "title": "North Herts Council",
+    "args": [
+      {
+        "name": "POST_CODE",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "HOUSE_NAME_NUMER",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "ADDRESS_STREET",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "STREET_TOWN",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "north_kesteven_org_uk",
+    "module": "north_kesteven_org_uk",
+    "title": "North Kesteven District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "northlanarkshire_gov_uk",
+    "module": "northlanarkshire_gov_uk",
+    "title": "North Lanarkshire Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "usrn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "northlincs_gov_uk",
+    "module": "northlincs_gov_uk",
+    "title": "North Lincolnshire Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "north_norfolk_gov_uk",
+    "module": "north_norfolk_gov_uk",
+    "title": "North Norfolk District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "northnorthants_gov_uk",
+    "module": "northnorthants_gov_uk",
+    "title": "North Northamptonshire council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "nsomerset_gov_uk",
+    "module": "nsomerset_gov_uk",
+    "title": "North Somerset Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "ics_northtyneside_gov_uk",
+    "module": "ics",
+    "title": "North Tyneside Council",
+    "args": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "file",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "offset",
+        "type": "int",
+        "required": false
+      },
+      {
+        "name": "method",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "params",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "year_field",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "regex",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "split_at",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "version",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "name": "verify_ssl",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "headers",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "title_template",
+        "type": "str",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "nwleics_gov_uk",
+    "module": "nwleics_gov_uk",
+    "title": "North West Leicestershire District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "northyorks_craven_gov_uk",
+    "module": "northyorks_craven_gov_uk",
+    "title": "North Yorkshire Council - Craven",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "northyorks_hambleton_gov_uk",
+    "module": "northyorks_hambleton_gov_uk",
+    "title": "North Yorkshire Council - Hambleton",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "northyorks_harrogate_gov_uk",
+    "module": "northyorks_harrogate_gov_uk",
+    "title": "North Yorkshire Council - Harrogate",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "northyorks_ryedale_gov_uk",
+    "module": "northyorks_ryedale_gov_uk",
+    "title": "North Yorkshire Council - Ryedale",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "northyorks_scarborough_gov_uk",
+    "module": "northyorks_scarborough_gov_uk",
+    "title": "North Yorkshire Council - Scarborough",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "northyorks_selby_gov_uk",
+    "module": "northyorks_selby_gov_uk",
+    "title": "North Yorkshire Council - Selby",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "norwich_gov_uk",
+    "module": "norwich_gov_uk",
+    "title": "Norwich City Council",
+    "args": [
+      {
+        "name": "property_name_or_number",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "street_name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "nottingham_city_gov_uk",
+    "module": "nottingham_city_gov_uk",
+    "title": "Nottingham City Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "oadby_wigston_gov_uk",
+    "module": "oadby_wigston_gov_uk",
+    "title": "Oadby and Wigston Council",
+    "args": [
+      {
+        "name": "address",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "oldham_gov_uk",
+    "module": "oldham_gov_uk",
+    "title": "Oldham Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "oxford_gov_uk",
+    "module": "oxford_gov_uk",
+    "title": "Oxford City Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "pembrokeshire_gov_uk",
+    "module": "pembrokeshire_gov_uk",
+    "title": "Pembrokeshire County Council",
+    "args": [
+      {
+        "name": "UPRN",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "peterborough_gov_uk",
+    "module": "peterborough_gov_uk",
+    "title": "Peterborough City Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "post_code",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "plymouth_gov_uk",
+    "module": "plymouth_gov_uk",
+    "title": "Plymouth City Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "portsmouth_gov_uk",
+    "module": "portsmouth_gov_uk",
+    "title": "Portsmouth City Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "preston_gov_uk",
+    "module": "preston_gov_uk",
+    "title": "Preston City Council",
+    "args": [
+      {
+        "name": "street",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "reading_gov_uk",
+    "module": "reading_gov_uk",
+    "title": "Reading Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "redbridge_gov_uk",
+    "module": "redbridge_gov_uk",
+    "title": "Redbridge Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "ics_recollect",
+    "module": "ics",
+    "title": "Redcar & Cleveland, UK",
+    "args": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "file",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "offset",
+        "type": "int",
+        "required": false
+      },
+      {
+        "name": "method",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "params",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "year_field",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "regex",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "split_at",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "version",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "name": "verify_ssl",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "headers",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "title_template",
+        "type": "str",
+        "required": false
+      }
+    ],
+    "default_params": {
+      "split_at": "\\, (?:and )?|(?: and )"
+    }
+  },
+  {
+    "id": "reigatebanstead_gov_uk",
+    "module": "reigatebanstead_gov_uk",
+    "title": "Reigate & Banstead Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "renfrewshire_gov_uk",
+    "module": "renfrewshire_gov_uk",
+    "title": "Renfrewshire Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "rctcbc_gov_uk",
+    "module": "rctcbc_gov_uk",
+    "title": "Rhondda Cynon Taf County Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "richmondshire_gov_uk",
+    "module": "richmondshire_gov_uk",
+    "title": "Richmondshire District Council",
+    "args": [
+      {
+        "name": "UPRN",
+        "type": "integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "rochdale_gov_uk",
+    "module": "rochdale_gov_uk",
+    "title": "Rochdale Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "rother_gov_uk",
+    "module": "rother_gov_uk",
+    "title": "Rother District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "apps_imactivate_com",
+    "module": "apps_imactivate_com",
+    "title": "Rotherham",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "town",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "street",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "number",
+        "type": "String | Integer",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "town": "Rotherham"
+    }
+  },
+  {
+    "id": "rotherham_gov_uk",
+    "module": "rotherham_gov_uk",
+    "title": "Rotherham Metropolitan Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "royalgreenwich_gov_uk",
+    "module": "royalgreenwich_gov_uk",
+    "title": "Royal Borough Of Greenwich",
+    "args": [
+      {
+        "name": "address",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "house",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "post_code",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "rugby_gov_uk",
+    "module": "rugby_gov_uk",
+    "title": "Rugby Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "runnymede_gov_uk",
+    "module": "runnymede_gov_uk",
+    "title": "Runnymede Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "rushcliffe_gov_uk",
+    "module": "rushcliffe_gov_uk",
+    "title": "Rushcliffe Brough Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "address",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "rushmoor_gov_uk",
+    "module": "rushmoor_gov_uk",
+    "title": "Rushmoor Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "salford_gov_uk",
+    "module": "salford_gov_uk",
+    "title": "Salford City Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "sandwell_gov_uk",
+    "module": "sandwell_gov_uk",
+    "title": "Sandwell Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "scotborders_gov_uk",
+    "module": "scotborders_gov_uk",
+    "title": "Scottish Borders Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "iapp_itouchvision_com",
+    "module": "iapp_itouchvision_com",
+    "title": "Sedgemoor District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "municipality",
+        "type": "String",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "municipality": "SEDGEMOOR"
+    }
+  },
+  {
+    "id": "sefton_gov_uk",
+    "module": "sefton_gov_uk",
+    "title": "Sefton Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "streetname",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "house_number_or_name",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "sheffield_gov_uk",
+    "module": "sheffield_gov_uk",
+    "title": "Sheffield City Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "shropshire_gov_uk",
+    "module": "shropshire_gov_uk",
+    "title": "Shropshire Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "solihull_gov_uk",
+    "module": "solihull_gov_uk",
+    "title": "Solihull Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string|integer",
+        "required": true
+      },
+      {
+        "name": "predict",
+        "type": "bool",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "iapp_itouchvision_com",
+    "module": "iapp_itouchvision_com",
+    "title": "Somerset Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "municipality",
+        "type": "String",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "municipality": "SOMERSET"
+    }
+  },
+  {
+    "id": "iapp_itouchvision_com",
+    "module": "iapp_itouchvision_com",
+    "title": "Somerset County Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "municipality",
+        "type": "String",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "municipality": "SOMERSET COUNTY"
+    }
+  },
+  {
+    "id": "iapp_itouchvision_com",
+    "module": "iapp_itouchvision_com",
+    "title": "Somerset West & Taunton District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "municipality",
+        "type": "String",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "municipality": "SOMERSET WEST AND TAUNTON"
+    }
+  },
+  {
+    "id": "scambs_gov_uk",
+    "module": "scambs_gov_uk",
+    "title": "South Cambridgeshire District Council (Deprecated)",
+    "args": [
+      {
+        "name": "POST_CODE",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "NUMBER",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "southderbyshire_gov_uk",
+    "module": "southderbyshire_gov_uk",
+    "title": "South Derbyshire District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "southglos_gov_uk",
+    "module": "southglos_gov_uk",
+    "title": "South Gloucestershire Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "fccenvironment_co_uk",
+    "module": "fccenvironment_co_uk",
+    "title": "South Hams District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "region",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "default_params": {
+      "region": "southhams"
+    }
+  },
+  {
+    "id": "sholland_gov_uk",
+    "module": "sholland_gov_uk",
+    "title": "South Holland District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "postcode",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "southkesteven_gov_uk",
+    "module": "southkesteven_gov_uk",
+    "title": "South Kesteven District Council",
+    "args": [
+      {
+        "name": "address_id",
+        "type": "int|string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "iapp_itouchvision_com",
+    "module": "iapp_itouchvision_com",
+    "title": "South Somerset District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "municipality",
+        "type": "String",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "municipality": "SOUTH SOMERSET"
+    }
+  },
+  {
+    "id": "sstaffs_gov_uk",
+    "module": "sstaffs_gov_uk",
+    "title": "South Staffordshire Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "southtyneside_gov_uk",
+    "module": "southtyneside_gov_uk",
+    "title": "South Tyneside Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "southampton_gov_uk",
+    "module": "southampton_gov_uk",
+    "title": "Southampton City Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "stalbans_gov_uk",
+    "module": "stalbans_gov_uk",
+    "title": "St Albans City & District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "st_helens_gov_uk",
+    "module": "st_helens_gov_uk",
+    "title": "St Helens Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "staffordbc_gov_uk",
+    "module": "staffordbc_gov_uk",
+    "title": "Stafford Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "stevenage_gov_uk",
+    "module": "stevenage_gov_uk",
+    "title": "Stevenage Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "stirling_uk",
+    "module": "stirling_uk",
+    "title": "Stirling.gov.uk",
+    "args": [
+      {
+        "name": "route",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "stockport_gov_uk",
+    "module": "stockport_gov_uk",
+    "title": "Stockport Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "stockton_gov_uk",
+    "module": "stockton_gov_uk",
+    "title": "Stockton-on-Tees Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "stoke_gov_uk",
+    "module": "stoke_gov_uk",
+    "title": "Stoke-on-Trent",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "stratford_gov_uk",
+    "module": "stratford_gov_uk",
+    "title": "Stratford District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "stroud_gov_uk",
+    "module": "stroud_gov_uk",
+    "title": "Stroud District Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "sunderland_gov_uk",
+    "module": "sunderland_gov_uk",
+    "title": "Sunderland City Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "address",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "jointwastesolutions_org",
+    "module": "jointwastesolutions_org",
+    "title": "Surrey Heath Borough Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "house",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "borough",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "default_params": {
+      "borough": "surreyheath"
+    }
+  },
+  {
+    "id": "sutton_gov_uk",
+    "module": "sutton_gov_uk",
+    "title": "Sutton Council, London",
+    "args": [
+      {
+        "name": "id",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "swale_gov_uk",
+    "module": "swale_gov_uk",
+    "title": "Swale Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "swansea_gov_uk",
+    "module": "swansea_gov_uk",
+    "title": "Swansea Council",
+    "args": [
+      {
+        "name": "street_name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "post_code",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "swindon_gov_uk",
+    "module": "swindon_gov_uk",
+    "title": "Swindon Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "tameside_gov_uk",
+    "module": "tameside_gov_uk",
+    "title": "Tameside Metropolitan Borough Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "teignbridge_gov_uk",
+    "module": "teignbridge_gov_uk",
+    "title": "Teignbridge District Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "telford_gov_uk",
+    "module": "telford_gov_uk",
+    "title": "Telford and Wrekin Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "name_number",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "post_code",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "iapp_itouchvision_com",
+    "module": "iapp_itouchvision_com",
+    "title": "Test Valley Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "municipality",
+        "type": "String",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "municipality": "TEST VALLEY"
+    }
+  },
+  {
+    "id": "tewkesbury_gov_uk",
+    "module": "tewkesbury_gov_uk",
+    "title": "Tewkesbury Borough Council",
+    "args": [
+      {
+        "name": "UPRN",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "thanet_gov_uk",
+    "module": "thanet_gov_uk",
+    "title": "Thanet District Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "street_address",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "ics_kingston_gov_uk",
+    "module": "ics",
+    "title": "The Royal Borough of Kingston Council",
+    "args": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "file",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "offset",
+        "type": "int",
+        "required": false
+      },
+      {
+        "name": "method",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "params",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "year_field",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "regex",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "split_at",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "version",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "name": "verify_ssl",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "headers",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "title_template",
+        "type": "str",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "thurrock_gov_uk",
+    "module": "thurrock_gov_uk",
+    "title": "Thurrock",
+    "args": [
+      {
+        "name": "street",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "town",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "tmbc_gov_uk",
+    "module": "tmbc_gov_uk",
+    "title": "Tonbridge and Malling Borough Council",
+    "args": [
+      {
+        "name": "post_code",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "address",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "torridge_gov_uk",
+    "module": "torridge_gov_uk",
+    "title": "Torridge Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "tunbridgewells_gov_uk",
+    "module": "tunbridgewells_gov_uk",
+    "title": "Tunbridge Wells",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "ukbcd",
+    "module": "ukbcd",
+    "title": "UK Bin Collection Schedule (UKBCD) project",
+    "args": [
+      {
+        "name": "file",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "uttlesford_gov_uk",
+    "module": "uttlesford_gov_uk",
+    "title": "Uttlesford District Council",
+    "args": [
+      {
+        "name": "house",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "valeofglamorgan_gov_uk",
+    "module": "valeofglamorgan_gov_uk",
+    "title": "Vale of Glamorgan Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "wakefield_gov_uk",
+    "module": "wakefield_gov_uk",
+    "title": "Wakefield Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "walsall_gov_uk",
+    "module": "walsall_gov_uk",
+    "title": "Walsall Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "walthamforest_gov_uk",
+    "module": "walthamforest_gov_uk",
+    "title": "Waltham Forest",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "wandsworth_gov_uk",
+    "module": "wandsworth_gov_uk",
+    "title": "Wandsworth Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "warrington_gov_uk",
+    "module": "warrington_gov_uk",
+    "title": "Warrington Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "warwickdc_gov_uk",
+    "module": "warwickdc_gov_uk",
+    "title": "Warwick District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "watford_gov_uk",
+    "module": "watford_gov_uk",
+    "title": "Watford Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "waverley_gov_uk",
+    "module": "waverley_gov_uk",
+    "title": "Waverley Borough Council",
+    "args": [
+      {
+        "name": "POST_CODE",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "HOUSE_NAME_NUMER",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "ADDRESS_STREET",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "STREET_TOWN",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "wealden_gov_uk",
+    "module": "wealden_gov_uk",
+    "title": "Wealden District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "welhat_gov_uk",
+    "module": "welhat_gov_uk",
+    "title": "Welwyn Hatfield Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "westberks_gov_uk",
+    "module": "westberks_gov_uk",
+    "title": "West Berkshire Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "fccenvironment_co_uk",
+    "module": "fccenvironment_co_uk",
+    "title": "West Devon Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "region",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "default_params": {
+      "region": "westdevon"
+    }
+  },
+  {
+    "id": "west_dunbartonshire_gov_uk",
+    "module": "west_dunbartonshire_gov_uk",
+    "title": "West Dunbartonshire Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "westlancs_gov_uk",
+    "module": "westlancs_gov_uk",
+    "title": "West Lancashire Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "west_lindsey_gov_uk",
+    "module": "west_lindsey_gov_uk",
+    "title": "West Lindsey District Council",
+    "args": [
+      {
+        "name": "x",
+        "type": "int |string",
+        "required": true
+      },
+      {
+        "name": "y",
+        "type": "int | string",
+        "required": true
+      },
+      {
+        "name": "id",
+        "type": "int | string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "westlothian_gov_uk",
+    "module": "westlothian_gov_uk",
+    "title": "West Lothian Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "westnorthants_gov_uk",
+    "module": "westnorthants_gov_uk",
+    "title": "West Northamptonshire council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "westoxon_gov_uk",
+    "module": "westoxon_gov_uk",
+    "title": "West Oxfordshire District Council",
+    "args": [
+      {
+        "name": "address",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "westsuffolk_gov_uk",
+    "module": "westsuffolk_gov_uk",
+    "title": "West Suffolk Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "ics_barrowbc_gov_uk",
+    "module": "ics",
+    "title": "Westmorland & Furness Council, Barrow area",
+    "args": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "file",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "offset",
+        "type": "int",
+        "required": false
+      },
+      {
+        "name": "method",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "params",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "year_field",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "regex",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "split_at",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "version",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "name": "verify_ssl",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "headers",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "title_template",
+        "type": "str",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "ics_southlakeland_gov_uk",
+    "module": "ics",
+    "title": "Westmorland & Furness Council, South Lakeland area",
+    "args": [
+      {
+        "name": "url",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "file",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "offset",
+        "type": "int",
+        "required": false
+      },
+      {
+        "name": "method",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "params",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "year_field",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "regex",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "split_at",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "version",
+        "type": "integer",
+        "required": false
+      },
+      {
+        "name": "verify_ssl",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "name": "headers",
+        "type": "dict",
+        "required": false
+      },
+      {
+        "name": "title_template",
+        "type": "str",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "wigan_gov_uk",
+    "module": "wigan_gov_uk",
+    "title": "Wigan Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "wiltshire_gov_uk",
+    "module": "wiltshire_gov_uk",
+    "title": "Wiltshire Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "iapp_itouchvision_com",
+    "module": "iapp_itouchvision_com",
+    "title": "Winchester City Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "municipality",
+        "type": "String",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "municipality": "WINCHESTER"
+    }
+  },
+  {
+    "id": "rbwm_gov_uk",
+    "module": "rbwm_gov_uk",
+    "title": "Windsor and Maidenhead",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "wirral_gov_uk",
+    "module": "wirral_gov_uk",
+    "title": "Wirral Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "address_value",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "jointwastesolutions_org",
+    "module": "jointwastesolutions_org",
+    "title": "Woking Borough Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "house",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "borough",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "default_params": {
+      "borough": "woking"
+    }
+  },
+  {
+    "id": "wokingham_gov_uk",
+    "module": "wokingham_gov_uk",
+    "title": "Wokingham Borough Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "property",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "address",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  {
+    "id": "wolverhampton_gov_uk",
+    "module": "wolverhampton_gov_uk",
+    "title": "Wolverhampton City Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "roundlookup_uk",
+    "module": "roundlookup_uk",
+    "title": "Worcester City",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "council",
+        "type": "String",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "council": "Worcester City"
+    }
+  },
+  {
+    "id": "wrexham_gov_uk",
+    "module": "wrexham_gov_uk",
+    "title": "Wrexham County Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "roundlookup_uk",
+    "module": "roundlookup_uk",
+    "title": "Wychavon",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "council",
+        "type": "String",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "council": "Wychavon"
+    }
+  },
+  {
+    "id": "wychavon_gov_uk",
+    "module": "wychavon_gov_uk",
+    "title": "Wychavon District Council (Deprecated)",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "wyre_gov_uk",
+    "module": "wyre_gov_uk",
+    "title": "Wyre Borough Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "wyreforestdc_gov_uk",
+    "module": "wyreforestdc_gov_uk",
+    "title": "Wyre Forest District Council",
+    "args": [
+      {
+        "name": "street",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "town",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "garden_cutomer",
+        "type": "string",
+        "required": false
+      }
+    ]
+  }
+]

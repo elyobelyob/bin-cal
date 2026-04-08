@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your calendar is ready — UK Bin Cal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1><a href="index.html" style="text-decoration:none;color:inherit">&#x1F5D1; UK Bin Cal</a></h1>
+  <p>Your bin collection calendar is ready</p>
+</header>
+
+<div class="page">
+
+  <div class="card" style="text-align:center;padding-top:2rem">
+    <p style="font-size:2.5rem">&#x2705;</p>
+    <h2 style="font-size:1.3rem;margin-top:.5rem">Your calendar is ready!</h2>
+    <p style="color:#555;margin-top:.4rem;font-size:.95rem" id="councilName"></p>
+  </div>
+
+  <div class="card">
+    <h2>Your subscribe URL</h2>
+    <p style="font-size:.88rem;color:#555;margin-bottom:.75rem">
+      Copy this URL and add it as a calendar subscription in your calendar app.
+      It updates automatically — you only need to do this once.
+    </p>
+    <div class="url-box">
+      <span id="calUrl" style="flex:1;word-break:break-all"></span>
+      <button class="copy-btn" onclick="copyUrl()">Copy</button>
+    </div>
+    <p id="copyConfirm" style="font-size:.8rem;color:var(--green);margin-top:.3rem;display:none">Copied!</p>
+  </div>
+
+  <div class="card">
+    <h2>How to subscribe</h2>
+    <ul class="client-list">
+      <li>
+        <strong>Apple Calendar (iPhone / Mac)</strong>
+        File &rarr; New Calendar Subscription&hellip; and paste the URL.
+        Or tap the URL on your iPhone and choose &ldquo;Subscribe&rdquo; when prompted.
+      </li>
+      <li>
+        <strong>Google Calendar</strong>
+        Open Settings &rarr; <em>Other calendars</em> &rarr; <em>From URL</em>.
+        Paste the URL and click &ldquo;Add calendar&rdquo;.
+        <br><span style="font-size:.82rem;color:#888">Note: Google refreshes subscriptions roughly once a day.</span>
+      </li>
+      <li>
+        <strong>Outlook (desktop)</strong>
+        Go to the Calendar view &rarr; <em>Add Calendar</em> &rarr; <em>From Internet&hellip;</em>
+        and paste the URL.
+      </li>
+      <li>
+        <strong>Outlook.com / Microsoft 365</strong>
+        Calendar &rarr; <em>Add calendar</em> &rarr; <em>Subscribe from web</em>.
+        Paste the URL and click <em>Import</em>.
+      </li>
+      <li>
+        <strong>Fantastical / other apps</strong>
+        Use <em>Add Calendar Subscription</em> (varies by app) and paste the URL.
+      </li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>How it stays up to date</h2>
+    <p style="font-size:.9rem;color:#555">
+      Your calendar is refreshed automatically every night from your council&rsquo;s website.
+      You don&rsquo;t need to do anything &mdash; as long as you&rsquo;ve subscribed (not imported),
+      your calendar app will pick up the latest dates automatically.
+    </p>
+    <p style="font-size:.9rem;color:#555;margin-top:.6rem">
+      You can share this URL with neighbours at the same address &mdash; they&rsquo;ll get the same calendar.
+    </p>
+  </div>
+
+  <div style="text-align:center;margin-top:1.5rem">
+    <a href="form.html" class="btn" style="background:#555">Add another address</a>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+<script>
+const params  = new URLSearchParams(location.search);
+const hash    = params.get("hash") || "";
+const council = params.get("council") || "";
+
+const calUrlEl = document.getElementById("calUrl");
+const cnEl     = document.getElementById("councilName");
+
+if (hash && hash !== "00000000") {
+  calUrlEl.textContent = icsUrl(hash);
+} else {
+  calUrlEl.textContent = "(calendar URL not available)";
+}
+
+if (council) {
+  cnEl.textContent = council;
+}
+
+function copyUrl() {
+  const text = calUrlEl.textContent;
+  navigator.clipboard.writeText(text)
+    .then(() => {
+      const confirm = document.getElementById("copyConfirm");
+      confirm.style.display = "block";
+      setTimeout(() => { confirm.style.display = "none"; }, 2000);
+    })
+    .catch(() => {
+      // Fallback for older browsers
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+    });
+}
+</script>
+
+</body>
+</html>

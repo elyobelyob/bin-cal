@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generating your calendar… — UK Bin Cal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1><a href="index.html" style="text-decoration:none;color:inherit">&#x1F5D1; UK Bin Cal</a></h1>
+  <p>Fetching your bin collection schedule</p>
+</header>
+
+<div class="page">
+  <div class="card" style="text-align:center;padding:2.5rem 1.5rem">
+
+    <div id="spinnerView">
+      <div class="spinner"></div>
+      <p class="waiting-msg" id="statusMsg">
+        Querying your council&rsquo;s website&hellip; this usually takes 30&ndash;90 seconds.
+      </p>
+      <p class="waiting-msg" style="margin-top:.5rem;font-size:.8rem;color:#aaa" id="elapsed"></p>
+    </div>
+
+    <div id="timeoutView" style="display:none">
+      <p style="font-size:2rem">&#x26A0;&#xFE0F;</p>
+      <p style="margin:.75rem 0;font-weight:600">This is taking longer than expected.</p>
+      <p style="color:#666;font-size:.9rem;margin-bottom:1.5rem">
+        The calendar may still be generating. Try visiting your calendar URL directly in a few minutes,
+        or <a href="form.html">resubmit your address</a>.
+      </p>
+      <div id="timeoutUrlWrap" style="display:none">
+        <p style="font-size:.85rem;color:#555;margin-bottom:.5rem">Your calendar URL (try after a few minutes):</p>
+        <div class="url-box">
+          <span id="timeoutUrl" style="flex:1"></span>
+          <button class="copy-btn" onclick="copyUrl('timeoutUrl')">Copy</button>
+        </div>
+      </div>
+      <a href="form.html" class="btn" style="margin-top:1rem">Try again</a>
+    </div>
+
+  </div>
+</div>
+
+<script src="app.js"></script>
+<script>
+const params   = new URLSearchParams(location.search);
+const hash     = params.get("hash") || "";
+const council  = params.get("council") || "your council";
+
+if (!hash || hash === "00000000") {
+  // Honeypot trigger or missing hash — show success anyway
+  window.location.href = "success.html?hash=00000000";
+}
+
+const statusMsg   = document.getElementById("statusMsg");
+const elapsedEl   = document.getElementById("elapsed");
+const spinnerView = document.getElementById("spinnerView");
+const timeoutView = document.getElementById("timeoutView");
+
+let startTime = Date.now();
+
+// Update elapsed counter
+setInterval(() => {
+  const secs = Math.floor((Date.now() - startTime) / 1000);
+  elapsedEl.textContent = `${secs}s elapsed`;
+}, 1000);
+
+// Update message after 30s
+setTimeout(() => {
+  statusMsg.textContent = "Still working… some councils can be slow to respond.";
+}, 30000);
+
+// Start polling
+pollForIcs(
+  hash,
+  (url) => {
+    window.location.href = `success.html?hash=${encodeURIComponent(hash)}&council=${encodeURIComponent(council)}`;
+  },
+  () => {
+    // Timeout
+    spinnerView.style.display = "none";
+    timeoutView.style.display = "block";
+    const urlEl = document.getElementById("timeoutUrl");
+    if (urlEl && hash) {
+      urlEl.textContent = icsUrl(hash);
+      document.getElementById("timeoutUrlWrap").style.display = "block";
+    }
+  },
+  300 // 5 minutes max
+);
+
+function copyUrl(id) {
+  const text = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text).catch(() => {});
+}
+</script>
+
+</body>
+</html>

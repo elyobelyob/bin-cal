@@ -1,0 +1,106 @@
+name: Nightly — Regenerate All ICS
+
+on:
+  schedule:
+    - cron: "0 2 * * *"  # 2am UTC daily
+  workflow_dispatch: {}   # allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Clone waste_collection_schedule
+        run: |
+          git clone --depth=1 https://github.com/mampfes/hacs_waste_collection_schedule.git wcs_repo
+
+      - name: Install dependencies
+        run: |
+          pip install --quiet \
+            beautifulsoup4 \
+            DateTime \
+            python-dateutil \
+            pytz \
+            requests \
+            lxml \
+            pycryptodome \
+            curl_cffi \
+            jinja2 \
+            pypdf \
+            "pdfminer.six" \
+            icalendar \
+            icalevents
+
+      - name: Regenerate all calendars
+        env:
+          WCS_REPO: wcs_repo
+        run: |
+          python3 - <<'EOF'
+          import json
+          import os
+          import subprocess
+          import time
+
+          with open("users.json") as f:
+              users = json.load(f)
+
+          for i, (h, entry) in enumerate(users.items()):
+              print(f"\n[{i+1}/{len(users)}] Generating {h} ({entry['council_title']})...")
+              try:
+                  result = subprocess.run(
+                      [
+                          "python3", "scripts/generate_ics.py",
+                          "--council-id", entry["council_id"],
+                          "--council-title", entry["council_title"],
+                          "--args", json.dumps(entry["args"]),
+                          "--hash", h,
+                          "--output-dir", "calendars",
+                          "--wcs-repo", "wcs_repo",
+                      ],
+                      capture_output=True, text=True, timeout=60
+                  )
+                  if result.returncode != 0:
+                      print(f"  FAILED: {result.stderr}")
+                  else:
+                      print(result.stdout)
+              except subprocess.TimeoutExpired:
+                  print(f"  TIMEOUT for {h}")
+              except Exception as e:
+                  print(f"  ERROR: {e}")
+
+              # Stagger requests to avoid hammering councils
+              if i < len(users) - 1:
+                  time.sleep(3)
+
+          print("\nDone.")
+          EOF
+
+      - name: Update last_updated timestamps
+        run: |
+          python3 - <<'EOF'
+          import json, datetime
+
+          with open("users.json") as f:
+              users = json.load(f)
+
+          today = datetime.date.today().isoformat()
+          for h in users:
+              users[h]["last_updated"] = today
+
+          with open("users.json", "w") as f:
+              json.dump(users, f, indent=2)
+          EOF
+
+      - name: Commit and push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add calendars/ users.json
+          git diff --cached --quiet && echo "Nothing to commit" && exit 0
+          git commit -m "Nightly calendar refresh $(date -u +%Y-%m-%d)"
+          git push

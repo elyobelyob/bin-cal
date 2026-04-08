@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UK Bin Cal — Subscribable bin collection calendars</title>
+  <meta name="description" content="Get a subscribable .ics calendar for your UK bin collection schedule. Works with Apple Calendar, Google Calendar, and Outlook.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>&#x1F5D1; UK Bin Cal</h1>
+  <p>Subscribable bin collection calendars for any UK address</p>
+</header>
+
+<div class="page">
+
+  <div class="hero" style="padding-top:2rem">
+    <h1>Never miss bin day again</h1>
+    <p>Enter your address once. Get a calendar URL you can subscribe to in Apple Calendar, Google Calendar, or Outlook — updated automatically every night.</p>
+    <a href="form.html" class="btn">Get my bin calendar &rarr;</a>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Enter your address</h3>
+      <p>Choose your council and enter your postcode and door number.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>We fetch your schedule</h3>
+      <p>Your council&rsquo;s website is queried automatically &mdash; takes about a minute.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Subscribe and you&rsquo;re done</h3>
+      <p>Paste the URL into your calendar app. It stays up to date automatically.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>How it works</h2>
+    <p>This free service uses open-source scrapers from the <a href="https://github.com/mampfes/hacs_waste_collection_schedule" target="_blank" rel="noopener">waste_collection_schedule</a> project to fetch your collection dates directly from your council&rsquo;s website. Your schedule is regenerated every night and served as a standard <code>.ics</code> calendar file.</p>
+    <p style="margin-top:.75rem"><strong>296 UK councils supported.</strong> No account, no email address, and no payment required.</p>
+  </div>
+
+  <div class="card">
+    <h2>Privacy</h2>
+    <p>Only your postcode, door number, and council are stored — no names, emails, or personal details. Postcodes and door numbers are public information (they are in Royal Mail's address database). The calendar file is identified by an anonymous hash of your address details.</p>
+  </div>
+
+  <div class="card">
+    <h2>Some councils need your UPRN</h2>
+    <p>A UPRN (Unique Property Reference Number) is a 12-digit code assigned to every address in the UK. Some councils require it to look up your specific property.</p>
+    <p style="margin-top:.5rem">If your council needs it, the form will ask for it. You can find yours for free at <a href="https://uprn.uk" target="_blank" rel="noopener"><strong>uprn.uk</strong></a> &mdash; just enter your postcode and select your address.</p>
+  </div>
+
+</div>
+
+<footer style="text-align:center;padding:2rem 1rem;color:#888;font-size:.82rem;border-top:1px solid #e0e0e0;margin-top:2rem">
+  Open source &middot; Powered by <a href="https://github.com/mampfes/hacs_waste_collection_schedule">waste_collection_schedule</a> &middot; Hosted on GitHub Pages
+</footer>
+
+</body>
+</html>

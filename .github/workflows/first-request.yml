@@ -1,0 +1,106 @@
+name: First Request — Generate ICS
+
+on:
+  workflow_dispatch:
+    inputs:
+      hash:
+        description: "8-char address hash (filename slug)"
+        required: true
+        type: string
+      council_id:
+        description: "Module ID e.g. kirklees_gov_uk"
+        required: true
+        type: string
+      council_title:
+        description: "Human-readable council name"
+        required: true
+        type: string
+      args_json:
+        description: "JSON-encoded source args e.g. {\"postcode\":\"HD9 6RJ\",\"door_num\":\"1\"}"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Check if ICS already exists (skip if up to date)
+        id: check
+        run: |
+          if [ -f "calendars/${{ inputs.hash }}.ics" ]; then
+            # Re-generate anyway to keep fresh; check was for early-exit on nightly
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Clone waste_collection_schedule
+        run: |
+          git clone --depth=1 https://github.com/mampfes/hacs_waste_collection_schedule.git wcs_repo
+
+      - name: Install dependencies
+        run: |
+          pip install --quiet \
+            beautifulsoup4 \
+            DateTime \
+            python-dateutil \
+            pytz \
+            requests \
+            lxml \
+            pycryptodome \
+            curl_cffi \
+            jinja2 \
+            pypdf \
+            "pdfminer.six" \
+            icalendar \
+            icalevents
+
+      - name: Generate ICS
+        env:
+          WCS_REPO: wcs_repo
+        run: |
+          python3 scripts/generate_ics.py \
+            --council-id "${{ inputs.council_id }}" \
+            --council-title "${{ inputs.council_title }}" \
+            --args '${{ inputs.args_json }}' \
+            --hash "${{ inputs.hash }}" \
+            --output-dir calendars \
+            --wcs-repo wcs_repo
+
+      - name: Update users.json
+        run: |
+          python3 - <<'EOF'
+          import json, os, datetime
+
+          users_path = "users.json"
+          with open(users_path) as f:
+              users = json.load(f)
+
+          h = "${{ inputs.hash }}"
+          if h not in users:
+              users[h] = {
+                  "council_id": "${{ inputs.council_id }}",
+                  "council_title": "${{ inputs.council_title }}",
+                  "args": json.loads('${{ inputs.args_json }}'),
+                  "added": datetime.date.today().isoformat(),
+              }
+          users[h]["last_updated"] = datetime.date.today().isoformat()
+
+          with open(users_path, "w") as f:
+              json.dump(users, f, indent=2)
+          EOF
+
+      - name: Commit and push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add calendars/${{ inputs.hash }}.ics users.json
+          git diff --cached --quiet && echo "Nothing to commit" && exit 0
+          git commit -m "Add calendar for ${{ inputs.hash }} (${{ inputs.council_title }})"
+          git push
