@@ -78,11 +78,30 @@ export default {
       return corsResponse(JSON.stringify({ error: "Invalid hash" }), 400, origin);
     }
 
-    // Validate args_json is valid JSON
+    // Validate council_id (module name: lowercase letters, digits, underscores only)
+    if (!/^[a-z0-9_]{1,64}$/.test(council_id)) {
+      return corsResponse(JSON.stringify({ error: "Invalid council_id" }), 400, origin);
+    }
+
+    // Validate council_title (printable text, reasonable length)
+    if (typeof council_title !== "string" || council_title.length < 1 || council_title.length > 128) {
+      return corsResponse(JSON.stringify({ error: "Invalid council_title" }), 400, origin);
+    }
+
+    // Validate args_json is valid JSON object with string/boolean values only
+    let parsedArgs;
     try {
-      JSON.parse(args_json);
-    } catch {
-      return corsResponse(JSON.stringify({ error: "Invalid args_json" }), 400, origin);
+      parsedArgs = JSON.parse(args_json);
+      if (typeof parsedArgs !== "object" || Array.isArray(parsedArgs) || parsedArgs === null) {
+        throw new Error("args must be a JSON object");
+      }
+      for (const [k, v] of Object.entries(parsedArgs)) {
+        if (!/^[a-z_]{1,32}$/.test(k)) throw new Error(`Invalid arg key: ${k}`);
+        if (typeof v !== "string" && typeof v !== "boolean") throw new Error(`Invalid arg value type for ${k}`);
+        if (typeof v === "string" && v.length > 256) throw new Error(`Arg value too long: ${k}`);
+      }
+    } catch (e) {
+      return corsResponse(JSON.stringify({ error: `Invalid args_json: ${e.message}` }), 400, origin);
     }
 
     // Trigger GitHub Actions workflow_dispatch

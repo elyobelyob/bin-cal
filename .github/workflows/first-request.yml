@@ -34,7 +34,6 @@ jobs:
         id: check
         run: |
           if [ -f "calendars/${{ inputs.hash }}.ics" ]; then
-            # Re-generate anyway to keep fresh; check was for early-exit on nightly
             echo "exists=true" >> $GITHUB_OUTPUT
           else
             echo "exists=false" >> $GITHUB_OUTPUT
@@ -43,9 +42,7 @@ jobs:
       - name: Clone waste_collection_schedule
         run: |
           git clone --depth=1 https://github.com/mampfes/hacs_waste_collection_schedule.git wcs_repo
-          # Remove HA component files that shadow Python stdlib modules (calendar, etc.)
           rm -f wcs_repo/custom_components/waste_collection_schedule/calendar.py
-          # Apply local patches to upstream scrapers
           cp scripts/patches/kirklees_gov_uk.py wcs_repo/custom_components/waste_collection_schedule/waste_collection_schedule/source/kirklees_gov_uk.py
 
       - name: Install dependencies
@@ -68,16 +65,25 @@ jobs:
       - name: Generate ICS
         env:
           WCS_REPO: wcs_repo
+          INPUT_COUNCIL_ID: ${{ inputs.council_id }}
+          INPUT_COUNCIL_TITLE: ${{ inputs.council_title }}
+          INPUT_ARGS_JSON: ${{ inputs.args_json }}
+          INPUT_HASH: ${{ inputs.hash }}
         run: |
           python3 scripts/generate_ics.py \
-            --council-id "${{ inputs.council_id }}" \
-            --council-title "${{ inputs.council_title }}" \
-            --args '${{ inputs.args_json }}' \
-            --hash "${{ inputs.hash }}" \
+            --council-id "$INPUT_COUNCIL_ID" \
+            --council-title "$INPUT_COUNCIL_TITLE" \
+            --args "$INPUT_ARGS_JSON" \
+            --hash "$INPUT_HASH" \
             --output-dir calendars \
             --wcs-repo wcs_repo
 
       - name: Update users.json
+        env:
+          INPUT_HASH: ${{ inputs.hash }}
+          INPUT_COUNCIL_ID: ${{ inputs.council_id }}
+          INPUT_COUNCIL_TITLE: ${{ inputs.council_title }}
+          INPUT_ARGS_JSON: ${{ inputs.args_json }}
         run: |
           python3 - <<'EOF'
           import json, os, datetime
@@ -86,13 +92,17 @@ jobs:
           with open(users_path) as f:
               users = json.load(f)
 
-          h = "${{ inputs.hash }}"
+          h             = os.environ["INPUT_HASH"]
+          council_id    = os.environ["INPUT_COUNCIL_ID"]
+          council_title = os.environ["INPUT_COUNCIL_TITLE"]
+          args_json     = os.environ["INPUT_ARGS_JSON"]
+
           if h not in users:
               users[h] = {
-                  "council_id": "${{ inputs.council_id }}",
-                  "council_title": "${{ inputs.council_title }}",
-                  "args": json.loads('${{ inputs.args_json }}'),
-                  "added": datetime.date.today().isoformat(),
+                  "council_id":    council_id,
+                  "council_title": council_title,
+                  "args":          json.loads(args_json),
+                  "added":         datetime.date.today().isoformat(),
               }
           users[h]["last_updated"] = datetime.date.today().isoformat()
 
@@ -101,10 +111,13 @@ jobs:
           EOF
 
       - name: Commit and push
+        env:
+          INPUT_HASH: ${{ inputs.hash }}
+          INPUT_COUNCIL_TITLE: ${{ inputs.council_title }}
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add calendars/${{ inputs.hash }}.ics users.json
+          git add "calendars/$INPUT_HASH.ics" users.json
           git diff --cached --quiet && echo "Nothing to commit" && exit 0
-          git commit -m "Add calendar for ${{ inputs.hash }} (${{ inputs.council_title }})"
+          git commit -m "Add calendar for $INPUT_HASH ($INPUT_COUNCIL_TITLE)"
           git push
