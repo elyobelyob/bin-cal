@@ -2156,7 +2156,9 @@
         "type": "string",
         "required": false
       }
-    ]
+    ],
+    "broken": true,
+    "broken_reason": "Council migrated to my.kirklees.gov.uk portal (JS-rendered). Scraper needs rewriting."
   },
   {
     "id": "knowsley_gov_uk",
