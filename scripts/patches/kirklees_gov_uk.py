@@ -97,54 +97,28 @@ class Source:
         r.raise_for_status()
         data = r.json()
 
-        rows_data: dict[str, Any] = (
-            data.get("integration", {})
-            .get("transformed", {})
-            .get("rows_data", {})
-        )
+        print(f"DEBUG full response: {json.dumps(data)}")
 
-        if not rows_data:
+        # Kirklees returns {"status": "done", "data": "<xml>"}
+        xml_str = data.get("data", "")
+        if not xml_str:
             raise ValueError(
-                f"Kirklees API: no collection data returned for UPRN {self._uprn}. "
-                f"Raw response: {json.dumps(data)[:500]}"
+                f"Kirklees API: empty response for UPRN {self._uprn}. "
+                f"Response keys: {list(data.keys())}"
             )
 
-        entries: list[Any] = []
-        for _row_key, row in rows_data.items():
-            # Each row is one collection event; field names TBC from live response
-            # Common Firmstep patterns tried in order
-            date_str = (
-                row.get("date")
-                or row.get("collectionDate")
-                or row.get("nextDate")
-                or row.get("NextCollectionDate")
-            )
-            waste_type = (
-                row.get("type")
-                or row.get("wasteType")
-                or row.get("collectionType")
-                or row.get("BinType")
-                or row.get("service")
-            )
+        import xml.etree.ElementTree as ET
+        root = ET.fromstring(xml_str)
 
-            if not date_str or not waste_type:
-                # Log unknown structure to help iteration
-                print(f"DEBUG row {_row_key}: {json.dumps(row)}")
-                continue
+        # Print full structure for debugging
+        print(f"DEBUG XML root tag: {root.tag}")
+        for child in root:
+            print(f"DEBUG child: {child.tag}")
+            for grandchild in child:
+                print(f"DEBUG  grandchild: {grandchild.tag} attribs={grandchild.attrib} text={grandchild.text!r}")
+                for field in grandchild:
+                    print(f"DEBUG   field: tag={field.tag} attribs={field.attrib} text={field.text!r}")
 
-            # Parse dates — Firmstep commonly uses ISO or UK formats
-            for fmt in ("%Y-%m-%dT%H:%M:%S", "%Y-%m-%d", "%d/%m/%Y", "%d %B %Y"):
-                try:
-                    col_date = datetime.strptime(date_str, fmt).date()
-                    break
-                except ValueError:
-                    continue
-            else:
-                print(f"DEBUG: unrecognised date format '{date_str}'")
-                continue
-
-            entries.append(
-                Collection(date=col_date, t=str(waste_type), icon=_icon(str(waste_type)))
-            )
-
-        return entries
+        raise ValueError(
+            "Kirklees DEBUG: inspect the output above to determine field names, then update the scraper"
+        )
