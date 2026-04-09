@@ -7,8 +7,8 @@
  *   GITHUB_REPO:  Repository name
  */
 const CONFIG = {
-  WORKER_URL:   "https://bin-cal-proxy.YOUR-SUBDOMAIN.workers.dev",
-  GITHUB_OWNER: "YOUR_GITHUB_USERNAME",
+  WORKER_URL:   "https://bin-cal-proxy.nick-c79.workers.dev",
+  GITHUB_OWNER: "elyobelyob",
   GITHUB_REPO:  "bin-cal",
 };
 

@@ -4,9 +4,9 @@ compatibility_date = "2024-01-01"
 
 [[kv_namespaces]]
 binding = "RATE_LIMIT_KV"
-id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+id = "6c74606408404ed5be8818889ede7d3a"
 
 # Set these as secrets via: wrangler secret put GITHUB_TOKEN
-# [vars]
-# GITHUB_OWNER = "your-github-username"
-# GITHUB_REPO  = "bin-cal"
+[vars]
+GITHUB_OWNER = "elyobelyob"
+GITHUB_REPO  = "bin-cal"
