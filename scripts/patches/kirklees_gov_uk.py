@@ -20,12 +20,14 @@ FORM_ID = "AF-Form-0d9c96d0-4067-4bea-9a5b-06f32a675be6"
 
 # Step 1: postcode → address list (UPRN → PropertyReference)
 LOOKUP_ADDRESS = "58049013ca4c9"
-# Steps 2–5: called after address selection; one contains collection dates
+# Steps 2+: called after address selection; collection dates expected in the later two
 LOOKUP_IDS_STEP2 = [
     "699d8de6a7183",
     "631615c4bd3b7",
     "659c2c2386104",
     "661d3dbd48355",
+    "65e08e60b299d",
+    "65e5ec5dc4ac6",
 ]
 
 HEADERS = {
@@ -166,14 +168,15 @@ class Source:
                 data = _run_lookup(s, sid, lid, payload_step2)
                 transformed = data.get("integration", {}).get("transformed", {})
                 rows_raw = transformed.get("rows_data", {})
-                fields = transformed.get("fields_data", {})
+                fields_raw = transformed.get("fields_data", {})
+                field_keys = list(fields_raw.keys()) if isinstance(fields_raw, dict) else list(fields_raw) if isinstance(fields_raw, list) else []
                 if isinstance(rows_raw, dict):
                     rows_list = list(rows_raw.values())
                 elif isinstance(rows_raw, list):
                     rows_list = rows_raw
                 else:
                     rows_list = []
-                print(f"DEBUG lookup {lid}: fields={list(fields.keys())}, rows_count={len(rows_list)}")
+                print(f"DEBUG lookup {lid}: fields={field_keys}, rows_count={len(rows_list)}")
                 for i, row in enumerate(rows_list[:3]):
                     print(f"DEBUG lookup {lid} row[{i}]: {json.dumps(row)}")
             except Exception as exc:
