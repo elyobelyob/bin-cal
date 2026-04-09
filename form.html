@@ -107,7 +107,7 @@ councilSearch.addEventListener("input", () => {
   if (q.length < 2) { dropdown.style.display = "none"; return; }
 
   const matches = councils
-    .filter(c => !c.broken && c.title.toLowerCase().includes(q))
+    .filter(c => c.title.toLowerCase().includes(q))
     .slice(0, 12);
 
   if (!matches.length) { dropdown.style.display = "none"; return; }
@@ -118,9 +118,10 @@ councilSearch.addEventListener("input", () => {
       cursor:pointer;
       font-size:.92rem;
       border-bottom:1px solid #f0f0f0;
+      ${c.broken ? "color:#888;" : ""}
     " onmouseover="this.style.background='#e8f5ed'" onmouseout="this.style.background=''"
        onclick="selectCouncil('${esc(c.id)}')">
-      ${esc(c.title)}
+      ${esc(c.title)}${c.broken && c.hint ? " <span style='font-size:.8em'>(see instructions)</span>" : c.broken ? " <span style='font-size:.8em'>(unavailable)</span>" : ""}
     </div>
   `).join("");
 
@@ -142,6 +143,7 @@ function selectCouncil(id) {
   councilId.value = c.id;
   councilTitle.value = c.title;
   dropdown.style.display = "none";
+
   const hintEl = document.getElementById("councilHint");
   if (c.hint) {
     hintEl.innerHTML = c.hint;
@@ -149,6 +151,19 @@ function selectCouncil(id) {
   } else {
     hintEl.style.display = "none";
   }
+
+  // ICS councils publish their own calendar — just show instructions, no form
+  const dynamicFields = document.getElementById("dynamicFields");
+  const uprnNote = document.getElementById("uprnNote");
+  if (c.broken && c.hint) {
+    dynamicFields.innerHTML = "";
+    uprnNote.style.display = "none";
+    submitBtn.disabled = true;
+    submitBtn.style.display = "none";
+    return;
+  }
+
+  submitBtn.style.display = "";
   renderDynamicFields(c);
   checkFormValid();
 }
@@ -161,6 +176,7 @@ function clearCouncilSelection() {
   document.getElementById("uprnNote").style.display = "none";
   document.getElementById("councilHint").style.display = "none";
   submitBtn.disabled = true;
+  submitBtn.style.display = "";
 }
 
 // ── Dynamic fields ───────────────────────────────────────────────────────
