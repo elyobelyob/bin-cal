@@ -19,7 +19,17 @@ import json
 import os
 import sys
 import uuid
-from datetime import date, datetime, timedelta, timezone
+from datetime import datetime, timedelta, timezone
+
+# Pre-import stdlib modules that wcs_repo/calendar.py would shadow.
+# These must be in sys.modules before we add the wcs path, otherwise
+# the HA calendar.py in custom_components/waste_collection_schedule/
+# intercepts any downstream import of 'calendar' (e.g. via email → requests).
+import calendar  # noqa: F401
+import email     # noqa: F401
+import http      # noqa: F401
+import urllib    # noqa: F401
+import requests  # noqa: F401
 
 
 def load_source_module(module_id: str, wcs_repo: str):
