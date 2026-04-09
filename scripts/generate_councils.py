@@ -104,8 +104,14 @@ def main():
         # For the generic ICS module, only expose the url field — all other
         # parameters (regex, split_at, headers, etc.) are developer knobs that
         # no end-user can meaningfully fill in.
+        ics_hint = None
         if module == "ics":
             args = [{"name": "url", "type": "string", "required": True}]
+            ics_hint = (
+                "To get your calendar URL: visit your council\u2019s website, search for your address, "
+                "and look for a \u201cSubscribe\u201d or \u201cAdd to calendar\u201d option on your bin collection page. "
+                "Right-click or copy the link \u2014 it should end in <code>.ics</code> \u2014 and paste it above."
+            )
 
         # Merge default_params into args as hidden fixed fields
         council = {
@@ -116,6 +122,8 @@ def main():
         }
         if default_params:
             council["default_params"] = default_params
+        if ics_hint:
+            council["hint"] = ics_hint
 
         councils.append(council)
 

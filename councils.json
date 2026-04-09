@@ -77,7 +77,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "To get your calendar URL: visit your council\u2019s website, search for your address, and look for a \u201cSubscribe\u201d or \u201cAdd to calendar\u201d option on your bin collection page. Right-click or copy the link \u2014 it should end in <code>.ics</code> \u2014 and paste it above."
   },
   {
     "id": "angus_gov_uk",
@@ -559,7 +560,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "To get your calendar URL: visit your council\u2019s website, search for your address, and look for a \u201cSubscribe\u201d or \u201cAdd to calendar\u201d option on your bin collection page. Right-click or copy the link \u2014 it should end in <code>.ics</code> \u2014 and paste it above."
   },
   {
     "id": "bridgend_gov_uk",
@@ -703,7 +705,8 @@
     ],
     "default_params": {
       "split_at": "\\, (?:and )?|(?: and )"
-    }
+    },
+    "hint": "To get your calendar URL: visit your council\u2019s website, search for your address, and look for a \u201cSubscribe\u201d or \u201cAdd to calendar\u201d option on your bin collection page. Right-click or copy the link \u2014 it should end in <code>.ics</code> \u2014 and paste it above."
   },
   {
     "id": "calderdale_gov_uk",
@@ -1481,7 +1484,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "To get your calendar URL: visit your council\u2019s website, search for your address, and look for a \u201cSubscribe\u201d or \u201cAdd to calendar\u201d option on your bin collection page. Right-click or copy the link \u2014 it should end in <code>.ics</code> \u2014 and paste it above."
   },
   {
     "id": "fareham_gov_uk",
@@ -1597,7 +1601,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "To get your calendar URL: visit your council\u2019s website, search for your address, and look for a \u201cSubscribe\u201d or \u201cAdd to calendar\u201d option on your bin collection page. Right-click or copy the link \u2014 it should end in <code>.ics</code> \u2014 and paste it above."
   },
   {
     "id": "glasgow_gov_uk",
@@ -2136,7 +2141,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "To get your calendar URL: visit your council\u2019s website, search for your address, and look for a \u201cSubscribe\u201d or \u201cAdd to calendar\u201d option on your bin collection page. Right-click or copy the link \u2014 it should end in <code>.ics</code> \u2014 and paste it above."
   },
   {
     "id": "merton_gov_uk",
@@ -2373,7 +2379,8 @@
     ],
     "default_params": {
       "split_at": "\\, (?:and )?|(?: and )"
-    }
+    },
+    "hint": "To get your calendar URL: visit your council\u2019s website, search for your address, and look for a \u201cSubscribe\u201d or \u201cAdd to calendar\u201d option on your bin collection page. Right-click or copy the link \u2014 it should end in <code>.ics</code> \u2014 and paste it above."
   },
   {
     "id": "midlothian_gov_uk",
@@ -2661,7 +2668,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "To get your calendar URL: visit your council\u2019s website, search for your address, and look for a \u201cSubscribe\u201d or \u201cAdd to calendar\u201d option on your bin collection page. Right-click or copy the link \u2014 it should end in <code>.ics</code> \u2014 and paste it above."
   },
   {
     "id": "nwleics_gov_uk",
@@ -2929,7 +2937,8 @@
     ],
     "default_params": {
       "split_at": "\\, (?:and )?|(?: and )"
-    }
+    },
+    "hint": "To get your calendar URL: visit your council\u2019s website, search for your address, and look for a \u201cSubscribe\u201d or \u201cAdd to calendar\u201d option on your bin collection page. Right-click or copy the link \u2014 it should end in <code>.ics</code> \u2014 and paste it above."
   },
   {
     "id": "reigatebanstead_gov_uk",
@@ -3810,7 +3819,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "To get your calendar URL: visit your council\u2019s website, search for your address, and look for a \u201cSubscribe\u201d or \u201cAdd to calendar\u201d option on your bin collection page. Right-click or copy the link \u2014 it should end in <code>.ics</code> \u2014 and paste it above."
   },
   {
     "id": "thurrock_gov_uk",
@@ -4197,7 +4207,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "To get your calendar URL: visit your council\u2019s website, search for your address, and look for a \u201cSubscribe\u201d or \u201cAdd to calendar\u201d option on your bin collection page. Right-click or copy the link \u2014 it should end in <code>.ics</code> \u2014 and paste it above."
   },
   {
     "id": "ics_southlakeland_gov_uk",
@@ -4209,7 +4220,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "To get your calendar URL: visit your council\u2019s website, search for your address, and look for a \u201cSubscribe\u201d or \u201cAdd to calendar\u201d option on your bin collection page. Right-click or copy the link \u2014 it should end in <code>.ics</code> \u2014 and paste it above."
   },
   {
     "id": "wigan_gov_uk",

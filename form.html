@@ -21,6 +21,8 @@
     &mdash; enter your postcode and select your address. Have it ready before submitting.
   </div>
 
+  <div class="uprn-callout" id="councilHint" style="display:none"></div>
+
   <div class="card">
     <h2>Your address details</h2>
 
@@ -140,6 +142,13 @@ function selectCouncil(id) {
   councilId.value = c.id;
   councilTitle.value = c.title;
   dropdown.style.display = "none";
+  const hintEl = document.getElementById("councilHint");
+  if (c.hint) {
+    hintEl.innerHTML = c.hint;
+    hintEl.style.display = "block";
+  } else {
+    hintEl.style.display = "none";
+  }
   renderDynamicFields(c);
   checkFormValid();
 }
@@ -150,6 +159,7 @@ function clearCouncilSelection() {
   councilTitle.value = "";
   document.getElementById("dynamicFields").innerHTML = "";
   document.getElementById("uprnNote").style.display = "none";
+  document.getElementById("councilHint").style.display = "none";
   submitBtn.disabled = true;
 }
 
