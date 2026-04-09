@@ -3,8 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UK Bin Cal — Subscribable bin collection calendars</title>
-  <meta name="description" content="Get a subscribable .ics calendar for your UK bin collection schedule. Works with Apple Calendar, Google Calendar, and Outlook.">
+  <title>UK Bin Cal — Bin Collection Calendar Reminders for Any UK Address</title>
+  <meta name="description" content="Get a free, auto-updating bin collection calendar for your UK address. Subscribe in Apple Calendar, Google Calendar, or Outlook and never miss bin day again. 296 councils supported.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://elyobelyob.github.io/bin-cal/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elyobelyob.github.io/bin-cal/">
+  <meta property="og:title" content="UK Bin Cal — Never Miss Bin Day Again">
+  <meta property="og:description" content="Free, subscribable bin collection calendars for any UK address. Enter your address once and get automatic reminders in your calendar app.">
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "UK Bin Cal",
+    "description": "Free subscribable bin collection calendars for UK addresses. Supports 296 councils. Works with Apple Calendar, Google Calendar, and Outlook.",
+    "url": "https://elyobelyob.github.io/bin-cal/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP" },
+    "areaServed": { "@type": "Country", "name": "United Kingdom" }
+  }
+  </script>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,8 +42,8 @@
 
   <div class="hero" style="padding-top:2rem">
     <h1>Never miss bin day again</h1>
-    <p>Enter your address once. Get a calendar URL you can subscribe to in Apple Calendar, Google Calendar, or Outlook — updated automatically every night.</p>
-    <a href="form.html" class="btn">Get my bin calendar &rarr;</a>
+    <p>Enter your address once. Get a calendar URL you can subscribe to in Apple Calendar, Google Calendar, or Outlook &mdash; updated automatically every night.</p>
+    <a href="form.html" class="btn">Get my bin collection calendar &rarr;</a>
   </div>
 
   <div class="steps">
@@ -55,6 +79,25 @@
     <h2>Some councils need your UPRN</h2>
     <p>A UPRN (Unique Property Reference Number) is a 12-digit code assigned to every address in the UK. Some councils require it to look up your specific property.</p>
     <p style="margin-top:.5rem">If your council needs it, the form will ask for it. You can find yours for free at <a href="https://www.findmyaddress.co.uk/" target="_blank" rel="noopener"><strong>findmyaddress.co.uk</strong></a> &mdash; just enter your postcode and select your address.</p>
+  </div>
+
+  <div class="card">
+    <h2>Frequently asked questions</h2>
+
+    <h3 style="margin-top:1rem;font-size:1rem">Which councils are supported?</h3>
+    <p>296 UK councils are currently supported, covering England, Scotland, and Wales. If your council isn&rsquo;t listed, it may not yet be supported by the underlying open-source project.</p>
+
+    <h3 style="margin-top:1rem;font-size:1rem">How do I add the calendar to my phone?</h3>
+    <p>After generating your calendar, copy the <code>.ics</code> URL and paste it into your calendar app&rsquo;s &ldquo;Subscribe to calendar&rdquo; or &ldquo;Add calendar from URL&rdquo; option. On iPhone: Settings &rsaquo; Calendar &rsaquo; Accounts &rsaquo; Add Account &rsaquo; Other &rsaquo; Add Subscribed Calendar.</p>
+
+    <h3 style="margin-top:1rem;font-size:1rem">How often is it updated?</h3>
+    <p>Your calendar is regenerated every night at 2am UTC, so it always reflects the next few weeks of your council&rsquo;s schedule.</p>
+
+    <h3 style="margin-top:1rem;font-size:1rem">Is it really free?</h3>
+    <p>Yes, completely free. No account, no email, no payment required.</p>
+
+    <h3 style="margin-top:1rem;font-size:1rem">What is a bin collection calendar reminder?</h3>
+    <p>It&rsquo;s a calendar event that appears in your phone or computer&rsquo;s calendar the evening before your bin needs to go out. You&rsquo;ll get a notification reminding you which bin to put out.</p>
   </div>
 
 </div>

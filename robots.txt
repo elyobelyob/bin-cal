@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /calendars/
+
+Sitemap: https://elyobelyob.github.io/bin-cal/sitemap.xml
