@@ -27,7 +27,7 @@ def load_source_module(module_id: str, wcs_repo: str):
         wcs_repo, "custom_components", "waste_collection_schedule"
     )
     if source_pkg_dir not in sys.path:
-        sys.path.insert(0, source_pkg_dir)
+        sys.path.append(source_pkg_dir)
     mod = importlib.import_module(f"waste_collection_schedule.source.{module_id}")
     return mod
 
