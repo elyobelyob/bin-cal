@@ -125,9 +125,11 @@ class Source:
             # Named property: the door-number search returned no usable results.
             # Re-run the search with an empty door number so the council returns ALL
             # properties in the postcode as a dagAddressList, then select with UPRN.
-            _LOGGER.debug(
-                "Calendar link not found; retrying postcode-only search then UPRN select"
-            )
+            print("DEBUG: cal_link not found after normal search, trying postcode-only fallback")
+            print(f"DEBUG: page title after normal search: {r1_bs4.title}")
+            print(f"DEBUG: dagAddressList present: {bool(r1_bs4.select_one('table#dagAddressList'))}")
+            print(f"DEBUG: all <a> ids on page: {[a.get('id') for a in r1_bs4.find_all('a') if a.get('id')]}")
+
             saved_door_num = self._door_num
             self._door_num = ""
             self._update_params(r0_bs4)  # fresh params from initial page
@@ -136,11 +138,17 @@ class Source:
             r1_bs4 = BeautifulSoup(r1.text, features="html.parser")
             self._door_num = saved_door_num
 
+            print(f"DEBUG: page title after postcode-only search: {r1_bs4.title}")
+            print(f"DEBUG: dagAddressList present: {bool(r1_bs4.select_one('table#dagAddressList'))}")
+            print(f"DEBUG: all <a> ids on page: {[a.get('id') for a in r1_bs4.find_all('a') if a.get('id')]}")
+
             if r1_bs4.select_one("table#dagAddressList"):
                 self._update_params(r1_bs4)
                 r1 = self._session.post(f"{BASE_URL}/default.aspx", data=self._params)
                 r1.raise_for_status()
                 r1_bs4 = BeautifulSoup(r1.text, features="html.parser")
+                print(f"DEBUG: page title after UPRN POST: {r1_bs4.title}")
+                print(f"DEBUG: all <a> ids on page: {[a.get('id') for a in r1_bs4.find_all('a') if a.get('id')]}")
 
             cal_link_el = self._find_cal_link(r1_bs4)
 
