@@ -18,8 +18,10 @@ BASE_URL = "https://my.kirklees.gov.uk"
 SERVICE_PATH = "/service/Bins_and_recycling___Manage_your_bins"
 FORM_ID = "AF-Form-0d9c96d0-4067-4bea-9a5b-06f32a675be6"
 
-LOOKUP_ADDRESS = "58049013ca4c9"      # postcode → address list (keyed by UPRN)
-LOOKUP_COLLECTIONS = "65e5ec5dc4ac6"  # uprnFinal → bin collection dates
+LOOKUP_ADDRESS     = "58049013ca4c9"  # postcode → address list (keyed by UPRN)
+LOOKUP_PROP_TYPE   = "659c2c2386104"  # UPRN → GovDeliveryCategorye / PropertyType
+LOOKUP_UPRN_VALID  = "631615c4bd3b7"  # set session validatedUPRN token
+LOOKUP_COLLECTIONS = "65e08e60b299d"  # UPRN → bin collection dates (rows keyed by service ID)
 
 HEADERS = {
     "User-Agent": (
@@ -34,12 +36,12 @@ HEADERS = {
 
 ICON_MAP = {
     "recycling": "mdi:recycle",
-    "domestic": "mdi:trash-can",
-    "garden": "mdi:leaf",
-    "green": "mdi:recycle",
-    "grey": "mdi:trash-can",
-    "brown": "mdi:leaf",
-    "blue": "mdi:recycle",
+    "domestic":  "mdi:trash-can",
+    "garden":    "mdi:leaf",
+    "green":     "mdi:recycle",
+    "grey":      "mdi:trash-can",
+    "brown":     "mdi:leaf",
+    "blue":      "mdi:recycle",
 }
 
 
@@ -114,19 +116,14 @@ class Source:
                 f"Found: {list(addr_rows.keys())}"
             )
 
-        # 4. Collection lookup — Search section with uprnFinal + date window
-        today = date.today()
-        from_date = (today - timedelta(days=7)).strftime("%d/%m/%Y")
-        to_date = (today + timedelta(days=28)).strftime("%d/%m/%Y")
+        # 4. Build shared "Search" form section (mirrors browser state after address selection)
+        prop_ref  = addr_rows[self._uprn].get("PropertyReference", "")
+        house     = addr_rows[self._uprn].get("Premise", "")
+        street    = addr_rows[self._uprn].get("Street", "")
+        town      = addr_rows[self._uprn].get("Town", "")
+        full_addr = addr_rows[self._uprn].get("display", "")
+        pc_len    = str(len(self._postcode))
 
-        prop_ref    = addr_rows[self._uprn].get("PropertyReference", "")
-        house       = addr_rows[self._uprn].get("Premise", "")
-        street      = addr_rows[self._uprn].get("Street", "")
-        town        = addr_rows[self._uprn].get("Town", "")
-        full_addr   = addr_rows[self._uprn].get("display", "")
-        pc_len      = str(len(self._postcode))
-
-        # Build shared "Search" form section (mirrors browser state after address selection)
         search_section: dict[str, Any] = {
             "PowerSuite_Available":  {"value": "True"},
             "PowerSuite_Available1": {"value": "True"},
@@ -166,21 +163,19 @@ class Source:
             },
         }
 
-        # Step 4a: get GovDeliveryCategorye for this property (needed by collection lookup)
-        prop_data = _run_lookup(s, sid, "659c2c2386104", {
+        # 5. Get GovDeliveryCategorye for this property
+        prop_data = _run_lookup(s, sid, LOOKUP_PROP_TYPE, {
             "formId": FORM_ID,
             "formValues": {"Search": search_section},
         })
         prop_rows = _rows(prop_data)
-        gov_cat = ""
+        gov_cat   = ""
         prop_type = "Residential"
         if prop_rows:
-            first = next(iter(prop_rows.values()))
+            first     = next(iter(prop_rows.values()))
             gov_cat   = first.get("GovDeliveryCategorye", "")
             prop_type = first.get("PropertyType", "Residential") or "Residential"
-        print(f"DEBUG GovDeliveryCategorye={gov_cat!r} PropertyType={prop_type!r}")
 
-        # Add property type data at multiple levels so the template token resolves
         search_section["binsPropertyType"] = {
             "value": {
                 "Section 1": {
@@ -189,45 +184,19 @@ class Source:
                 }
             }
         }
-        # Also expose GovDeliveryCategorye at root level of Search
         search_section["GovDeliveryCategorye"] = {"value": gov_cat}
         search_section["PropertyType"]         = {"value": prop_type}
 
-        # Step 4b: call UPRN validator to set session's validatedUPRN token
-        valid_data = _run_lookup(s, sid, "631615c4bd3b7", {
+        # 6. Set session validatedUPRN token
+        _run_lookup(s, sid, LOOKUP_UPRN_VALID, {
             "formId": FORM_ID,
             "formValues": {"Search": search_section},
         })
-        valid_rows = _rows(valid_data)
-        if valid_rows:
-            vrow = next(iter(valid_rows.values()))
-            print(f"DEBUG UPRN validation: validatedUPRN={vrow.get('validatedUPRN')!r} suppliedUPRN={vrow.get('suppliedUPRN')!r}")
-        else:
-            print(f"DEBUG UPRN validation: empty rows, raw fields={list(valid_data.get('integration',{}).get('transformed',{}).get('fields_data',{}).keys())}")
 
-        import json as _json
-
-        # Try all remaining lookups with full form state
-        for probe_id in ["699d8de6a7183", "661d3dbd48355", "65e08e60b299d", LOOKUP_COLLECTIONS]:
-            pd = _run_lookup(s, sid, probe_id, {
-                "formId": FORM_ID,
-                "formValues": {
-                    "Search": search_section,
-                    "Your bins": {
-                        "GovDeliveryCategorye":   {"value": gov_cat},
-                        "NextCollectionFromDate": {"value": from_date},
-                        "NextCollectionToDate":   {"value": to_date},
-                    },
-                },
-            })
-            pt = pd.get("integration", {}).get("transformed", {})
-            pr = pt.get("rows_data", {})
-            pf = pt.get("fields_data", {})
-            pr_list = list(pr.values()) if isinstance(pr, dict) else pr
-            pf_keys = list(pf.keys()) if isinstance(pf, dict) else pf
-            print(f"DEBUG probe {probe_id}: fields={pf_keys}, rows={len(pr_list)}")
-            if pr_list:
-                print(f"DEBUG probe {probe_id} row[0]: {_json.dumps(pr_list[0])}")
+        # 7. Fetch collection dates
+        today     = date.today()
+        from_date = (today - timedelta(days=7)).strftime("%d/%m/%Y")
+        to_date   = (today + timedelta(days=28)).strftime("%d/%m/%Y")
 
         col_data = _run_lookup(s, sid, LOOKUP_COLLECTIONS, {
             "formId": FORM_ID,
@@ -241,13 +210,6 @@ class Source:
             },
         })
         col_rows = _rows(col_data)
-        _transformed = col_data.get("integration", {}).get("transformed", {})
-        print(f"DEBUG col fields: {list(_transformed.get('fields_data', {}).keys())}")
-        print(f"DEBUG col rows_count: {len(col_rows)}")
-        if col_rows:
-            print(f"DEBUG col first row: {_json.dumps(next(iter(col_rows.values())))}")
-        else:
-            print(f"DEBUG col raw rows_data: {_json.dumps(_transformed.get('rows_data', {}))[:300]}")
 
         if not col_rows:
             raise ValueError(
@@ -256,13 +218,13 @@ class Source:
 
         entries: list[Any] = []
         for row in col_rows.values():
-            date_str  = row.get("nextCollectionDate", "")
-            bin_type  = row.get("BinType") or row.get("BinDescription", "")
+            date_str = row.get("NextCollectionDate", "")
+            bin_type = row.get("label", "") or row.get("ServiceItemName", "")
             if not date_str or not bin_type:
                 continue
-            # API returns "13/04/2026 00:00:00"
+            # API returns ISO format "2026-04-20T00:00:00"
             try:
-                col_date = datetime.strptime(date_str.split()[0], "%d/%m/%Y").date()
+                col_date = datetime.fromisoformat(date_str).date()
             except ValueError:
                 continue
             entries.append(
