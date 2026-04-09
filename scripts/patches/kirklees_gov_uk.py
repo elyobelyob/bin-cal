@@ -100,16 +100,31 @@ class Source:
             raise ValueError("Kirklees API: failed to obtain session ID")
 
         # 3. Step 1: postcode lookup → get PropertyReference for our UPRN
-        payload_step1: dict[str, Any] = {
-            "formId": FORM_ID,
-            "formValues": {
-                "Section 1": {
-                    "postcode": {"value": self._postcode},
-                }
-            },
-        }
-        data1 = _run_lookup(s, sid, LOOKUP_ADDRESS, payload_step1)
-        rows1_raw = data1.get("integration", {}).get("transformed", {}).get("rows_data", {})
+        # Try common section/field name combinations
+        step1_candidates = [
+            ("Section 1", "postcode"),
+            ("Section 1", "Postcode"),
+            ("Section 1", "PostCode"),
+            ("Section 1", "searchPostcode"),
+            ("Section 1", "addressSearch"),
+            ("Your address", "postcode"),
+            ("Your address", "Postcode"),
+            ("Address", "postcode"),
+            ("Search", "postcode"),
+        ]
+        rows1_raw: Any = {}
+        for section, field in step1_candidates:
+            payload_step1: dict[str, Any] = {
+                "formId": FORM_ID,
+                "formValues": {section: {field: {"value": self._postcode}}},
+            }
+            d = _run_lookup(s, sid, LOOKUP_ADDRESS, payload_step1)
+            r = d.get("integration", {}).get("transformed", {}).get("rows_data", {})
+            print(f"DEBUG step1 [{section}/{field}]: rows={len(r) if r else 0}")
+            if r:
+                rows1_raw = r
+                print(f"DEBUG step1 MATCH: section='{section}' field='{field}'")
+                break
 
         # rows_data may be a dict keyed by UPRN or a list of dicts
         if isinstance(rows1_raw, dict):
