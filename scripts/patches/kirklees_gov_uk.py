@@ -77,7 +77,8 @@ def _rows(data: dict) -> dict:
 class Source:
     def __init__(self, uprn: str | int, postcode: str, predict: bool = False):
         self._uprn = str(uprn)
-        self._postcode = postcode.strip().upper()
+        pc = postcode.strip().upper().replace(" ", "")
+        self._postcode = pc[:-3] + " " + pc[-3:] if len(pc) >= 5 else pc
         self._predict = predict
 
     def fetch(self) -> list[Any]:

@@ -285,7 +285,11 @@ document.getElementById("binForm").addEventListener("submit", async e => {
     if (i.dataset.argtype === "boolean") {
       if (i.checked) args[i.dataset.argname] = true;
     } else {
-      const v = i.value.trim();
+      let v = i.value.trim();
+      if (i.dataset.argname === "postcode" && v) {
+        const pc = v.toUpperCase().replace(/\s+/g, "");
+        v = pc.length >= 5 ? pc.slice(0, -3) + " " + pc.slice(-3) : pc;
+      }
       if (v) args[i.dataset.argname] = v;
     }
   });

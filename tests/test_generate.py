@@ -161,6 +161,30 @@ def test_rows_list_without_name_uses_index():
     assert "1" in result
 
 
+# ── postcode normalisation (kirklees Source.__init__) ────────────────────────
+
+def _postcode(s):
+    """Return the normalised postcode the Source would store."""
+    src = object.__new__(kirklees.Source)
+    kirklees.Source.__init__(src, "0", s)
+    return src._postcode
+
+def test_postcode_with_space_unchanged():
+    assert _postcode("HD9 7HA") == "HD9 7HA"
+
+def test_postcode_without_space_normalised():
+    assert _postcode("HD97HA") == "HD9 7HA"
+
+def test_postcode_lowercased_input():
+    assert _postcode("hd9 7ha") == "HD9 7HA"
+
+def test_postcode_extra_spaces_stripped():
+    assert _postcode("  HD9  7HA  ") == "HD9 7HA"
+
+def test_postcode_no_space_long():
+    assert _postcode("SW1A1AA") == "SW1A 1AA"
+
+
 # ── _icon (kirklees) ─────────────────────────────────────────────────────────
 
 def test_icon_grey():
