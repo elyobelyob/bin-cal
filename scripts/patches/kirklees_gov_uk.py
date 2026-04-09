@@ -146,15 +146,17 @@ class Source:
         print(f"DEBUG PropertyReference for UPRN {self._uprn}: {prop_ref}")
 
         # 4. Step 2: try each subsequent lookup with PropertyReference + UPRN
+        # Include all plausible field names from the form; extra fields are ignored by the API
         payload_step2: dict[str, Any] = {
             "formId": FORM_ID,
             "formValues": {
                 "Section 1": {
+                    "Postcode": {"value": self._postcode},
                     "PropertyReference": {"value": prop_ref},
                     "propertyReference": {"value": prop_ref},
+                    "suppliedUPRN": {"value": self._uprn},
                     "uprn": {"value": self._uprn},
                     "UPRN": {"value": self._uprn},
-                    "postcode": {"value": self._postcode},
                 }
             },
         }
@@ -163,12 +165,17 @@ class Source:
             try:
                 data = _run_lookup(s, sid, lid, payload_step2)
                 transformed = data.get("integration", {}).get("transformed", {})
-                rows = transformed.get("rows_data", {})
+                rows_raw = transformed.get("rows_data", {})
                 fields = transformed.get("fields_data", {})
-                print(f"DEBUG lookup {lid}: fields={list(fields.keys())}, rows_count={len(rows)}")
-                if rows:
-                    first_row = next(iter(rows.values())) if isinstance(rows, dict) else rows[0] if rows else {}
-                    print(f"DEBUG lookup {lid} first row: {json.dumps(first_row)}")
+                if isinstance(rows_raw, dict):
+                    rows_list = list(rows_raw.values())
+                elif isinstance(rows_raw, list):
+                    rows_list = rows_raw
+                else:
+                    rows_list = []
+                print(f"DEBUG lookup {lid}: fields={list(fields.keys())}, rows_count={len(rows_list)}")
+                for i, row in enumerate(rows_list[:3]):
+                    print(f"DEBUG lookup {lid} row[{i}]: {json.dumps(row)}")
             except Exception as exc:
                 print(f"DEBUG lookup {lid} error: {exc}")
 
