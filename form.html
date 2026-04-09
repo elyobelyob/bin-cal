@@ -173,6 +173,7 @@ const FIELD_HINTS = {
   door_num: "e.g. 1 or 1A",
   uprn:     'Find yours at <a href="https://www.findmyaddress.co.uk/" target="_blank" rel="noopener">findmyaddress.co.uk</a>',
   uprn_number: 'Find yours at <a href="https://www.findmyaddress.co.uk/" target="_blank" rel="noopener">findmyaddress.co.uk</a>',
+  predict:  "Tick to predict a full year of collections based on your bin's schedule, rather than just the next collection date.",
 };
 
 function renderDynamicFields(council) {
@@ -195,14 +196,16 @@ function renderDynamicFields(council) {
 
     if (BOOL_TYPES.includes(typeNorm)) {
       return `
-        <div class="form-group" style="flex-direction:row;align-items:center;gap:.6rem">
-          <input type="checkbox" id="arg_${esc(arg.name)}" name="arg_${esc(arg.name)}"
-            data-argname="${esc(arg.name)}" data-argtype="boolean"
-            style="width:auto;margin:0">
-          <label for="arg_${esc(arg.name)}" style="margin:0;font-weight:normal">
-            ${esc(label)}
-            ${!req ? '<span class="optional">(optional)</span>' : ""}
-          </label>
+        <div class="form-group">
+          <div style="display:flex;align-items:center;gap:.6rem">
+            <input type="checkbox" id="arg_${esc(arg.name)}" name="arg_${esc(arg.name)}"
+              data-argname="${esc(arg.name)}" data-argtype="boolean"
+              style="width:auto;margin:0">
+            <label for="arg_${esc(arg.name)}" style="margin:0;font-weight:normal">
+              ${esc(label)}
+              ${!req ? '<span class="optional">(optional)</span>' : ""}
+            </label>
+          </div>
           ${hint ? `<div class="hint">${hint}</div>` : ""}
         </div>
       `;
