@@ -1,4 +1,3 @@
-import logging
 import re
 from datetime import datetime
 from typing import Any
@@ -7,7 +6,6 @@ from curl_cffi import requests
 from bs4 import BeautifulSoup
 from waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
-_LOGGER = logging.getLogger(__name__)
 
 TITLE = "Kirklees Council"
 DESCRIPTION = "Source for waste collections for Kirklees Council"
@@ -189,7 +187,8 @@ class Source:
                 )
             },
         ):
-            matches = re.findall(COLLECTION_REGEX, collection["alt"])
+            alt = str(collection.get("alt", ""))
+            matches = re.findall(COLLECTION_REGEX, alt)
             if matches:
                 entries.append(
                     Collection(
