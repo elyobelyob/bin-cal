@@ -109,15 +109,22 @@ class Source:
             },
         }
         data1 = _run_lookup(s, sid, LOOKUP_ADDRESS, payload_step1)
-        rows1 = data1.get("integration", {}).get("transformed", {}).get("rows_data", {})
+        rows1_raw = data1.get("integration", {}).get("transformed", {}).get("rows_data", {})
+
+        # rows_data may be a dict keyed by UPRN or a list of dicts
+        if isinstance(rows1_raw, dict):
+            rows1 = rows1_raw  # keyed by UPRN ("name" field)
+        else:
+            # list → build dict keyed by "name" (UPRN)
+            rows1 = {str(r.get("name", i)): r for i, r in enumerate(rows1_raw)}
 
         print(f"DEBUG step1 rows keys: {list(rows1.keys())[:5]}")
 
-        # rows_data is keyed by UPRN ("name" field); find our property
+        # Find our property by UPRN
         if self._uprn not in rows1:
             raise ValueError(
                 f"Kirklees: UPRN {self._uprn} not found in postcode {self._postcode} results. "
-                f"Found UPRNs: {list(rows1.keys())}"
+                f"Found: {list(rows1.keys())}"
             )
 
         prop_ref = rows1[self._uprn]["PropertyReference"]
