@@ -99,11 +99,12 @@ class Source:
         # Do NOT pre-set the GDPR cookie — it triggers a redirect to the
         # My Kirklees portal (my.kirklees.gov.uk) which has no ASP.NET form.
         # Without it, /default.aspx serves the standalone form directly.
+        r0_check = self._session.get(f"{BASE_URL}/default.aspx", allow_redirects=False)
+        print(f"DEBUG r0 no-redirect: status={r0_check.status_code}, location={r0_check.headers.get('location')}")
         r0 = self._session.get(f"{BASE_URL}/default.aspx")
         r0.raise_for_status()
         r0_bs4 = BeautifulSoup(r0.text, features="html.parser")
         print(f"DEBUG r0: title={r0_bs4.title}, status={r0.status_code}, url={r0.url}")
-        print(f"DEBUG r0 html[:3000]: {r0.text[:3000]}")
         self._update_params(r0_bs4)
         search_url = f"{BASE_URL}/default.aspx"
         r1 = self._session.post(
