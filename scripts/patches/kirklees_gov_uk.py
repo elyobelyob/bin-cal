@@ -11,14 +11,22 @@ TITLE = "Kirklees Council"
 DESCRIPTION = "Source for waste collections for Kirklees Council (my.kirklees.gov.uk)"
 URL = "https://www.kirklees.gov.uk"
 TEST_CASES = {
-    "Midgebottom House": {"uprn": "83074265"},
-    "HD9 6LW 20": {"uprn": "83194785"},
+    "Midgebottom House": {"uprn": "83074265", "postcode": "HD9 7HA"},
 }
 
 BASE_URL = "https://my.kirklees.gov.uk"
 SERVICE_PATH = "/service/Bins_and_recycling___Manage_your_bins"
-LOOKUP_ID = "58049013ca4c9"
 FORM_ID = "AF-Form-0d9c96d0-4067-4bea-9a5b-06f32a675be6"
+
+# Step 1: postcode → address list (UPRN → PropertyReference)
+LOOKUP_ADDRESS = "58049013ca4c9"
+# Steps 2–5: called after address selection; one contains collection dates
+LOOKUP_IDS_STEP2 = [
+    "699d8de6a7183",
+    "631615c4bd3b7",
+    "659c2c2386104",
+    "661d3dbd48355",
+]
 
 HEADERS = {
     "User-Agent": (
@@ -50,14 +58,28 @@ def _icon(waste_type: str) -> str:
     return "mdi:trash-can"
 
 
+def _run_lookup(s: requests.Session, sid: str, lookup_id: str, payload: dict) -> dict:
+    ts = time_ns() // 1_000_000
+    url = (
+        f"{BASE_URL}/apibroker/runLookup"
+        f"?id={lookup_id}&repeat_against=&noRetry=false"
+        f"&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self"
+        f"&_={ts}&sid={sid}"
+    )
+    r = s.post(url, headers=HEADERS, json=payload, timeout=30)
+    r.raise_for_status()
+    return r.json()
+
+
 class Source:
-    def __init__(self, uprn: str | int):
+    def __init__(self, uprn: str | int, postcode: str):
         self._uprn = str(uprn)
+        self._postcode = postcode.strip().upper()
 
     def fetch(self) -> list[Any]:
         s = requests.Session()
 
-        # 1. Hit domain endpoint to initialise session cookies
+        # 1. Init session
         ts = time_ns() // 1_000_000
         s.get(
             f"{BASE_URL}/apibroker/domain/my.kirklees.gov.uk?_={ts}",
@@ -65,7 +87,7 @@ class Source:
             timeout=30,
         ).raise_for_status()
 
-        # 2. Obtain auth-session SID
+        # 2. Get SID
         auth_url = (
             f"{BASE_URL}/authapi/isauthenticated"
             f"?uri=https%3A%2F%2Fmy.kirklees.gov.uk%2Fservice%2FBins_and_recycling___Manage_your_bins"
@@ -77,48 +99,57 @@ class Source:
         if not sid:
             raise ValueError("Kirklees API: failed to obtain session ID")
 
-        # 3. POST to runLookup with UPRN
-        ts = time_ns() // 1_000_000
-        lookup_url = (
-            f"{BASE_URL}/apibroker/runLookup"
-            f"?id={LOOKUP_ID}&repeat_against=&noRetry=false"
-            f"&getOnlyTokens=undefined&log_id=&app_name=AF-Renderer::Self"
-            f"&_={ts}&sid={sid}"
-        )
-        payload: dict[str, Any] = {
+        # 3. Step 1: postcode lookup → get PropertyReference for our UPRN
+        payload_step1: dict[str, Any] = {
             "formId": FORM_ID,
             "formValues": {
                 "Section 1": {
-                    "uprn": {"value": self._uprn},
+                    "postcode": {"value": self._postcode},
                 }
             },
         }
-        r = s.post(lookup_url, headers=HEADERS, json=payload, timeout=30)
-        r.raise_for_status()
-        data = r.json()
+        data1 = _run_lookup(s, sid, LOOKUP_ADDRESS, payload_step1)
+        rows1 = data1.get("integration", {}).get("transformed", {}).get("rows_data", {})
 
-        print(f"DEBUG full response: {json.dumps(data)}")
+        print(f"DEBUG step1 rows keys: {list(rows1.keys())[:5]}")
 
-        # Kirklees returns {"status": "done", "data": "<xml>"}
-        xml_str = data.get("data", "")
-        if not xml_str:
+        # rows_data is keyed by UPRN ("name" field); find our property
+        if self._uprn not in rows1:
             raise ValueError(
-                f"Kirklees API: empty response for UPRN {self._uprn}. "
-                f"Response keys: {list(data.keys())}"
+                f"Kirklees: UPRN {self._uprn} not found in postcode {self._postcode} results. "
+                f"Found UPRNs: {list(rows1.keys())}"
             )
 
-        import xml.etree.ElementTree as ET
-        root = ET.fromstring(xml_str)
+        prop_ref = rows1[self._uprn]["PropertyReference"]
+        print(f"DEBUG PropertyReference for UPRN {self._uprn}: {prop_ref}")
 
-        # Print full structure for debugging
-        print(f"DEBUG XML root tag: {root.tag}")
-        for child in root:
-            print(f"DEBUG child: {child.tag}")
-            for grandchild in child:
-                print(f"DEBUG  grandchild: {grandchild.tag} attribs={grandchild.attrib} text={grandchild.text!r}")
-                for field in grandchild:
-                    print(f"DEBUG   field: tag={field.tag} attribs={field.attrib} text={field.text!r}")
+        # 4. Step 2: try each subsequent lookup with PropertyReference + UPRN
+        payload_step2: dict[str, Any] = {
+            "formId": FORM_ID,
+            "formValues": {
+                "Section 1": {
+                    "PropertyReference": {"value": prop_ref},
+                    "propertyReference": {"value": prop_ref},
+                    "uprn": {"value": self._uprn},
+                    "UPRN": {"value": self._uprn},
+                    "postcode": {"value": self._postcode},
+                }
+            },
+        }
+
+        for lid in LOOKUP_IDS_STEP2:
+            try:
+                data = _run_lookup(s, sid, lid, payload_step2)
+                transformed = data.get("integration", {}).get("transformed", {})
+                rows = transformed.get("rows_data", {})
+                fields = transformed.get("fields_data", {})
+                print(f"DEBUG lookup {lid}: fields={list(fields.keys())}, rows_count={len(rows)}")
+                if rows:
+                    first_row = next(iter(rows.values())) if isinstance(rows, dict) else rows[0] if rows else {}
+                    print(f"DEBUG lookup {lid} first row: {json.dumps(first_row)}")
+            except Exception as exc:
+                print(f"DEBUG lookup {lid} error: {exc}")
 
         raise ValueError(
-            "Kirklees DEBUG: inspect the output above to determine field names, then update the scraper"
+            "Kirklees DEBUG: check output above to identify which lookup contains collection dates"
         )
