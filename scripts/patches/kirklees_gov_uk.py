@@ -54,6 +54,18 @@ class Source:
         self._postcode = postcode
         self._uprn = uprn
         self._session = requests.Session()
+        self._session.headers.update({
+            "User-Agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/124.0.0.0 Safari/537.36"
+            ),
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+            "Accept-Language": "en-GB,en;q=0.9",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Connection": "keep-alive",
+            "Upgrade-Insecure-Requests": "1",
+        })
         self._params: dict[str, Any] = PARAMS
 
     def _update_params(self, soup: BeautifulSoup) -> None:
@@ -105,6 +117,7 @@ class Source:
         r0 = self._session.get(f"{BASE_URL}/default.aspx")
         r0.raise_for_status()
         r0_bs4 = BeautifulSoup(r0.text, features="html.parser")
+        print(f"DEBUG r0: title={r0_bs4.title}, status={r0.status_code}")
         self._update_params(r0_bs4)
         r1 = self._session.get(f"{BASE_URL}/default.aspx", params=self._params)
         r1.raise_for_status()
