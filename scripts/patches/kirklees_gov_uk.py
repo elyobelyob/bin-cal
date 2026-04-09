@@ -119,27 +119,81 @@ class Source:
         from_date = (today - timedelta(days=7)).strftime("%d/%m/%Y")
         to_date = (today + timedelta(days=28)).strftime("%d/%m/%Y")
 
-        prop_ref = addr_rows[self._uprn].get("PropertyReference", "")
+        prop_ref    = addr_rows[self._uprn].get("PropertyReference", "")
+        house       = addr_rows[self._uprn].get("Premise", "")
+        street      = addr_rows[self._uprn].get("Street", "")
+        town        = addr_rows[self._uprn].get("Town", "")
+        full_addr   = addr_rows[self._uprn].get("display", "")
+        pc_len      = str(len(self._postcode))
+
+        # Build shared "Search" form section (mirrors browser state after address selection)
+        search_section: dict[str, Any] = {
+            "PowerSuite_Available":  {"value": "True"},
+            "PowerSuite_Available1": {"value": "True"},
+            "productName":           {"value": "Self"},
+            "uprn2":                 {"value": self._uprn},
+            "validatedUPRN":         {"value": self._uprn},
+            "suppliedUPRN":          {"value": self._uprn},
+            "uprnFinal":             {"value": self._uprn},
+            "validPropertyFlag":     {"value": "yes"},
+            "sSection":              {"value": "1"},
+            "flatOrSubBuildingFinal":{"value": ""},
+            "houseFinal":            {"value": house},
+            "streetFinal":           {"value": street},
+            "townFinal":             {"value": town},
+            "postcodeFinal":         {"value": self._postcode},
+            "fullAddressFinal":      {"value": full_addr},
+            "customerAddress": {
+                "value": {
+                    "Section 1": {
+                        "searchForAddress":  {"value": "yes"},
+                        "Postcode":          {"value": self._postcode},
+                        "List":              {"value": self._uprn},
+                        "House":             {"value": house},
+                        "Street":            {"value": street},
+                        "Town":              {"value": town},
+                        "UPRN":              {"value": self._uprn},
+                        "PropertyReference": {"value": prop_ref},
+                        "postcode":          {"value": ""},
+                        "house":             {"value": ""},
+                        "flat":              {"value": ""},
+                        "street":            {"value": ""},
+                        "town":              {"value": ""},
+                        "fullAddress":       {"value": full_addr},
+                        "lengthPostCode":    {"value": pc_len},
+                    }
+                }
+            },
+        }
+
+        # Step 4a: get GovDeliveryCategorye for this property (needed by collection lookup)
+        prop_data = _run_lookup(s, sid, "659c2c2386104", {
+            "formId": FORM_ID,
+            "formValues": {"Search": search_section},
+        })
+        prop_rows = _rows(prop_data)
+        gov_cat = ""
+        prop_type = "Residential"
+        if prop_rows:
+            first = next(iter(prop_rows.values()))
+            gov_cat   = first.get("GovDeliveryCategorye", "")
+            prop_type = first.get("PropertyType", "Residential") or "Residential"
+        print(f"DEBUG GovDeliveryCategorye={gov_cat!r} PropertyType={prop_type!r}")
+
+        # Add property type data to search section (needed for collection lookup)
+        search_section["binsPropertyType"] = {
+            "value": {
+                "Section 1": {
+                    "PropertyType":        {"value": prop_type},
+                    "GovDeliveryCategorye": {"value": gov_cat},
+                }
+            }
+        }
+
         col_data = _run_lookup(s, sid, LOOKUP_COLLECTIONS, {
             "formId": FORM_ID,
             "formValues": {
-                "Search": {
-                    "uprnFinal":        {"value": self._uprn},
-                    "validatedUPRN":    {"value": self._uprn},
-                    "suppliedUPRN":     {"value": self._uprn},
-                    "uprn2":            {"value": self._uprn},
-                    "validPropertyFlag": {"value": "yes"},
-                    "customerAddress": {
-                        "value": {
-                            "Section 1": {
-                                "Postcode":          {"value": self._postcode},
-                                "List":              {"value": self._uprn},
-                                "UPRN":              {"value": self._uprn},
-                                "PropertyReference": {"value": prop_ref},
-                            }
-                        }
-                    },
-                },
+                "Search": search_section,
                 "Your bins": {
                     "NextCollectionFromDate": {"value": from_date},
                     "NextCollectionToDate":   {"value": to_date},
