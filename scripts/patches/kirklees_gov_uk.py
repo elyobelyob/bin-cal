@@ -106,6 +106,8 @@ class Source:
         r0.raise_for_status()
         r0_bs4 = BeautifulSoup(r0.text, features="html.parser")
         print(f"DEBUG r0: title={r0_bs4.title}, status={r0.status_code}")
+        print(f"DEBUG r0 inputs: {[(i.get('name'), i.get('id'), i.get('type')) for i in r0_bs4.find_all('input')]}")
+        print(f"DEBUG r0 forms: {[(f.get('action'), f.get('method')) for f in r0_bs4.find_all('form')]}")
         self._update_params(r0_bs4)
         search_url = f"{BASE_URL}/default.aspx"
         r1 = self._session.post(
