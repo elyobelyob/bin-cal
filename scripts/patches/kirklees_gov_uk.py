@@ -96,10 +96,9 @@ class Source:
 
     def fetch(self):
         entries = []
-        self._session.cookies.set(
-            "cookiesacceptedGDPR", "true", domain=".kirklees.gov.uk"
-        )
-
+        # Do NOT pre-set the GDPR cookie — it triggers a redirect to the
+        # My Kirklees portal (my.kirklees.gov.uk) which has no ASP.NET form.
+        # Without it, /default.aspx serves the standalone form directly.
         r0 = self._session.get(f"{BASE_URL}/default.aspx")
         r0.raise_for_status()
         r0_bs4 = BeautifulSoup(r0.text, features="html.parser")
