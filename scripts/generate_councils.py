@@ -9,12 +9,67 @@ Requires the repo to be cloned at /tmp/wcs (or set WCS_REPO env var).
 import json
 import os
 import re
-import sys
 
 WCS_REPO = os.environ.get("WCS_REPO", "/tmp/wcs")
 SOURCES_JSON = os.path.join(WCS_REPO, "custom_components/waste_collection_schedule/sources.json")
 DOC_DIR = os.path.join(WCS_REPO, "doc/source")
+ICS_DOC_DIR = os.path.join(WCS_REPO, "doc/ics")
 OUT = os.path.join(os.path.dirname(__file__), "..", "councils.json")
+
+ICS_FALLBACK_HINT = (
+    "To get your calendar URL: visit your council\u2019s website, search for your address, "
+    "and look for a \u201cSubscribe\u201d or \u201cAdd to calendar\u201d option on your bin collection page. "
+    "Right-click or copy the link \u2014 it should end in <code>.ics</code> \u2014 and paste it above."
+)
+
+
+def _md_to_html(line: str) -> str:
+    line = re.sub(r'<(https?://[^>]+)>', r'<a href="\1" target="_blank" rel="noopener">\1</a>', line)
+    line = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2" target="_blank" rel="noopener">\1</a>', line)
+    line = re.sub(r'`([^`]+)`', r'<code>\1</code>', line)
+    line = re.sub(r'(?<!\w)[_*](.+?)[_*](?!\w)', r'<em>\1</em>', line)
+    return line
+
+
+def parse_ics_hint(source_id: str) -> str:
+    """Extract the 'How to get the configuration arguments' section from doc/ics/<id>.md."""
+    doc_id = source_id.removeprefix("ics_")
+    doc_path = os.path.join(ICS_DOC_DIR, f"{doc_id}.md")
+    if not os.path.exists(doc_path):
+        return ICS_FALLBACK_HINT
+
+    with open(doc_path) as f:
+        content = f.read()
+
+    m = re.search(r'##\s+How to get[^\n]*\n(.*?)(?=\n##|\Z)', content, re.DOTALL | re.IGNORECASE)
+    if not m:
+        return ICS_FALLBACK_HINT
+
+    html_lines = []
+    for line in m.group(1).strip().splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        if line.startswith("- "):
+            html_lines.append(f"<li>{_md_to_html(line[2:])}</li>")
+        else:
+            html_lines.append(f"<p>{_md_to_html(line)}</p>")
+
+    result, in_ul = [], False
+    for h in html_lines:
+        if h.startswith("<li>"):
+            if not in_ul:
+                result.append("<ul>")
+                in_ul = True
+        else:
+            if in_ul:
+                result.append("</ul>")
+                in_ul = False
+        result.append(h)
+    if in_ul:
+        result.append("</ul>")
+
+    return "\n".join(result) or ICS_FALLBACK_HINT
 
 
 def parse_args_from_doc(module_id: str) -> list[dict]:
@@ -107,11 +162,7 @@ def main():
         ics_hint = None
         if module == "ics":
             args = [{"name": "url", "type": "string", "required": True}]
-            ics_hint = (
-                "To get your calendar URL: visit your council\u2019s website, search for your address, "
-                "and look for a \u201cSubscribe\u201d or \u201cAdd to calendar\u201d option on your bin collection page. "
-                "Right-click or copy the link \u2014 it should end in <code>.ics</code> \u2014 and paste it above."
-            )
+            ics_hint = parse_ics_hint(source_id)
 
         # Merge default_params into args as hidden fixed fields
         council = {
