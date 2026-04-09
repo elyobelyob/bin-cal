@@ -193,6 +193,18 @@ class Source:
         search_section["GovDeliveryCategorye"] = {"value": gov_cat}
         search_section["PropertyType"]         = {"value": prop_type}
 
+        # Step 4b: call UPRN validator to set session's validatedUPRN token
+        valid_data = _run_lookup(s, sid, "631615c4bd3b7", {
+            "formId": FORM_ID,
+            "formValues": {"Search": search_section},
+        })
+        valid_rows = _rows(valid_data)
+        if valid_rows:
+            vrow = next(iter(valid_rows.values()))
+            print(f"DEBUG UPRN validation: validatedUPRN={vrow.get('validatedUPRN')!r} suppliedUPRN={vrow.get('suppliedUPRN')!r}")
+        else:
+            print(f"DEBUG UPRN validation: empty rows, raw fields={list(valid_data.get('integration',{}).get('transformed',{}).get('fields_data',{}).keys())}")
+
         col_data = _run_lookup(s, sid, LOOKUP_COLLECTIONS, {
             "formId": FORM_ID,
             "formValues": {
