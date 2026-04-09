@@ -43,6 +43,8 @@ jobs:
       - name: Clone waste_collection_schedule
         run: |
           git clone --depth=1 https://github.com/mampfes/hacs_waste_collection_schedule.git wcs_repo
+          # Remove HA component files that shadow Python stdlib modules (calendar, etc.)
+          rm -f wcs_repo/custom_components/waste_collection_schedule/calendar.py
 
       - name: Install dependencies
         run: |
