@@ -135,6 +135,14 @@ class Source:
             },
         })
         col_rows = _rows(col_data)
+        import json as _json
+        _transformed = col_data.get("integration", {}).get("transformed", {})
+        print(f"DEBUG col fields: {list(_transformed.get('fields_data', {}).keys())}")
+        print(f"DEBUG col rows_count: {len(col_rows)}")
+        if col_rows:
+            print(f"DEBUG col first row: {_json.dumps(next(iter(col_rows.values())))}")
+        else:
+            print(f"DEBUG col raw rows_data: {_json.dumps(_transformed.get('rows_data', {}))[:300]}")
 
         if not col_rows:
             raise ValueError(
