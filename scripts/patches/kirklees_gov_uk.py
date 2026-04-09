@@ -3,7 +3,7 @@ import re
 from datetime import datetime
 from typing import Any
 
-import requests
+from curl_cffi import requests
 from bs4 import BeautifulSoup
 from waste_collection_schedule import Collection  # type: ignore[attr-defined]
 
@@ -53,19 +53,7 @@ class Source:
         self._door_num = door_num
         self._postcode = postcode
         self._uprn = uprn
-        self._session = requests.Session()
-        self._session.headers.update({
-            "User-Agent": (
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) "
-                "Chrome/124.0.0.0 Safari/537.36"
-            ),
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-            "Accept-Language": "en-GB,en;q=0.9",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Connection": "keep-alive",
-            "Upgrade-Insecure-Requests": "1",
-        })
+        self._session = requests.Session(impersonate="chrome124")
         self._params: dict[str, Any] = PARAMS
 
     def _update_params(self, soup: BeautifulSoup) -> None:
