@@ -45,6 +45,8 @@ jobs:
           git clone --depth=1 https://github.com/mampfes/hacs_waste_collection_schedule.git wcs_repo
           # Remove HA component files that shadow Python stdlib modules (calendar, etc.)
           rm -f wcs_repo/custom_components/waste_collection_schedule/calendar.py
+          # Apply local patches to upstream scrapers
+          cp scripts/patches/kirklees_gov_uk.py wcs_repo/custom_components/waste_collection_schedule/waste_collection_schedule/source/kirklees_gov_uk.py
 
       - name: Install dependencies
         run: |
