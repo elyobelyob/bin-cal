@@ -75,7 +75,7 @@ def generate_ics(collections: list, council_title: str, address_hint: str) -> st
             f"DTSTART;VALUE=DATE:{dtstart}",
             f"DTEND;VALUE=DATE:{dtend}",
             f"SUMMARY:{escape_ics(col_type)} collection",
-            f"DESCRIPTION:Put out your {escape_ics(col_type)} bin tonight.",
+            f"DESCRIPTION:Put out your {escape_ics(col_type)} tonight.",
             "BEGIN:VALARM",
             "ACTION:DISPLAY",
             f"TRIGGER:{alarm_trigger}",
