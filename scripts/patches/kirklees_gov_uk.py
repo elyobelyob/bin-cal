@@ -119,14 +119,26 @@ class Source:
         from_date = (today - timedelta(days=7)).strftime("%d/%m/%Y")
         to_date = (today + timedelta(days=28)).strftime("%d/%m/%Y")
 
+        prop_ref = addr_rows[self._uprn].get("PropertyReference", "")
         col_data = _run_lookup(s, sid, LOOKUP_COLLECTIONS, {
             "formId": FORM_ID,
             "formValues": {
                 "Search": {
-                    "uprnFinal":      {"value": self._uprn},
-                    "validatedUPRN":  {"value": self._uprn},
-                    "suppliedUPRN":   {"value": self._uprn},
-                    "uprn2":          {"value": self._uprn},
+                    "uprnFinal":        {"value": self._uprn},
+                    "validatedUPRN":    {"value": self._uprn},
+                    "suppliedUPRN":     {"value": self._uprn},
+                    "uprn2":            {"value": self._uprn},
+                    "validPropertyFlag": {"value": "yes"},
+                    "customerAddress": {
+                        "value": {
+                            "Section 1": {
+                                "Postcode":          {"value": self._postcode},
+                                "List":              {"value": self._uprn},
+                                "UPRN":              {"value": self._uprn},
+                                "PropertyReference": {"value": prop_ref},
+                            }
+                        }
+                    },
                 },
                 "Your bins": {
                     "NextCollectionFromDate": {"value": from_date},
