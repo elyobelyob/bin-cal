@@ -75,62 +75,7 @@
       {
         "name": "url",
         "type": "string",
-        "required": false
-      },
-      {
-        "name": "file",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "offset",
-        "type": "int",
-        "required": false
-      },
-      {
-        "name": "method",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "params",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "year_field",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "regex",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "split_at",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "version",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "name": "verify_ssl",
-        "type": "boolean",
-        "required": false
-      },
-      {
-        "name": "headers",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "title_template",
-        "type": "str",
-        "required": false
+        "required": true
       }
     ]
   },
@@ -612,62 +557,7 @@
       {
         "name": "url",
         "type": "string",
-        "required": false
-      },
-      {
-        "name": "file",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "offset",
-        "type": "int",
-        "required": false
-      },
-      {
-        "name": "method",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "params",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "year_field",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "regex",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "split_at",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "version",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "name": "verify_ssl",
-        "type": "boolean",
-        "required": false
-      },
-      {
-        "name": "headers",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "title_template",
-        "type": "str",
-        "required": false
+        "required": true
       }
     ]
   },
@@ -808,62 +698,7 @@
       {
         "name": "url",
         "type": "string",
-        "required": false
-      },
-      {
-        "name": "file",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "offset",
-        "type": "int",
-        "required": false
-      },
-      {
-        "name": "method",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "params",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "year_field",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "regex",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "split_at",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "version",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "name": "verify_ssl",
-        "type": "boolean",
-        "required": false
-      },
-      {
-        "name": "headers",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "title_template",
-        "type": "str",
-        "required": false
+        "required": true
       }
     ],
     "default_params": {
@@ -1644,62 +1479,7 @@
       {
         "name": "url",
         "type": "string",
-        "required": false
-      },
-      {
-        "name": "file",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "offset",
-        "type": "int",
-        "required": false
-      },
-      {
-        "name": "method",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "params",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "year_field",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "regex",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "split_at",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "version",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "name": "verify_ssl",
-        "type": "boolean",
-        "required": false
-      },
-      {
-        "name": "headers",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "title_template",
-        "type": "str",
-        "required": false
+        "required": true
       }
     ]
   },
@@ -1815,62 +1595,7 @@
       {
         "name": "url",
         "type": "string",
-        "required": false
-      },
-      {
-        "name": "file",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "offset",
-        "type": "int",
-        "required": false
-      },
-      {
-        "name": "method",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "params",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "year_field",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "regex",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "split_at",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "version",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "name": "verify_ssl",
-        "type": "boolean",
-        "required": false
-      },
-      {
-        "name": "headers",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "title_template",
-        "type": "str",
-        "required": false
+        "required": true
       }
     ]
   },
@@ -2404,62 +2129,7 @@
       {
         "name": "url",
         "type": "string",
-        "required": false
-      },
-      {
-        "name": "file",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "offset",
-        "type": "int",
-        "required": false
-      },
-      {
-        "name": "method",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "params",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "year_field",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "regex",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "split_at",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "version",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "name": "verify_ssl",
-        "type": "boolean",
-        "required": false
-      },
-      {
-        "name": "headers",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "title_template",
-        "type": "str",
-        "required": false
+        "required": true
       }
     ]
   },
@@ -2693,62 +2363,7 @@
       {
         "name": "url",
         "type": "string",
-        "required": false
-      },
-      {
-        "name": "file",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "offset",
-        "type": "int",
-        "required": false
-      },
-      {
-        "name": "method",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "params",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "year_field",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "regex",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "split_at",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "version",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "name": "verify_ssl",
-        "type": "boolean",
-        "required": false
-      },
-      {
-        "name": "headers",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "title_template",
-        "type": "str",
-        "required": false
+        "required": true
       }
     ],
     "default_params": {
@@ -3039,62 +2654,7 @@
       {
         "name": "url",
         "type": "string",
-        "required": false
-      },
-      {
-        "name": "file",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "offset",
-        "type": "int",
-        "required": false
-      },
-      {
-        "name": "method",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "params",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "year_field",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "regex",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "split_at",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "version",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "name": "verify_ssl",
-        "type": "boolean",
-        "required": false
-      },
-      {
-        "name": "headers",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "title_template",
-        "type": "str",
-        "required": false
+        "required": true
       }
     ]
   },
@@ -3359,62 +2919,7 @@
       {
         "name": "url",
         "type": "string",
-        "required": false
-      },
-      {
-        "name": "file",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "offset",
-        "type": "int",
-        "required": false
-      },
-      {
-        "name": "method",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "params",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "year_field",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "regex",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "split_at",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "version",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "name": "verify_ssl",
-        "type": "boolean",
-        "required": false
-      },
-      {
-        "name": "headers",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "title_template",
-        "type": "str",
-        "required": false
+        "required": true
       }
     ],
     "default_params": {
@@ -4298,62 +3803,7 @@
       {
         "name": "url",
         "type": "string",
-        "required": false
-      },
-      {
-        "name": "file",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "offset",
-        "type": "int",
-        "required": false
-      },
-      {
-        "name": "method",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "params",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "year_field",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "regex",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "split_at",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "version",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "name": "verify_ssl",
-        "type": "boolean",
-        "required": false
-      },
-      {
-        "name": "headers",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "title_template",
-        "type": "str",
-        "required": false
+        "required": true
       }
     ]
   },
@@ -4740,62 +4190,7 @@
       {
         "name": "url",
         "type": "string",
-        "required": false
-      },
-      {
-        "name": "file",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "offset",
-        "type": "int",
-        "required": false
-      },
-      {
-        "name": "method",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "params",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "year_field",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "regex",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "split_at",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "version",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "name": "verify_ssl",
-        "type": "boolean",
-        "required": false
-      },
-      {
-        "name": "headers",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "title_template",
-        "type": "str",
-        "required": false
+        "required": true
       }
     ]
   },
@@ -4807,62 +4202,7 @@
       {
         "name": "url",
         "type": "string",
-        "required": false
-      },
-      {
-        "name": "file",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "offset",
-        "type": "int",
-        "required": false
-      },
-      {
-        "name": "method",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "params",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "year_field",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "regex",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "split_at",
-        "type": "string",
-        "required": false
-      },
-      {
-        "name": "version",
-        "type": "integer",
-        "required": false
-      },
-      {
-        "name": "verify_ssl",
-        "type": "boolean",
-        "required": false
-      },
-      {
-        "name": "headers",
-        "type": "dict",
-        "required": false
-      },
-      {
-        "name": "title_template",
-        "type": "str",
-        "required": false
+        "required": true
       }
     ]
   },

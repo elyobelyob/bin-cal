@@ -101,6 +101,12 @@ def main():
 
         args = parse_args_from_doc(module)
 
+        # For the generic ICS module, only expose the url field — all other
+        # parameters (regex, split_at, headers, etc.) are developer knobs that
+        # no end-user can meaningfully fill in.
+        if module == "ics":
+            args = [{"name": "url", "type": "string", "required": True}]
+
         # Merge default_params into args as hidden fixed fields
         council = {
             "id": source_id,
