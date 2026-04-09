@@ -205,6 +205,30 @@ class Source:
         else:
             print(f"DEBUG UPRN validation: empty rows, raw fields={list(valid_data.get('integration',{}).get('transformed',{}).get('fields_data',{}).keys())}")
 
+        import json as _json
+
+        # Try all remaining lookups with full form state
+        for probe_id in ["699d8de6a7183", "661d3dbd48355", "65e08e60b299d", LOOKUP_COLLECTIONS]:
+            pd = _run_lookup(s, sid, probe_id, {
+                "formId": FORM_ID,
+                "formValues": {
+                    "Search": search_section,
+                    "Your bins": {
+                        "GovDeliveryCategorye":   {"value": gov_cat},
+                        "NextCollectionFromDate": {"value": from_date},
+                        "NextCollectionToDate":   {"value": to_date},
+                    },
+                },
+            })
+            pt = pd.get("integration", {}).get("transformed", {})
+            pr = pt.get("rows_data", {})
+            pf = pt.get("fields_data", {})
+            pr_list = list(pr.values()) if isinstance(pr, dict) else pr
+            pf_keys = list(pf.keys()) if isinstance(pf, dict) else pf
+            print(f"DEBUG probe {probe_id}: fields={pf_keys}, rows={len(pr_list)}")
+            if pr_list:
+                print(f"DEBUG probe {probe_id} row[0]: {_json.dumps(pr_list[0])}")
+
         col_data = _run_lookup(s, sid, LOOKUP_COLLECTIONS, {
             "formId": FORM_ID,
             "formValues": {
@@ -217,7 +241,6 @@ class Source:
             },
         })
         col_rows = _rows(col_data)
-        import json as _json
         _transformed = col_data.get("integration", {}).get("transformed", {})
         print(f"DEBUG col fields: {list(_transformed.get('fields_data', {}).keys())}")
         print(f"DEBUG col rows_count: {len(col_rows)}")
