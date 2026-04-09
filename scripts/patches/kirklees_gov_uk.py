@@ -107,9 +107,10 @@ class Source:
         r0_bs4 = BeautifulSoup(r0.text, features="html.parser")
         print(f"DEBUG r0: title={r0_bs4.title}, status={r0.status_code}")
         self._update_params(r0_bs4)
-        r1 = self._session.get(f"{BASE_URL}/default.aspx", params=self._params)
+        r1 = self._session.post(f"{BASE_URL}/default.aspx", data=self._params)
         r1.raise_for_status()
         r1_bs4 = BeautifulSoup(r1.text, features="html.parser")
+        print(f"DEBUG r1: title={r1_bs4.title}, status={r1.status_code}")
 
         if r1_bs4.select_one("table#dagAddressList"):
             # Multiple addresses returned — need UPRN to select one
@@ -134,7 +135,7 @@ class Source:
             saved_door_num = self._door_num
             self._door_num = ""
             self._update_params(r0_bs4)  # fresh params from initial page
-            r1 = self._session.get(f"{BASE_URL}/default.aspx", params=self._params)
+            r1 = self._session.post(f"{BASE_URL}/default.aspx", data=self._params)
             r1.raise_for_status()
             r1_bs4 = BeautifulSoup(r1.text, features="html.parser")
             self._door_num = saved_door_num
