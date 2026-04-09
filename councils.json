@@ -1875,6 +1875,11 @@
         "name": "postcode",
         "type": "string",
         "required": true
+      },
+      {
+        "name": "predict",
+        "type": "boolean",
+        "required": false
       }
     ]
   },

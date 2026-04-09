@@ -75,9 +75,10 @@ def _rows(data: dict) -> dict:
 
 
 class Source:
-    def __init__(self, uprn: str | int, postcode: str):
+    def __init__(self, uprn: str | int, postcode: str, predict: bool = False):
         self._uprn = str(uprn)
         self._postcode = postcode.strip().upper()
+        self._predict = predict
 
     def fetch(self) -> list[Any]:
         s = requests.Session()
@@ -227,8 +228,14 @@ class Source:
                 col_date = datetime.fromisoformat(date_str).date()
             except ValueError:
                 continue
-            entries.append(
-                Collection(date=col_date, t=str(bin_type), icon=_icon(str(bin_type)))
-            )
+            # Kirklees residential collections are fortnightly
+            dates = [col_date]
+            if self._predict:
+                for i in range(1, 365 // 14):
+                    dates.append(col_date + timedelta(days=14 * i))
+            for d in dates:
+                entries.append(
+                    Collection(date=d, t=str(bin_type), icon=_icon(str(bin_type)))
+                )
 
         return entries
