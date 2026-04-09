@@ -180,10 +180,34 @@ function renderDynamicFields(council) {
   const hasUprn = council.args.some(a => a.name.toLowerCase().includes("uprn"));
   document.getElementById("uprnNote").style.display = hasUprn ? "block" : "none";
 
+  const BOOL_TYPES = ["boolean", "bool"];
+  const DICT_TYPES = ["dict"];
+
   container.innerHTML = council.args.map(arg => {
+    const typeNorm = (arg.type || "").toLowerCase().trim();
+
+    // Dict fields can't be entered by a user — skip them
+    if (DICT_TYPES.includes(typeNorm)) return "";
+
     const label = FIELD_LABELS[arg.name] || arg.name.replace(/_/g, " ");
     const hint  = FIELD_HINTS[arg.name] || "";
     const req   = arg.required;
+
+    if (BOOL_TYPES.includes(typeNorm)) {
+      return `
+        <div class="form-group" style="flex-direction:row;align-items:center;gap:.6rem">
+          <input type="checkbox" id="arg_${esc(arg.name)}" name="arg_${esc(arg.name)}"
+            data-argname="${esc(arg.name)}" data-argtype="boolean"
+            style="width:auto;margin:0">
+          <label for="arg_${esc(arg.name)}" style="margin:0;font-weight:normal">
+            ${esc(label)}
+            ${!req ? '<span class="optional">(optional)</span>' : ""}
+          </label>
+          ${hint ? `<div class="hint">${hint}</div>` : ""}
+        </div>
+      `;
+    }
+
     return `
       <div class="form-group">
         <label for="arg_${esc(arg.name)}">
@@ -227,8 +251,12 @@ document.getElementById("binForm").addEventListener("submit", async e => {
 
   const args = {};
   document.querySelectorAll("#dynamicFields input[data-argname]").forEach(i => {
-    const v = i.value.trim();
-    if (v) args[i.dataset.argname] = v;
+    if (i.dataset.argtype === "boolean") {
+      if (i.checked) args[i.dataset.argname] = true;
+    } else {
+      const v = i.value.trim();
+      if (v) args[i.dataset.argname] = v;
+    }
   });
 
   const hash = await computeHash(selectedCouncil.id, args);
