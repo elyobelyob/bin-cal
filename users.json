@@ -19,5 +19,15 @@
     },
     "added": "2026-04-09",
     "last_updated": "2026-04-09"
+  },
+  "34cb02da": {
+    "council_id": "mole_valley_gov_uk",
+    "council_title": "Mole Valley District Council",
+    "args": {
+      "postcode": "kt22 9bg",
+      "house_number": "17"
+    },
+    "added": "2026-04-09",
+    "last_updated": "2026-04-09"
   }
 }
