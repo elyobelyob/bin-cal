@@ -16,7 +16,7 @@
  *   RATE_LIMIT_KV  — bound KV namespace for IP rate limiting
  */
 
-const RATE_LIMIT_SECONDS = 3600; // 1 hour
+const RATE_LIMIT_SECONDS = 60; // 1 minute
 
 const ALLOWED_ORIGIN_PATTERN = /^https:\/\/[a-z0-9-]+\.github\.io$/;
 
@@ -59,7 +59,7 @@ export default {
       const existing = await env.RATE_LIMIT_KV.get(rateLimitKey);
       if (existing) {
         return corsResponse(
-          JSON.stringify({ error: "Too many requests. Please wait an hour before submitting again." }),
+          JSON.stringify({ error: "Too many requests. Please wait a minute before submitting again." }),
           429,
           origin
         );
