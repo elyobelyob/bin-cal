@@ -112,18 +112,20 @@ councilSearch.addEventListener("input", () => {
 
   if (!matches.length) { dropdown.style.display = "none"; return; }
 
-  dropdown.innerHTML = matches.map(c => `
-    <div role="option" data-id="${esc(c.id)}" style="
+  dropdown.innerHTML = matches.map(c => {
+    const idx = councils.indexOf(c);
+    return `
+    <div role="option" data-idx="${idx}" style="
       padding:.6rem .9rem;
       cursor:pointer;
       font-size:.92rem;
       border-bottom:1px solid #f0f0f0;
       ${c.broken ? "color:#888;" : ""}
     " onmouseover="this.style.background='#e8f5ed'" onmouseout="this.style.background=''"
-       onclick="selectCouncil('${esc(c.id)}')">
+       onclick="selectCouncil(${idx})">
       ${esc(c.title)}${c.broken && c.hint ? " <span style='font-size:.8em'>(see instructions)</span>" : c.broken ? " <span style='font-size:.8em'>(unavailable)</span>" : ""}
     </div>
-  `).join("");
+  `;}).join("");
 
   dropdown.style.display = "block";
   positionDropdown();
@@ -135,8 +137,8 @@ document.addEventListener("click", e => {
   }
 });
 
-function selectCouncil(id) {
-  const c = councils.find(x => x.id === id);
+function selectCouncil(idx) {
+  const c = councils[idx];
   if (!c) return;
   selectedCouncil = c;
   councilSearch.value = c.title;
