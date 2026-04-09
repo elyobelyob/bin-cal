@@ -130,7 +130,9 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "broken": true,
+    "broken_reason": "Generic vendor entry \u2014 select your specific council from the list instead."
   },
   {
     "id": "ardsandnorthdown_gov_uk",
@@ -341,7 +343,9 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "broken": true,
+    "broken_reason": "Generic vendor entry \u2014 select your specific council from the list instead."
   },
   {
     "id": "birmingham_gov_uk",
@@ -1478,7 +1482,9 @@
         "type": "string",
         "required": false
       }
-    ]
+    ],
+    "broken": true,
+    "broken_reason": "Generic vendor entry \u2014 select your specific council from the list instead."
   },
   {
     "id": "ics_falkirk_gov_uk",
@@ -1874,7 +1880,9 @@
         "type": "string",
         "required": false
       }
-    ]
+    ],
+    "broken": true,
+    "broken_reason": "Generic vendor entry \u2014 select your specific council from the list instead."
   },
   {
     "id": "kirklees_gov_uk",
@@ -3910,7 +3918,9 @@
         "type": "string",
         "required": false
       }
-    ]
+    ],
+    "broken": true,
+    "broken_reason": "Generic vendor entry \u2014 select your specific council from the list instead."
   },
   {
     "id": "uttlesford_gov_uk",

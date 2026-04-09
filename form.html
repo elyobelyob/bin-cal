@@ -107,7 +107,7 @@ councilSearch.addEventListener("input", () => {
   if (q.length < 2) { dropdown.style.display = "none"; return; }
 
   const matches = councils
-    .filter(c => c.title.toLowerCase().includes(q))
+    .filter(c => c.title.toLowerCase().includes(q) && !(c.broken && !c.hint))
     .slice(0, 12);
 
   if (!matches.length) { dropdown.style.display = "none"; return; }
