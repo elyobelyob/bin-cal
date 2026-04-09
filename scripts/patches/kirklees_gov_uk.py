@@ -180,21 +180,25 @@ class Source:
             prop_type = first.get("PropertyType", "Residential") or "Residential"
         print(f"DEBUG GovDeliveryCategorye={gov_cat!r} PropertyType={prop_type!r}")
 
-        # Add property type data to search section (needed for collection lookup)
+        # Add property type data at multiple levels so the template token resolves
         search_section["binsPropertyType"] = {
             "value": {
                 "Section 1": {
-                    "PropertyType":        {"value": prop_type},
+                    "PropertyType":         {"value": prop_type},
                     "GovDeliveryCategorye": {"value": gov_cat},
                 }
             }
         }
+        # Also expose GovDeliveryCategorye at root level of Search
+        search_section["GovDeliveryCategorye"] = {"value": gov_cat}
+        search_section["PropertyType"]         = {"value": prop_type}
 
         col_data = _run_lookup(s, sid, LOOKUP_COLLECTIONS, {
             "formId": FORM_ID,
             "formValues": {
                 "Search": search_section,
                 "Your bins": {
+                    "GovDeliveryCategorye":   {"value": gov_cat},
                     "NextCollectionFromDate": {"value": from_date},
                     "NextCollectionToDate":   {"value": to_date},
                 },
