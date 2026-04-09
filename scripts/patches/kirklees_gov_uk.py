@@ -1,4 +1,3 @@
-import json
 from datetime import datetime
 from time import time_ns
 from typing import Any
@@ -12,23 +11,17 @@ DESCRIPTION = "Source for waste collections for Kirklees Council (my.kirklees.go
 URL = "https://www.kirklees.gov.uk"
 TEST_CASES = {
     "Midgebottom House": {"uprn": "83074265", "postcode": "HD9 7HA"},
+    "HD8 8NA test": {"uprn": "83194785", "postcode": "HD8 8NA"},
 }
 
 BASE_URL = "https://my.kirklees.gov.uk"
 SERVICE_PATH = "/service/Bins_and_recycling___Manage_your_bins"
 FORM_ID = "AF-Form-0d9c96d0-4067-4bea-9a5b-06f32a675be6"
 
-# Step 1: postcode → address list (UPRN → PropertyReference)
+# Postcode → address list (rows keyed by UPRN)
 LOOKUP_ADDRESS = "58049013ca4c9"
-# Steps 2+: called after address selection; collection dates expected in the later two
-LOOKUP_IDS_STEP2 = [
-    "699d8de6a7183",
-    "631615c4bd3b7",
-    "659c2c2386104",
-    "661d3dbd48355",
-    "65e08e60b299d",
-    "65e5ec5dc4ac6",
-]
+# Bin collection data (rows keyed by bin code; input: validatedUPRN token)
+LOOKUP_COLLECTIONS = "65e5ec5dc4ac6"
 
 HEADERS = {
     "User-Agent": (
@@ -42,13 +35,13 @@ HEADERS = {
 }
 
 ICON_MAP = {
+    "recycling": "mdi:recycle",
+    "domestic": "mdi:trash-can",
+    "garden": "mdi:leaf",
     "green": "mdi:recycle",
     "grey": "mdi:trash-can",
     "brown": "mdi:leaf",
     "blue": "mdi:recycle",
-    "recycling": "mdi:recycle",
-    "domestic": "mdi:trash-can",
-    "garden": "mdi:leaf",
 }
 
 
@@ -81,7 +74,7 @@ class Source:
     def fetch(self) -> list[Any]:
         s = requests.Session()
 
-        # 1. Init session
+        # 1. Init session cookies
         ts = time_ns() // 1_000_000
         s.get(
             f"{BASE_URL}/apibroker/domain/my.kirklees.gov.uk?_={ts}",
@@ -89,7 +82,7 @@ class Source:
             timeout=30,
         ).raise_for_status()
 
-        # 2. Get SID
+        # 2. Obtain auth-session SID
         auth_url = (
             f"{BASE_URL}/authapi/isauthenticated"
             f"?uri=https%3A%2F%2Fmy.kirklees.gov.uk%2Fservice%2FBins_and_recycling___Manage_your_bins"
@@ -101,87 +94,61 @@ class Source:
         if not sid:
             raise ValueError("Kirklees API: failed to obtain session ID")
 
-        # 3. Step 1: postcode lookup → get PropertyReference for our UPRN
-        # Try common section/field name combinations
-        step1_candidates = [
-            ("Section 1", "postcode"),
-            ("Section 1", "Postcode"),
-            ("Section 1", "PostCode"),
-            ("Section 1", "searchPostcode"),
-            ("Section 1", "addressSearch"),
-            ("Your address", "postcode"),
-            ("Your address", "Postcode"),
-            ("Address", "postcode"),
-            ("Search", "postcode"),
-        ]
-        rows1_raw: Any = {}
-        for section, field in step1_candidates:
-            payload_step1: dict[str, Any] = {
-                "formId": FORM_ID,
-                "formValues": {section: {field: {"value": self._postcode}}},
-            }
-            d = _run_lookup(s, sid, LOOKUP_ADDRESS, payload_step1)
-            r = d.get("integration", {}).get("transformed", {}).get("rows_data", {})
-            print(f"DEBUG step1 [{section}/{field}]: rows={len(r) if r else 0}")
-            if r:
-                rows1_raw = r
-                print(f"DEBUG step1 MATCH: section='{section}' field='{field}'")
-                break
+        # 3. Postcode lookup — validate that UPRN exists at this postcode
+        payload_addr: dict[str, Any] = {
+            "formId": FORM_ID,
+            "formValues": {
+                "Section 1": {"Postcode": {"value": self._postcode}}
+            },
+        }
+        data_addr = _run_lookup(s, sid, LOOKUP_ADDRESS, payload_addr)
+        rows_addr = data_addr.get("integration", {}).get("transformed", {}).get("rows_data", {})
+        if isinstance(rows_addr, list):
+            rows_addr = {str(r.get("name", i)): r for i, r in enumerate(rows_addr)}
 
-        # rows_data may be a dict keyed by UPRN or a list of dicts
-        if isinstance(rows1_raw, dict):
-            rows1 = rows1_raw  # keyed by UPRN ("name" field)
-        else:
-            # list → build dict keyed by "name" (UPRN)
-            rows1 = {str(r.get("name", i)): r for i, r in enumerate(rows1_raw)}
-
-        print(f"DEBUG step1 rows keys: {list(rows1.keys())[:5]}")
-
-        # Find our property by UPRN
-        if self._uprn not in rows1:
+        if self._uprn not in rows_addr:
             raise ValueError(
-                f"Kirklees: UPRN {self._uprn} not found in postcode {self._postcode} results. "
-                f"Found: {list(rows1.keys())}"
+                f"Kirklees: UPRN {self._uprn} not found for postcode {self._postcode}. "
+                f"Found UPRNs: {list(rows_addr.keys())}"
             )
 
-        prop_ref = rows1[self._uprn]["PropertyReference"]
-        print(f"DEBUG PropertyReference for UPRN {self._uprn}: {prop_ref}")
-
-        # 4. Step 2: try each subsequent lookup with PropertyReference + UPRN
-        # Include all plausible field names from the form; extra fields are ignored by the API
-        payload_step2: dict[str, Any] = {
+        # 4. Collection data lookup — pass UPRN as validatedUPRN token
+        payload_col: dict[str, Any] = {
             "formId": FORM_ID,
             "formValues": {
                 "Section 1": {
                     "Postcode": {"value": self._postcode},
-                    "PropertyReference": {"value": prop_ref},
-                    "propertyReference": {"value": prop_ref},
+                    "validatedUPRN": {"value": self._uprn},
                     "suppliedUPRN": {"value": self._uprn},
-                    "uprn": {"value": self._uprn},
-                    "UPRN": {"value": self._uprn},
                 }
             },
         }
+        data_col = _run_lookup(s, sid, LOOKUP_COLLECTIONS, payload_col)
+        rows_col = data_col.get("integration", {}).get("transformed", {}).get("rows_data", {})
+        if isinstance(rows_col, list):
+            rows_col = {str(r.get("name", i)): r for i, r in enumerate(rows_col)}
 
-        for lid in LOOKUP_IDS_STEP2:
+        if not rows_col:
+            raise ValueError(
+                f"Kirklees: no collection data returned for UPRN {self._uprn}."
+            )
+
+        entries: list[Any] = []
+        for row in rows_col.values():
+            date_str = row.get("nextCollectionDate", "")
+            bin_type = row.get("BinType") or row.get("BinDescription", "")
+
+            if not date_str or not bin_type:
+                continue
+
+            # Date format from API: "13/04/2026 00:00:00"
             try:
-                data = _run_lookup(s, sid, lid, payload_step2)
-                transformed = data.get("integration", {}).get("transformed", {})
-                rows_raw = transformed.get("rows_data", {})
-                fields_raw = transformed.get("fields_data", {})
-                field_keys = list(fields_raw.keys()) if isinstance(fields_raw, dict) else list(fields_raw) if isinstance(fields_raw, list) else []
-                if isinstance(rows_raw, dict):
-                    rows_list = list(rows_raw.values())
-                elif isinstance(rows_raw, list):
-                    rows_list = rows_raw
-                else:
-                    rows_list = []
-                print(f"DEBUG lookup {lid}: fields={field_keys}, rows_count={len(rows_list)}")
-                for i, row in enumerate(rows_list[:3]):
-                    print(f"DEBUG lookup {lid} row[{i}]: {json.dumps(row)}")
-            except Exception as exc:
-                print(f"DEBUG lookup {lid} error: {exc}")
+                col_date = datetime.strptime(date_str.split()[0], "%d/%m/%Y").date()
+            except ValueError:
+                continue
 
-        raise ValueError(
-            "Kirklees DEBUG: check output above to identify which lookup contains collection dates"
-        )
+            entries.append(
+                Collection(date=col_date, t=str(bin_type), icon=_icon(str(bin_type)))
+            )
+
+        return entries
