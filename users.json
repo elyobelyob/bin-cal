@@ -8,5 +8,16 @@
     },
     "added": "2026-04-09",
     "last_updated": "2026-04-09"
+  },
+  "9d63c870": {
+    "council_id": "kirklees_gov_uk",
+    "council_title": "Kirklees Council",
+    "args": {
+      "uprn": "83074265",
+      "postcode": "HD9 7HA",
+      "predict": true
+    },
+    "added": "2026-04-09",
+    "last_updated": "2026-04-09"
   }
 }
