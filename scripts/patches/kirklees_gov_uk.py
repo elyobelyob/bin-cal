@@ -122,18 +122,26 @@ class Source:
         cal_link_el = self._find_cal_link(r1_bs4)
 
         if cal_link_el is None and self._uprn:
-            # Named property (no door number): address search may have returned no
-            # results. Try a direct POST with just the UPRN to select the property.
-            _LOGGER.debug("Calendar link not found after search; retrying with UPRN POST")
-            self._update_params(r1_bs4)
-            self._params["ctl00$ctl00$cphPageBody$cphContent$hdnBinUPRN"] = self._uprn
-            self._params["UPRN"] = self._uprn
-            self._params[
-                "ctl00$ctl00$cphPageBody$cphContent$thisGeoSearch$butSelectAddress"
-            ] = "Select Address"
-            r1 = self._session.post(f"{BASE_URL}/default.aspx", data=self._params)
+            # Named property: the door-number search returned no usable results.
+            # Re-run the search with an empty door number so the council returns ALL
+            # properties in the postcode as a dagAddressList, then select with UPRN.
+            _LOGGER.debug(
+                "Calendar link not found; retrying postcode-only search then UPRN select"
+            )
+            saved_door_num = self._door_num
+            self._door_num = ""
+            self._update_params(r0_bs4)  # fresh params from initial page
+            r1 = self._session.get(f"{BASE_URL}/default.aspx", params=self._params)
             r1.raise_for_status()
             r1_bs4 = BeautifulSoup(r1.text, features="html.parser")
+            self._door_num = saved_door_num
+
+            if r1_bs4.select_one("table#dagAddressList"):
+                self._update_params(r1_bs4)
+                r1 = self._session.post(f"{BASE_URL}/default.aspx", data=self._params)
+                r1.raise_for_status()
+                r1_bs4 = BeautifulSoup(r1.text, features="html.parser")
+
             cal_link_el = self._find_cal_link(r1_bs4)
 
         if cal_link_el is None:
