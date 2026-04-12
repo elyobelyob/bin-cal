@@ -78,9 +78,7 @@
         "required": true
       }
     ],
-    "hint": "<ul>\n<li>Go to <a href=\"https://www.anglesey.gov.wales/en/Residents/Bins-and-recycling/Waste-Collection-Day.aspx\" target=\"_blank\" rel=\"noopener\">https://www.anglesey.gov.wales/en/Residents/Bins-and-recycling/Waste-Collection-Day.aspx</a> go to <code>Find your bin day</code> and search your address.</li>\n<li>Copy the link(s) below <code>Download calendar to your device</code></li>\n</ul>",
-    "broken": true,
-    "broken_reason": "This council publishes its own subscribable ICS calendar \u2014 subscribe directly via the link in the instructions below rather than generating one here."
+    "hint": "<ul>\n<li>Go to <a href=\"https://www.anglesey.gov.wales/en/Residents/Bins-and-recycling/Waste-Collection-Day.aspx\" target=\"_blank\" rel=\"noopener\">https://www.anglesey.gov.wales/en/Residents/Bins-and-recycling/Waste-Collection-Day.aspx</a> go to <code>Find your bin day</code> and search your address.</li>\n<li>Copy the link(s) below <code>Download calendar to your device</code></li>\n<li>Use this link as the <code>url</code> parameter.</li>\n<li>For multiple calendars (waste + garden) add a new source for each calendar.</li>\n</ul>"
   },
   {
     "id": "angus_gov_uk",
@@ -130,9 +128,7 @@
         "type": "String | Integer",
         "required": true
       }
-    ],
-    "broken": true,
-    "broken_reason": "Generic vendor entry \u2014 select your specific council from the list instead."
+    ]
   },
   {
     "id": "ardsandnorthdown_gov_uk",
@@ -343,9 +339,7 @@
         "type": "string",
         "required": true
       }
-    ],
-    "broken": true,
-    "broken_reason": "Generic vendor entry \u2014 select your specific council from the list instead."
+    ]
   },
   {
     "id": "birmingham_gov_uk",
@@ -567,9 +561,7 @@
         "required": true
       }
     ],
-    "hint": "<ul>\n<li>Go to <a href=\"https://recyclingservices.brent.gov.uk/waste\" target=\"_blank\" rel=\"noopener\">https://recyclingservices.brent.gov.uk/waste</a> and enter your post code, and on the following page select your address.</li>\n<li>Right click -> copy the url of the <code>Add to your calendar (.ics file)</code> link.</li>\n</ul>",
-    "broken": true,
-    "broken_reason": "This council publishes its own subscribable ICS calendar \u2014 subscribe directly via the link in the instructions below rather than generating one here."
+    "hint": "<ul>\n<li>Go to <a href=\"https://recyclingservices.brent.gov.uk/waste\" target=\"_blank\" rel=\"noopener\">https://recyclingservices.brent.gov.uk/waste</a> and enter your post code, and on the following page select your address.</li>\n<li>Right click -> copy the url of the <code>Add to your calendar (.ics file)</code> link.</li>\n<li>Use this link as the <code>url</code> parameter. (If you know your address reference, you can just replace the last part of the url with it.)</li>\n</ul>"
   },
   {
     "id": "bridgend_gov_uk",
@@ -714,9 +706,7 @@
     "default_params": {
       "split_at": "\\, (?:and )?|(?: and )"
     },
-    "hint": "<ul>\n<li>To get the URL, search your address in the recollect form of your home town.</li>\n<li>Click \"Get a calendar\", then \"Add to Google Calendar\".</li>\n</ul>",
-    "broken": true,
-    "broken_reason": "This council publishes its own subscribable ICS calendar \u2014 subscribe directly via the link in the instructions below rather than generating one here."
+    "hint": "<ul>\n<li>To get the URL, search your address in the recollect form of your home town.</li>\n<li>Click \"Get a calendar\", then \"Add to Google Calendar\".</li>\n<li>The URL shown is your ICS calendar link, for example.</li>\n</ul>\n<p>```plain</p>\n<p>https://recollect.a.ssl.fastly.net/api/places/BCCDF30E-578B-11E4-AD38-5839C200407A/services/208/events.en.ics?client_id=6FBD18FE-167B-11EC-992A-C843A7F05606</p>\n<p>```</p>\n<ul>\n<li>You can strip the client ID URL parameter to get the final URL: <code>https://recollect.a.ssl.fastly.net/api/places/BCCDF30E-578B-11E4-AD38-5839C200407A/services/208/events.en.ics</code></li>\n</ul>\n<p>known to work with:</p>\n<p>|Region|Country|URL|</p>\n<p>|-|-|-|</p>\n<p>|Ottawa, ON|Canada|<a href=\"https://ottawa.ca/en/garbage-and-recycling/recycling/garbage-and-recycling-collection-calendar\" target=\"_blank\" rel=\"noopener\">ottawa.ca</a>|</p>\n<p>|Simcoe County, ON|Canada|<a href=\"https://www.simcoe.ca/dpt/swm/when\" target=\"_blank\" rel=\"noopener\">simcoe.ca</a>|</p>\n<p>|City of Bloomington, IN|USA|<a href=\"https://api.recollect.net/r/area/bloomingtonin\" target=\"_blank\" rel=\"noopener\">api.recollect.net/r/area/bloomingtonin</a>|</p>\n<p>|City of Cambridge, MA|USA|<a href=\"https://www.cambridgema.gov/services/curbsidecollections\" target=\"_blank\" rel=\"noopener\">cambridgema.gov</a>|</p>\n<p>|City of Lowell, MA|USA|<a href=\"https://www.lowellma.gov/195/Solid-Waste-Recycling\" target=\"_blank\" rel=\"noopener\">lowellma.gov</a>|</p>\n<p>|City of Georgetown, TX|USA|<a href=\"https://www.texasdisposal.com/waste-wizard/\" target=\"_blank\" rel=\"noopener\">texasdisposal.com</a>|</p>\n<p>|City of Vancouver|Canada|<a href=\"https://vancouver.ca/home-property-development/garbage-and-recycling-collection-schedules.aspx\" target=\"_blank\" rel=\"noopener\">vancouver.ca</a>|</p>\n<p>|City of Nanaimo|Canada|<a href=\"https://www.nanaimo.ca/city-services/garbage-recycling/collectionschedule\" target=\"_blank\" rel=\"noopener\">nanaimo.ca</a>|</p>\n<p>|City of Austin|USA|<a href=\"https://www.austintexas.gov/myschedule\" target=\"_blank\" rel=\"noopener\">austintexas.gov</a>|</p>\n<p>|Middlesbrough|UK|<a href=\"https://my.middlesbrough.gov.uk/login/\" target=\"_blank\" rel=\"noopener\">middlesbrough.gov.uk</a>|</p>\n<p>|City of McKinney|USA|<a href=\"https://www.mckinneytexas.org/503/Residential-Trash-Services/#App\" target=\"_blank\" rel=\"noopener\">mckinneytexas.org</a>|</p>\n<p>|Waste Connections|USA|<a href=\"https://www.wasteconnections.com/pickup-schedule/\" target=\"_blank\" rel=\"noopener\">wasteconnections.com</a>|</p>\n<p>|Halton County, ON|Canada|<a href=\"https://www.halton.ca/For-Residents/Recycling-Waste/Recycling-and-Waste-Tools/Online-Waste-Collection-Schedule\" target=\"_blank\" rel=\"noopener\">halton.ca</a>|</p>\n<p>|District of Saanish, BC|Canada|<a href=\"https://www.saanich.ca/EN/main/community/utilities-garbage/garbage-organics-recycling.html\" target=\"_blank\" rel=\"noopener\">saanich.ca</a>|</p>\n<p>|Caerphilly, Wales|UK|<a href=\"https://www.caerphilly.gov.uk/services/household-waste-and-recycling/bin-collection-days\" target=\"_blank\" rel=\"noopener\">caerphilly.gov.uk</a>|</p>\n<p>|Recology CleanScapes, WA|USA|<a href=\"https://www.recology.com/recology-king-county/des-moines/collection-calendar/\" target=\"_blank\" rel=\"noopener\">recology.com</a>|</p>\n<p>|City of Lethbridge|Canada|<a href=\"https://www.lethbridge.ca/waste-recycling/#wastewizard\" target=\"_blank\" rel=\"noopener\">lethbridge.ca</a>|</p>\n<p>|City of Regina|Canada|<a href=\"https://www.regina.ca/home-property/recycling-garbage/\" target=\"_blank\" rel=\"noopener\">regina.ca</a>|</p>\n<p>|Hardin Sanitation, Ada County, Idaho|USA|<a href=\"https://www.hardinsanitation.com/ada/\" target=\"_blank\" rel=\"noopener\">hardinsanitation.com/ada</a>|</p>\n<p>|Hardin Sanitation, Treasure Valley, Idaho|USA|<a href=\"https://www.hardinsanitation.com/home/\" target=\"_blank\" rel=\"noopener\">hardinsanitation.com</a>|</p>\n<p>|Hardin Sanitation, City of Eagle, Idaho|USA|<a href=\"https://www.hardinsanitation.com/cityofeagle/\" target=\"_blank\" rel=\"noopener\">hardinsanitation.com/cityofeagle</a>|</p>\n<p>|Richmond, BC|Canada|<a href=\"https://www.richmond.ca/services/recycling-garbage/\" target=\"_blank\" rel=\"noopener\">richmond.ca</a>|</p>\n<p>|Davenport, Iowa|USA|<a href=\"https://www.davenportiowa.com/cms/One.aspx?portalId=6481456&pageId=17602135\" target=\"_blank\" rel=\"noopener\">davenportiowa.com</a>|</p>\n<p>|Redcar & Cleveland|UK|<a href=\"https://www.redcar-cleveland.gov.uk/bins-and-waste-services/check-your-bin-collection-day\" target=\"_blank\" rel=\"noopener\">redcar-cleveland.gov.uk</a>|</p>\n<p>|Recology San Francisco|USA|<a href=\"https://www.recology.com/recology-san-francisco/collection-calendar/\" target=\"_blank\" rel=\"noopener\">recology.com</a>|</p>\n<p>and probably a lot more.</p>"
   },
   {
     "id": "calderdale_gov_uk",
@@ -1482,9 +1472,7 @@
         "type": "string",
         "required": false
       }
-    ],
-    "broken": true,
-    "broken_reason": "Generic vendor entry \u2014 select your specific council from the list instead."
+    ]
   },
   {
     "id": "ics_falkirk_gov_uk",
@@ -1497,9 +1485,7 @@
         "required": true
       }
     ],
-    "hint": "<ul>\n<li>Go to <a href=\"https://www.falkirk.gov.uk/services/bins-rubbish-recycling/household-waste/bin-collection-dates.aspx\" target=\"_blank\" rel=\"noopener\">https://www.falkirk.gov.uk/services/bins-rubbish-recycling/household-waste/bin-collection-dates.aspx</a> and select your location.</li>\n<li>Click on <code>Add to smartphone</code>.</li>\n<li>select Android and uncheck Remind me.</li>\n</ul>",
-    "broken": true,
-    "broken_reason": "This council publishes its own subscribable ICS calendar \u2014 subscribe directly via the link in the instructions below rather than generating one here."
+    "hint": "<ul>\n<li>Go to <a href=\"https://www.falkirk.gov.uk/services/bins-rubbish-recycling/household-waste/bin-collection-dates.aspx\" target=\"_blank\" rel=\"noopener\">https://www.falkirk.gov.uk/services/bins-rubbish-recycling/household-waste/bin-collection-dates.aspx</a> and select your location.</li>\n<li>Click on <code>Add to smartphone</code>.</li>\n<li>select Android and uncheck Remind me.</li>\n<li>Replace the <code>url</code> in the example configuration with the link shown in the bar below <code>Remind me</code>.</li>\n</ul>"
   },
   {
     "id": "fareham_gov_uk",
@@ -1616,9 +1602,7 @@
         "required": true
       }
     ],
-    "hint": "<ul>\n<li>Gedling Borough Council does not provide bin collections in the iCal calendar format directly.</li>\n<li>The iCal calendar files have been generated from the official printed calendars and hosted on GitHub for use.</li>\n<li>Find your collection weekday and schedule by entering your street name in the <a href=\"https://www.gbcbincalendars.co.uk/collection-search\" target=\"_blank\" rel=\"noopener\">collection search tool</a>.</li>\n<li>The correct calendar link will be displayed. On the calendar page use the \"Copy iCal URL\" button to get the calendar URL</li>\n</ul>",
-    "broken": true,
-    "broken_reason": "This council publishes its own subscribable ICS calendar \u2014 subscribe directly via the link in the instructions below rather than generating one here."
+    "hint": "<ul>\n<li>Gedling Borough Council does not provide bin collections in the iCal calendar format directly.</li>\n<li>The iCal calendar files have been generated from the official printed calendars and hosted on GitHub for use.</li>\n<li>Find your collection weekday and schedule by entering your street name in the <a href=\"https://www.gbcbincalendars.co.uk/collection-search\" target=\"_blank\" rel=\"noopener\">collection search tool</a>.</li>\n<li>The correct calendar link will be displayed. On the calendar page use the \"Copy iCal URL\" button to get the calendar URL to use with this integration.</li>\n</ul>"
   },
   {
     "id": "glasgow_gov_uk",
@@ -1880,9 +1864,7 @@
         "type": "string",
         "required": false
       }
-    ],
-    "broken": true,
-    "broken_reason": "Generic vendor entry \u2014 select your specific council from the list instead."
+    ]
   },
   {
     "id": "kirklees_gov_uk",
@@ -1890,7 +1872,7 @@
     "title": "Kirklees Council",
     "args": [
       {
-        "name": "uprn",
+        "name": "door_num",
         "type": "string",
         "required": true
       },
@@ -1900,8 +1882,8 @@
         "required": true
       },
       {
-        "name": "predict",
-        "type": "boolean",
+        "name": "uprn",
+        "type": "string",
         "required": false
       }
     ]
@@ -2160,9 +2142,7 @@
         "required": true
       }
     ],
-    "hint": "<ul>\n<li>Go to <a href=\"https://fixmystreet.merton.gov.uk/waste\" target=\"_blank\" rel=\"noopener\">https://fixmystreet.merton.gov.uk/waste</a> and enter your post code, and on the following page select your address.</li>\n<li>In the <em>Download your collection schedule</em> panel, click <code>Add to your calendar</code>.</li>\n<li>Click the <code>Copy</code> button in <em>Step 1: copy the link to the calendar</em>.</li>\n</ul>",
-    "broken": true,
-    "broken_reason": "This council publishes its own subscribable ICS calendar \u2014 subscribe directly via the link in the instructions below rather than generating one here."
+    "hint": "<ul>\n<li>Go to <a href=\"https://fixmystreet.merton.gov.uk/waste\" target=\"_blank\" rel=\"noopener\">https://fixmystreet.merton.gov.uk/waste</a> and enter your post code, and on the following page select your address.</li>\n<li>In the <em>Download your collection schedule</em> panel, click <code>Add to your calendar</code>.</li>\n<li>Click the <code>Copy</code> button in <em>Step 1: copy the link to the calendar</em>.</li>\n<li>Use the copied link as the <code>url</code> parameter.</li>\n</ul>"
   },
   {
     "id": "merton_gov_uk",
@@ -2400,9 +2380,7 @@
     "default_params": {
       "split_at": "\\, (?:and )?|(?: and )"
     },
-    "hint": "<ul>\n<li>To get the URL, search your address in the recollect form of your home town.</li>\n<li>Click \"Get a calendar\", then \"Add to Google Calendar\".</li>\n</ul>",
-    "broken": true,
-    "broken_reason": "This council publishes its own subscribable ICS calendar \u2014 subscribe directly via the link in the instructions below rather than generating one here."
+    "hint": "<ul>\n<li>To get the URL, search your address in the recollect form of your home town.</li>\n<li>Click \"Get a calendar\", then \"Add to Google Calendar\".</li>\n<li>The URL shown is your ICS calendar link, for example.</li>\n</ul>\n<p>```plain</p>\n<p>https://recollect.a.ssl.fastly.net/api/places/BCCDF30E-578B-11E4-AD38-5839C200407A/services/208/events.en.ics?client_id=6FBD18FE-167B-11EC-992A-C843A7F05606</p>\n<p>```</p>\n<ul>\n<li>You can strip the client ID URL parameter to get the final URL: <code>https://recollect.a.ssl.fastly.net/api/places/BCCDF30E-578B-11E4-AD38-5839C200407A/services/208/events.en.ics</code></li>\n</ul>\n<p>known to work with:</p>\n<p>|Region|Country|URL|</p>\n<p>|-|-|-|</p>\n<p>|Ottawa, ON|Canada|<a href=\"https://ottawa.ca/en/garbage-and-recycling/recycling/garbage-and-recycling-collection-calendar\" target=\"_blank\" rel=\"noopener\">ottawa.ca</a>|</p>\n<p>|Simcoe County, ON|Canada|<a href=\"https://www.simcoe.ca/dpt/swm/when\" target=\"_blank\" rel=\"noopener\">simcoe.ca</a>|</p>\n<p>|City of Bloomington, IN|USA|<a href=\"https://api.recollect.net/r/area/bloomingtonin\" target=\"_blank\" rel=\"noopener\">api.recollect.net/r/area/bloomingtonin</a>|</p>\n<p>|City of Cambridge, MA|USA|<a href=\"https://www.cambridgema.gov/services/curbsidecollections\" target=\"_blank\" rel=\"noopener\">cambridgema.gov</a>|</p>\n<p>|City of Lowell, MA|USA|<a href=\"https://www.lowellma.gov/195/Solid-Waste-Recycling\" target=\"_blank\" rel=\"noopener\">lowellma.gov</a>|</p>\n<p>|City of Georgetown, TX|USA|<a href=\"https://www.texasdisposal.com/waste-wizard/\" target=\"_blank\" rel=\"noopener\">texasdisposal.com</a>|</p>\n<p>|City of Vancouver|Canada|<a href=\"https://vancouver.ca/home-property-development/garbage-and-recycling-collection-schedules.aspx\" target=\"_blank\" rel=\"noopener\">vancouver.ca</a>|</p>\n<p>|City of Nanaimo|Canada|<a href=\"https://www.nanaimo.ca/city-services/garbage-recycling/collectionschedule\" target=\"_blank\" rel=\"noopener\">nanaimo.ca</a>|</p>\n<p>|City of Austin|USA|<a href=\"https://www.austintexas.gov/myschedule\" target=\"_blank\" rel=\"noopener\">austintexas.gov</a>|</p>\n<p>|Middlesbrough|UK|<a href=\"https://my.middlesbrough.gov.uk/login/\" target=\"_blank\" rel=\"noopener\">middlesbrough.gov.uk</a>|</p>\n<p>|City of McKinney|USA|<a href=\"https://www.mckinneytexas.org/503/Residential-Trash-Services/#App\" target=\"_blank\" rel=\"noopener\">mckinneytexas.org</a>|</p>\n<p>|Waste Connections|USA|<a href=\"https://www.wasteconnections.com/pickup-schedule/\" target=\"_blank\" rel=\"noopener\">wasteconnections.com</a>|</p>\n<p>|Halton County, ON|Canada|<a href=\"https://www.halton.ca/For-Residents/Recycling-Waste/Recycling-and-Waste-Tools/Online-Waste-Collection-Schedule\" target=\"_blank\" rel=\"noopener\">halton.ca</a>|</p>\n<p>|District of Saanish, BC|Canada|<a href=\"https://www.saanich.ca/EN/main/community/utilities-garbage/garbage-organics-recycling.html\" target=\"_blank\" rel=\"noopener\">saanich.ca</a>|</p>\n<p>|Caerphilly, Wales|UK|<a href=\"https://www.caerphilly.gov.uk/services/household-waste-and-recycling/bin-collection-days\" target=\"_blank\" rel=\"noopener\">caerphilly.gov.uk</a>|</p>\n<p>|Recology CleanScapes, WA|USA|<a href=\"https://www.recology.com/recology-king-county/des-moines/collection-calendar/\" target=\"_blank\" rel=\"noopener\">recology.com</a>|</p>\n<p>|City of Lethbridge|Canada|<a href=\"https://www.lethbridge.ca/waste-recycling/#wastewizard\" target=\"_blank\" rel=\"noopener\">lethbridge.ca</a>|</p>\n<p>|City of Regina|Canada|<a href=\"https://www.regina.ca/home-property/recycling-garbage/\" target=\"_blank\" rel=\"noopener\">regina.ca</a>|</p>\n<p>|Hardin Sanitation, Ada County, Idaho|USA|<a href=\"https://www.hardinsanitation.com/ada/\" target=\"_blank\" rel=\"noopener\">hardinsanitation.com/ada</a>|</p>\n<p>|Hardin Sanitation, Treasure Valley, Idaho|USA|<a href=\"https://www.hardinsanitation.com/home/\" target=\"_blank\" rel=\"noopener\">hardinsanitation.com</a>|</p>\n<p>|Hardin Sanitation, City of Eagle, Idaho|USA|<a href=\"https://www.hardinsanitation.com/cityofeagle/\" target=\"_blank\" rel=\"noopener\">hardinsanitation.com/cityofeagle</a>|</p>\n<p>|Richmond, BC|Canada|<a href=\"https://www.richmond.ca/services/recycling-garbage/\" target=\"_blank\" rel=\"noopener\">richmond.ca</a>|</p>\n<p>|Davenport, Iowa|USA|<a href=\"https://www.davenportiowa.com/cms/One.aspx?portalId=6481456&pageId=17602135\" target=\"_blank\" rel=\"noopener\">davenportiowa.com</a>|</p>\n<p>|Redcar & Cleveland|UK|<a href=\"https://www.redcar-cleveland.gov.uk/bins-and-waste-services/check-your-bin-collection-day\" target=\"_blank\" rel=\"noopener\">redcar-cleveland.gov.uk</a>|</p>\n<p>|Recology San Francisco|USA|<a href=\"https://www.recology.com/recology-san-francisco/collection-calendar/\" target=\"_blank\" rel=\"noopener\">recology.com</a>|</p>\n<p>and probably a lot more.</p>"
   },
   {
     "id": "midlothian_gov_uk",
@@ -2691,9 +2669,7 @@
         "required": true
       }
     ],
-    "hint": "<ul>\n<li>Go to <a href=\"https://www.northtyneside.gov.uk/waste-collection-schedule\" target=\"_blank\" rel=\"noopener\">https://www.northtyneside.gov.uk/waste-collection-schedule</a> and search your address.</li>\n<li>Copy the link from <code>Add to iCalendar</code></li>\n</ul>",
-    "broken": true,
-    "broken_reason": "This council publishes its own subscribable ICS calendar \u2014 subscribe directly via the link in the instructions below rather than generating one here."
+    "hint": "<ul>\n<li>Go to <a href=\"https://www.northtyneside.gov.uk/waste-collection-schedule\" target=\"_blank\" rel=\"noopener\">https://www.northtyneside.gov.uk/waste-collection-schedule</a> and search your address.</li>\n<li>Copy the link from <code>Add to iCalendar</code></li>\n<li>Use this link as the <code>url</code> parameter.</li>\n</ul>"
   },
   {
     "id": "nwleics_gov_uk",
@@ -2962,9 +2938,7 @@
     "default_params": {
       "split_at": "\\, (?:and )?|(?: and )"
     },
-    "hint": "<ul>\n<li>To get the URL, search your address in the recollect form of your home town.</li>\n<li>Click \"Get a calendar\", then \"Add to Google Calendar\".</li>\n</ul>",
-    "broken": true,
-    "broken_reason": "This council publishes its own subscribable ICS calendar \u2014 subscribe directly via the link in the instructions below rather than generating one here."
+    "hint": "<ul>\n<li>To get the URL, search your address in the recollect form of your home town.</li>\n<li>Click \"Get a calendar\", then \"Add to Google Calendar\".</li>\n<li>The URL shown is your ICS calendar link, for example.</li>\n</ul>\n<p>```plain</p>\n<p>https://recollect.a.ssl.fastly.net/api/places/BCCDF30E-578B-11E4-AD38-5839C200407A/services/208/events.en.ics?client_id=6FBD18FE-167B-11EC-992A-C843A7F05606</p>\n<p>```</p>\n<ul>\n<li>You can strip the client ID URL parameter to get the final URL: <code>https://recollect.a.ssl.fastly.net/api/places/BCCDF30E-578B-11E4-AD38-5839C200407A/services/208/events.en.ics</code></li>\n</ul>\n<p>known to work with:</p>\n<p>|Region|Country|URL|</p>\n<p>|-|-|-|</p>\n<p>|Ottawa, ON|Canada|<a href=\"https://ottawa.ca/en/garbage-and-recycling/recycling/garbage-and-recycling-collection-calendar\" target=\"_blank\" rel=\"noopener\">ottawa.ca</a>|</p>\n<p>|Simcoe County, ON|Canada|<a href=\"https://www.simcoe.ca/dpt/swm/when\" target=\"_blank\" rel=\"noopener\">simcoe.ca</a>|</p>\n<p>|City of Bloomington, IN|USA|<a href=\"https://api.recollect.net/r/area/bloomingtonin\" target=\"_blank\" rel=\"noopener\">api.recollect.net/r/area/bloomingtonin</a>|</p>\n<p>|City of Cambridge, MA|USA|<a href=\"https://www.cambridgema.gov/services/curbsidecollections\" target=\"_blank\" rel=\"noopener\">cambridgema.gov</a>|</p>\n<p>|City of Lowell, MA|USA|<a href=\"https://www.lowellma.gov/195/Solid-Waste-Recycling\" target=\"_blank\" rel=\"noopener\">lowellma.gov</a>|</p>\n<p>|City of Georgetown, TX|USA|<a href=\"https://www.texasdisposal.com/waste-wizard/\" target=\"_blank\" rel=\"noopener\">texasdisposal.com</a>|</p>\n<p>|City of Vancouver|Canada|<a href=\"https://vancouver.ca/home-property-development/garbage-and-recycling-collection-schedules.aspx\" target=\"_blank\" rel=\"noopener\">vancouver.ca</a>|</p>\n<p>|City of Nanaimo|Canada|<a href=\"https://www.nanaimo.ca/city-services/garbage-recycling/collectionschedule\" target=\"_blank\" rel=\"noopener\">nanaimo.ca</a>|</p>\n<p>|City of Austin|USA|<a href=\"https://www.austintexas.gov/myschedule\" target=\"_blank\" rel=\"noopener\">austintexas.gov</a>|</p>\n<p>|Middlesbrough|UK|<a href=\"https://my.middlesbrough.gov.uk/login/\" target=\"_blank\" rel=\"noopener\">middlesbrough.gov.uk</a>|</p>\n<p>|City of McKinney|USA|<a href=\"https://www.mckinneytexas.org/503/Residential-Trash-Services/#App\" target=\"_blank\" rel=\"noopener\">mckinneytexas.org</a>|</p>\n<p>|Waste Connections|USA|<a href=\"https://www.wasteconnections.com/pickup-schedule/\" target=\"_blank\" rel=\"noopener\">wasteconnections.com</a>|</p>\n<p>|Halton County, ON|Canada|<a href=\"https://www.halton.ca/For-Residents/Recycling-Waste/Recycling-and-Waste-Tools/Online-Waste-Collection-Schedule\" target=\"_blank\" rel=\"noopener\">halton.ca</a>|</p>\n<p>|District of Saanish, BC|Canada|<a href=\"https://www.saanich.ca/EN/main/community/utilities-garbage/garbage-organics-recycling.html\" target=\"_blank\" rel=\"noopener\">saanich.ca</a>|</p>\n<p>|Caerphilly, Wales|UK|<a href=\"https://www.caerphilly.gov.uk/services/household-waste-and-recycling/bin-collection-days\" target=\"_blank\" rel=\"noopener\">caerphilly.gov.uk</a>|</p>\n<p>|Recology CleanScapes, WA|USA|<a href=\"https://www.recology.com/recology-king-county/des-moines/collection-calendar/\" target=\"_blank\" rel=\"noopener\">recology.com</a>|</p>\n<p>|City of Lethbridge|Canada|<a href=\"https://www.lethbridge.ca/waste-recycling/#wastewizard\" target=\"_blank\" rel=\"noopener\">lethbridge.ca</a>|</p>\n<p>|City of Regina|Canada|<a href=\"https://www.regina.ca/home-property/recycling-garbage/\" target=\"_blank\" rel=\"noopener\">regina.ca</a>|</p>\n<p>|Hardin Sanitation, Ada County, Idaho|USA|<a href=\"https://www.hardinsanitation.com/ada/\" target=\"_blank\" rel=\"noopener\">hardinsanitation.com/ada</a>|</p>\n<p>|Hardin Sanitation, Treasure Valley, Idaho|USA|<a href=\"https://www.hardinsanitation.com/home/\" target=\"_blank\" rel=\"noopener\">hardinsanitation.com</a>|</p>\n<p>|Hardin Sanitation, City of Eagle, Idaho|USA|<a href=\"https://www.hardinsanitation.com/cityofeagle/\" target=\"_blank\" rel=\"noopener\">hardinsanitation.com/cityofeagle</a>|</p>\n<p>|Richmond, BC|Canada|<a href=\"https://www.richmond.ca/services/recycling-garbage/\" target=\"_blank\" rel=\"noopener\">richmond.ca</a>|</p>\n<p>|Davenport, Iowa|USA|<a href=\"https://www.davenportiowa.com/cms/One.aspx?portalId=6481456&pageId=17602135\" target=\"_blank\" rel=\"noopener\">davenportiowa.com</a>|</p>\n<p>|Redcar & Cleveland|UK|<a href=\"https://www.redcar-cleveland.gov.uk/bins-and-waste-services/check-your-bin-collection-day\" target=\"_blank\" rel=\"noopener\">redcar-cleveland.gov.uk</a>|</p>\n<p>|Recology San Francisco|USA|<a href=\"https://www.recology.com/recology-san-francisco/collection-calendar/\" target=\"_blank\" rel=\"noopener\">recology.com</a>|</p>\n<p>and probably a lot more.</p>"
   },
   {
     "id": "reigatebanstead_gov_uk",
@@ -3846,9 +3820,7 @@
         "required": true
       }
     ],
-    "hint": "<ul>\n<li>Go to <a href=\"https://waste-services.kingston.gov.uk/waste\" target=\"_blank\" rel=\"noopener\">https://waste-services.kingston.gov.uk/waste</a> and enter your post code, and on the following page select your address.</li>\n<li>In the <em>Download your collection schedule</em> panel, click <code>Add to your calendar</code>.</li>\n<li>Click the <code>Copy</code> button in <em>Step 1: copy the link to the calendar</em>.</li>\n</ul>",
-    "broken": true,
-    "broken_reason": "This council publishes its own subscribable ICS calendar \u2014 subscribe directly via the link in the instructions below rather than generating one here."
+    "hint": "<ul>\n<li>Go to <a href=\"https://waste-services.kingston.gov.uk/waste\" target=\"_blank\" rel=\"noopener\">https://waste-services.kingston.gov.uk/waste</a> and enter your post code, and on the following page select your address.</li>\n<li>In the <em>Download your collection schedule</em> panel, click <code>Add to your calendar</code>.</li>\n<li>Click the <code>Copy</code> button in <em>Step 1: copy the link to the calendar</em>.</li>\n<li>Use the copied link as the <code>url</code> parameter.</li>\n</ul>"
   },
   {
     "id": "thurrock_gov_uk",
@@ -3918,9 +3890,7 @@
         "type": "string",
         "required": false
       }
-    ],
-    "broken": true,
-    "broken_reason": "Generic vendor entry \u2014 select your specific council from the list instead."
+    ]
   },
   {
     "id": "uttlesford_gov_uk",
@@ -4238,9 +4208,7 @@
         "required": true
       }
     ],
-    "hint": "<ul>\n<li>Go to <a href=\"https://ww.barrowbc.gov.uk/bins-recycling-and-street-cleaning/waste-collection-schedule\" target=\"_blank\" rel=\"noopener\">https://ww.barrowbc.gov.uk/bins-recycling-and-street-cleaning/waste-collection-schedule</a> and select your location.</li>\n<li>Right click -> copy the url of the <code>Add to iCalendar</code> link.</li>\n</ul>",
-    "broken": true,
-    "broken_reason": "This council publishes its own subscribable ICS calendar \u2014 subscribe directly via the link in the instructions below rather than generating one here."
+    "hint": "<ul>\n<li>Go to <a href=\"https://ww.barrowbc.gov.uk/bins-recycling-and-street-cleaning/waste-collection-schedule\" target=\"_blank\" rel=\"noopener\">https://ww.barrowbc.gov.uk/bins-recycling-and-street-cleaning/waste-collection-schedule</a> and select your location.</li>\n<li>Right click -> copy the url of the <code>Add to iCalendar</code> link.</li>\n<li>Use this link as the <code>url</code> parameter. (If you know your UPRN, you can just replace the last part of the url with it.)</li>\n<li>if you want to shorten your entry names use the <code>regex</code> line from the second example (<code>Grey lidded bins for General waste</code> will show up as <code>Grey</code>)</li>\n</ul>"
   },
   {
     "id": "ics_southlakeland_gov_uk",
@@ -4253,9 +4221,7 @@
         "required": true
       }
     ],
-    "hint": "<ul>\n<li>Go to <a href=\"https://www.southlakeland.gov.uk/bins-and-recycling/collection-calendar/\" target=\"_blank\" rel=\"noopener\">https://www.southlakeland.gov.uk/bins-and-recycling/collection-calendar/</a> and select your location.</li>\n<li>Rightclick -> copy the URL of the <code>Import these dates into your calendar</code> link.</li>\n</ul>",
-    "broken": true,
-    "broken_reason": "This council publishes its own subscribable ICS calendar \u2014 subscribe directly via the link in the instructions below rather than generating one here."
+    "hint": "<ul>\n<li>Go to <a href=\"https://www.southlakeland.gov.uk/bins-and-recycling/collection-calendar/\" target=\"_blank\" rel=\"noopener\">https://www.southlakeland.gov.uk/bins-and-recycling/collection-calendar/</a> and select your location.</li>\n<li>Rightclick -> copy the URL of the <code>Import these dates into your calendar</code> link.</li>\n<li>Use this link as the <code>url</code> parameter.</li>\n</ul>"
   },
   {
     "id": "wigan_gov_uk",
