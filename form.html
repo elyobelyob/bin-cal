@@ -297,6 +297,19 @@ document.getElementById("binForm").addEventListener("submit", async e => {
     }
   });
 
+  // ICS-module councils: the user pasted the council's own ICS URL.
+  // Skip the worker/poll pipeline and take them straight to success
+  // using that URL as their subscription URL.
+  if (selectedCouncil.module === "ics") {
+    const url = (args.url || "").trim();
+    if (!/^https?:\/\//i.test(url)) {
+      showError("Please paste the calendar URL from your council's website (must start with http:// or https://).");
+      return;
+    }
+    window.location.href = `success.html?url=${encodeURIComponent(url)}&council=${encodeURIComponent(selectedCouncil.title)}`;
+    return;
+  }
+
   const hash = await computeHash(selectedCouncil.id, args);
 
   submitBtn.disabled = true;

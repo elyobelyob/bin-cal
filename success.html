@@ -96,12 +96,15 @@
 <script>
 const params  = new URLSearchParams(location.search);
 const hash    = params.get("hash") || "";
+const url     = params.get("url") || "";
 const council = params.get("council") || "";
 
 const calUrlEl = document.getElementById("calUrl");
 const cnEl     = document.getElementById("councilName");
 
-if (hash && hash !== "00000000") {
+if (url && /^https?:\/\//i.test(url)) {
+  calUrlEl.textContent = url;
+} else if (hash && hash !== "00000000") {
   calUrlEl.textContent = icsUrl(hash);
 } else {
   calUrlEl.textContent = "(calendar URL not available)";
