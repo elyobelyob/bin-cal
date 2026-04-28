@@ -22,18 +22,39 @@ import uuid
 from datetime import datetime, timedelta, timezone
 
 
-def load_source_module(module_id: str, wcs_repo: str):
+def resolve_module_name(council_id: str) -> str:
+    """Look up the upstream module name for a given council_id.
+
+    Most councils share id == module, but ICS-module councils have ids like
+    'ics_kingston_gov_uk' that all map to module 'ics'. councils.json is the
+    source of truth. Falls back to council_id if the lookup fails (which keeps
+    the old behaviour for any caller invoking this script outside the repo).
+    """
+    councils_path = os.path.join(os.path.dirname(__file__), "..", "councils.json")
+    try:
+        with open(councils_path) as f:
+            councils = json.load(f)
+    except (OSError, json.JSONDecodeError):
+        return council_id
+    for c in councils:
+        if c.get("id") == council_id:
+            return c.get("module") or council_id
+    return council_id
+
+
+def load_source_module(council_id: str, wcs_repo: str):
     source_pkg_dir = os.path.join(
         wcs_repo, "custom_components", "waste_collection_schedule"
     )
     if source_pkg_dir not in sys.path:
         sys.path.append(source_pkg_dir)
-    mod = importlib.import_module(f"waste_collection_schedule.source.{module_id}")
+    module_name = resolve_module_name(council_id)
+    mod = importlib.import_module(f"waste_collection_schedule.source.{module_name}")
     return mod
 
 
-def fetch_collections(module_id: str, args: dict, wcs_repo: str) -> list:
-    mod = load_source_module(module_id, wcs_repo)
+def fetch_collections(council_id: str, args: dict, wcs_repo: str) -> list:
+    mod = load_source_module(council_id, wcs_repo)
     source = mod.Source(**args)
     collections = source.fetch()
     return collections
