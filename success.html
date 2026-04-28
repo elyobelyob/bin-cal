@@ -104,10 +104,13 @@ const cnEl     = document.getElementById("councilName");
 
 if (url && /^https?:\/\//i.test(url)) {
   calUrlEl.textContent = url;
+  track("success/ics-direct", `Success via ICS: ${council}`);
 } else if (hash && hash !== "00000000") {
   calUrlEl.textContent = icsUrl(hash);
+  track("success/worker", `Success via worker: ${council}`);
 } else {
   calUrlEl.textContent = "(calendar URL not available)";
+  track("success/honeypot", "Success page reached with no hash");
 }
 
 if (council) {

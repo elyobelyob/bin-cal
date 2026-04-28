@@ -12,6 +12,16 @@ const CONFIG = {
   GITHUB_REPO:  "bin-cal",
 };
 
+// ── Event tracking (GoatCounter custom events) ─────────────────────────────
+
+function track(name, title) {
+  try {
+    if (window.goatcounter && typeof window.goatcounter.count === "function") {
+      window.goatcounter.count({ path: name, event: true, title: title || name });
+    }
+  } catch { /* ignore — analytics must never break the page */ }
+}
+
 // ── Hash generation ────────────────────────────────────────────────────────
 
 /**

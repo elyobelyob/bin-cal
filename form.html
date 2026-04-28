@@ -303,9 +303,11 @@ document.getElementById("binForm").addEventListener("submit", async e => {
   if (selectedCouncil.module === "ics") {
     const url = (args.url || "").trim();
     if (!/^https?:\/\//i.test(url)) {
+      track("form-error/invalid-ics-url", "Invalid ICS URL pasted");
       showError("Please paste the calendar URL from your council's website (must start with http:// or https://).");
       return;
     }
+    track("form-submit/ics-direct", `ICS submit: ${selectedCouncil.id}`);
     window.location.href = `success.html?url=${encodeURIComponent(url)}&council=${encodeURIComponent(selectedCouncil.title)}`;
     return;
   }
@@ -331,6 +333,7 @@ document.getElementById("binForm").addEventListener("submit", async e => {
     const data = await res.json().catch(() => ({}));
 
     if (!res.ok) {
+      track("form-error/worker", `Worker ${res.status}: ${data.error || "unknown"}`);
       showError(data.error || "Something went wrong. Please try again.");
       submitBtn.disabled = false;
       submitBtn.textContent = "Generate my calendar →";
@@ -342,8 +345,10 @@ document.getElementById("binForm").addEventListener("submit", async e => {
       Object.assign(args, selectedCouncil.default_params);
     }
 
+    track("form-submit/worker", `Worker submit: ${selectedCouncil.id}`);
     window.location.href = `waiting.html?hash=${hash}&council=${encodeURIComponent(selectedCouncil.title)}`;
   } catch (err) {
+    track("form-error/network", "Worker network error");
     showError("Could not reach the submission service. Please try again.");
     submitBtn.disabled = false;
     submitBtn.textContent = "Generate my calendar →";

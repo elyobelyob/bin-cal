@@ -20,7 +20,7 @@
     <div id="spinnerView">
       <div class="spinner"></div>
       <p class="waiting-msg" id="statusMsg">
-        Querying your council&rsquo;s website&hellip; this usually takes 30&ndash;90 seconds.
+        Querying your council&rsquo;s website&hellip; this usually takes 10&ndash;30 seconds.
       </p>
       <p class="waiting-msg" style="margin-top:.5rem;font-size:.8rem;color:#aaa" id="elapsed"></p>
     </div>
@@ -78,10 +78,13 @@ setTimeout(() => {
 pollForIcs(
   hash,
   (url) => {
+    const secs = Math.floor((Date.now() - startTime) / 1000);
+    track("poll-success", `Found ICS after ${secs}s`);
     window.location.href = `success.html?hash=${encodeURIComponent(hash)}&council=${encodeURIComponent(council)}`;
   },
   () => {
     // Timeout
+    track("poll-timeout", "Polling timed out");
     spinnerView.style.display = "none";
     timeoutView.style.display = "block";
     const urlEl = document.getElementById("timeoutUrl");
@@ -90,7 +93,7 @@ pollForIcs(
       document.getElementById("timeoutUrlWrap").style.display = "block";
     }
   },
-  300 // 5 minutes max
+  90 // 90s max — most successful runs finish in <30s
 );
 
 function copyUrl(id) {
