@@ -151,20 +151,35 @@ function selectCouncil(idx) {
 
   const hintEl = document.getElementById("councilHint");
   if (c.hint) {
-    hintEl.innerHTML = c.hint;
+    if (c.module === "ics") {
+      // Reframe the upstream hint — these are written for the HA
+      // integration's "use as the `url` parameter" context which doesn't
+      // apply here. The user just wants the link to subscribe directly.
+      hintEl.innerHTML = `
+        <p style="margin-bottom:.75rem"><strong>Good news!</strong> ${esc(c.title)} already publishes a subscribable calendar.</p>
+        <p style="margin-bottom:.75rem">Follow the steps below to find your calendar link, then paste it straight into Apple Calendar, Google Calendar, or Outlook &mdash; you&rsquo;re done. You can ignore any mention of a &ldquo;url parameter&rdquo;.</p>
+        <hr style="border:none;border-top:1px solid #e0e0e0;margin:1rem 0">
+        ${c.hint}
+      `;
+    } else {
+      hintEl.innerHTML = c.hint;
+    }
     hintEl.style.display = "block";
   } else {
     hintEl.style.display = "none";
   }
 
-  // ICS councils publish their own calendar — just show instructions, no form
+  // Self-serve councils: show instructions only, no form.
+  // Covers ICS-module councils (publish their own ICS) and explicitly
+  // broken councils that have a manual workaround in their hint.
   const dynamicFields = document.getElementById("dynamicFields");
   const uprnNote = document.getElementById("uprnNote");
-  if (c.broken && c.hint) {
+  if (c.module === "ics" || (c.broken && c.hint)) {
     dynamicFields.innerHTML = "";
     uprnNote.style.display = "none";
     submitBtn.disabled = true;
     submitBtn.style.display = "none";
+    if (c.module === "ics") track("ics-council-selected", `Self-serve: ${c.id}`);
     return;
   }
 
