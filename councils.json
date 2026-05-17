@@ -1350,17 +1350,12 @@
       {
         "name": "postcode",
         "type": "String",
-        "required": false
+        "required": true
       },
       {
         "name": "address",
         "type": "String",
-        "required": false
-      },
-      {
-        "name": "address_id",
-        "type": "String",
-        "required": false
+        "required": true
       }
     ]
   },
@@ -1941,6 +1936,18 @@
     "default_params": {
       "municipality": "HYNDBURN"
     }
+  },
+  {
+    "id": "ipswich_gov_uk",
+    "module": "ipswich_gov_uk",
+    "title": "Ipswich Borough Council",
+    "args": [
+      {
+        "name": "location_id",
+        "type": "integer",
+        "required": true
+      }
+    ]
   },
   {
     "id": "islington_gov_uk",
@@ -3120,6 +3127,23 @@
     ]
   },
   {
+    "id": "powys_gov_uk",
+    "module": "powys_gov_uk",
+    "title": "Powys County Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
     "id": "preston_gov_uk",
     "module": "preston_gov_uk",
     "title": "Preston City Council",
@@ -3466,6 +3490,23 @@
     ]
   },
   {
+    "id": "slough_gov_uk",
+    "module": "slough_gov_uk",
+    "title": "Slough Borough Council",
+    "args": [
+      {
+        "name": "record_id",
+        "type": "Integer",
+        "required": false
+      },
+      {
+        "name": "street",
+        "type": "String",
+        "required": false
+      }
+    ]
+  },
+  {
     "id": "solihull_gov_uk",
     "module": "solihull_gov_uk",
     "title": "Solihull Council",
@@ -3650,6 +3691,23 @@
     ]
   },
   {
+    "id": "southribble_gov_uk",
+    "module": "southribble_gov_uk",
+    "title": "South Ribble Borough Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
     "id": "iapp_itouchvision_com",
     "module": "iapp_itouchvision_com",
     "title": "South Somerset District Council",
@@ -3756,6 +3814,23 @@
     "module": "staffordbc_gov_uk",
     "title": "Stafford Borough Council",
     "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "staffsmoorlands_gov_uk",
+    "module": "staffsmoorlands_gov_uk",
+    "title": "Staffordshire Moorlands District Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
       {
         "name": "uprn",
         "type": "string",
