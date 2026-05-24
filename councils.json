@@ -880,6 +880,18 @@
     ]
   },
   {
+    "id": "cheltenham_gov_uk",
+    "module": "cheltenham_gov_uk",
+    "title": "Cheltenham Borough Council",
+    "args": [
+      {
+        "name": "property_id",
+        "type": "integer",
+        "required": true
+      }
+    ]
+  },
+  {
     "id": "cherwell_gov_uk",
     "module": "cherwell_gov_uk",
     "title": "Cherwell District Council",
@@ -1184,6 +1196,18 @@
       {
         "name": "premises_id",
         "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "derbyshiredales_gov_uk",
+    "module": "derbyshiredales_gov_uk",
+    "title": "Derbyshire Dales District Council",
+    "args": [
+      {
+        "name": "address_id",
+        "type": "string",
         "required": true
       }
     ]
@@ -1690,6 +1714,18 @@
         "type": "string",
         "required": true
       },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "great_yarmouth_gov_uk",
+    "module": "great_yarmouth_gov_uk",
+    "title": "Great Yarmouth Borough Council",
+    "args": [
       {
         "name": "uprn",
         "type": "string",
@@ -2669,6 +2705,23 @@
     ]
   },
   {
+    "id": "newforest_gov_uk",
+    "module": "newforest_gov_uk",
+    "title": "New Forest District Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
     "id": "newark_sherwooddc_gov_uk",
     "module": "newark_sherwooddc_gov_uk",
     "title": "Newark & Sherwood District Council",
@@ -2962,6 +3015,18 @@
       {
         "name": "uprn",
         "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "northumberland_gov_uk",
+    "module": "northumberland_gov_uk",
+    "title": "Northumberland County Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
         "required": true
       }
     ]
@@ -3691,6 +3756,23 @@
     ]
   },
   {
+    "id": "southlanarkshire_gov_uk",
+    "module": "southlanarkshire_gov_uk",
+    "title": "South Lanarkshire Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "Integer",
+        "required": true
+      }
+    ]
+  },
+  {
     "id": "southribble_gov_uk",
     "module": "southribble_gov_uk",
     "title": "South Ribble Borough Council",
@@ -4084,6 +4166,18 @@
         "name": "post_code",
         "type": "string",
         "required": false
+      }
+    ]
+  },
+  {
+    "id": "tendring_gov_uk",
+    "module": "tendring_gov_uk",
+    "title": "Tendring District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "string",
+        "required": true
       }
     ]
   },
