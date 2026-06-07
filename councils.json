@@ -255,6 +255,43 @@
     ]
   },
   {
+    "id": "babergh_midsuffolk_gov_uk",
+    "module": "babergh_midsuffolk_gov_uk",
+    "title": "Babergh District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "council",
+        "type": "String",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "council": "babergh"
+    }
+  },
+  {
+    "id": "babergh_midsuffolk_gov_uk",
+    "module": "babergh_midsuffolk_gov_uk",
+    "title": "Babergh and Mid Suffolk District Councils",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "council",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
     "id": "barnsley_gov_uk",
     "module": "barnsley_gov_uk",
     "title": "Barnsley Metropolitan Borough Council",
@@ -1054,9 +1091,19 @@
     "title": "Colchester City Council",
     "args": [
       {
-        "name": "llpgid",
+        "name": "postcode",
         "type": "string",
         "required": true
+      },
+      {
+        "name": "house",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "llpgid",
+        "type": "string",
+        "required": false
       }
     ]
   },
@@ -1670,6 +1717,18 @@
       {
         "name": "uprn",
         "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "forest_of_dean_gov_uk",
+    "module": "forest_of_dean_gov_uk",
+    "title": "Forest of Dean District Council",
+    "args": [
+      {
+        "name": "address",
+        "type": "string",
         "required": true
       }
     ]
@@ -2599,6 +2658,26 @@
     ]
   },
   {
+    "id": "babergh_midsuffolk_gov_uk",
+    "module": "babergh_midsuffolk_gov_uk",
+    "title": "Mid Suffolk District Council",
+    "args": [
+      {
+        "name": "uprn",
+        "type": "String | Integer",
+        "required": true
+      },
+      {
+        "name": "council",
+        "type": "String",
+        "required": true
+      }
+    ],
+    "default_params": {
+      "council": "midsuffolk"
+    }
+  },
+  {
     "id": "midsussex_gov_uk",
     "module": "midsussex_gov_uk",
     "title": "Mid Sussex District Council (Whitespace WRP)",
@@ -3355,6 +3434,23 @@
       {
         "name": "uprn",
         "type": "String | Integer",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "rochford_gov_uk",
+    "module": "rochford_gov_uk",
+    "title": "Rochford District Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "uprn",
+        "type": "string",
         "required": true
       }
     ]
@@ -4330,6 +4426,18 @@
       },
       {
         "name": "address",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
+    "id": "torbay_council_gov_uk",
+    "module": "torbay_council_gov_uk",
+    "title": "Torbay Council",
+    "args": [
+      {
+        "name": "uprn",
         "type": "string",
         "required": true
       }
