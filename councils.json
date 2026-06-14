@@ -548,6 +548,23 @@
     ]
   },
   {
+    "id": "boston_gov_uk",
+    "module": "boston_gov_uk",
+    "title": "Boston Borough Council",
+    "args": [
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "property",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
     "id": "bracknell_forest_gov_uk",
     "module": "bracknell_forest_gov_uk",
     "title": "Bracknell Forest Council",
@@ -3146,6 +3163,11 @@
     "args": [
       {
         "name": "uprn",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "postcode",
         "type": "string",
         "required": true
       }
