@@ -1159,6 +1159,18 @@
     ]
   },
   {
+    "id": "cotswold_gov_uk",
+    "module": "cotswold_gov_uk",
+    "title": "Cotswold District Council",
+    "args": [
+      {
+        "name": "address",
+        "type": "string",
+        "required": true
+      }
+    ]
+  },
+  {
     "id": "coventry_gov_uk",
     "module": "coventry_gov_uk",
     "title": "Coventry City Council",
