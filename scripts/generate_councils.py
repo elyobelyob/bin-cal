@@ -31,6 +31,48 @@ def _md_to_html(line: str) -> str:
     return line
 
 
+def _how_to_get_html(content: str) -> str | None:
+    """Convert a doc's 'How to get ...' section into HTML, or None if absent."""
+    m = re.search(r'##\s+How to get[^\n]*\n(.*?)(?=\n##|\Z)', content, re.DOTALL | re.IGNORECASE)
+    if not m:
+        return None
+
+    html_lines = []
+    for line in m.group(1).strip().splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        if line.startswith("- "):
+            html_lines.append(f"<li>{_md_to_html(line[2:])}</li>")
+        else:
+            html_lines.append(f"<p>{_md_to_html(line)}</p>")
+
+    result, in_ul = [], False
+    for h in html_lines:
+        if h.startswith("<li>"):
+            if not in_ul:
+                result.append("<ul>")
+                in_ul = True
+        else:
+            if in_ul:
+                result.append("</ul>")
+                in_ul = False
+        result.append(h)
+    if in_ul:
+        result.append("</ul>")
+
+    return "\n".join(result) or None
+
+
+def parse_source_hint(module_id: str) -> str | None:
+    """Extract the 'How to get the source argument' section from doc/source/<module>.md."""
+    doc_path = os.path.join(DOC_DIR, f"{module_id}.md")
+    if not os.path.exists(doc_path):
+        return None
+    with open(doc_path) as f:
+        return _how_to_get_html(f.read())
+
+
 def parse_ics_hint(source_id: str) -> str:
     """Extract the 'How to get the configuration arguments' section from doc/ics/<id>.md."""
     doc_id = source_id.removeprefix("ics_")
@@ -159,10 +201,14 @@ def main():
         # For the generic ICS module, only expose the url field — all other
         # parameters (regex, split_at, headers, etc.) are developer knobs that
         # no end-user can meaningfully fill in.
-        ics_hint = None
         if module == "ics":
             args = [{"name": "url", "type": "string", "required": True}]
-            ics_hint = parse_ics_hint(source_id)
+            hint = parse_ics_hint(source_id)
+        else:
+            # Scraper modules: surface the doc's "How to get the source
+            # argument" section so users know what to enter (e.g. where to
+            # find Sutton's address `id`).
+            hint = parse_source_hint(module)
 
         # Merge default_params into args as hidden fixed fields
         council = {
@@ -173,8 +219,8 @@ def main():
         }
         if default_params:
             council["default_params"] = default_params
-        if ics_hint:
-            council["hint"] = ics_hint
+        if hint:
+            council["hint"] = hint
 
         councils.append(council)
 

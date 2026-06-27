@@ -31,7 +31,8 @@
         "type": "string",
         "required": false
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "allerdale_gov_uk",
@@ -65,7 +66,8 @@
         "type": "boolean",
         "required": false
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "ics_anglesey_gov_wales",
@@ -84,7 +86,8 @@
     "id": "angus_gov_uk",
     "module": "angus_gov_uk",
     "title": "Angus Council",
-    "args": []
+    "args": [],
+    "hint": "<p>1. An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>\n<p>OR</p>\n<p>1. Go to <a href=\"https://myangus.angus.gov.uk/service/Bin_collection_dates_V3\" target=\"_blank\" rel=\"noopener\">https://myangus.angus.gov.uk/service/Bin_collection_dates_V3</a></p>\n<p>2. Search for your address.</p>\n<p>3. Open your browser Developer Tools (F12) and go to the <em>*Network</em>* tab.</p>\n<p>4. Select your address from the dropdown list on the website.</p>\n<p>5. In the Network tab, look for a request named <code>runLookup...</code>.</p>\n<p>6. Click on it and view the <em>*Payload</em><em> or </em><em>Request Data</em>*.</p>\n<p>7. Look for <code>select_NewAddress</code> or <code>serviceUPRN</code>. The value (usually starting with <code>1...</code>) is your UPRN.</p>"
   },
   {
     "id": "antrimandnewtownabbey_gov_uk",
@@ -140,7 +143,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "armaghbanbridgecraigavon_gov_uk",
@@ -152,7 +156,8 @@
         "type": "Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Find the parameter of your address using <a href=\"https://www.armaghbanbridgecraigavon.gov.uk/resident/when-is-my-bin-day/\" target=\"_blank\" rel=\"noopener\">https://www.armaghbanbridgecraigavon.gov.uk/resident/when-is-my-bin-day/</a> after selecting your address. The address ID is the number at the end of the URL after <code>address=</code>.</p>"
   },
   {
     "id": "arun_gov_uk",
@@ -164,7 +169,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to https://www.findmyaddress.co.uk/ and entering in your address details.</p>"
   },
   {
     "id": "ashfield_gov_uk",
@@ -208,7 +214,8 @@
         "type": "String",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Use your postcode as <code>postcode</code> argument.</p>"
   },
   {
     "id": "iapp_itouchvision_com",
@@ -228,7 +235,8 @@
     ],
     "default_params": {
       "municipality": "AYLESBURY VALE"
-    }
+    },
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "bcp_gov_uk",
@@ -240,7 +248,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to https://www.findmyaddress.co.uk/ and entering in your address details.</p>"
   },
   {
     "id": "barnsley_gov_uk",
@@ -257,7 +266,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Use your postcode as the <code>postcode</code> argument and your Unique Property Reference Number (UPRN) as the <code>uprn</code> argument.</p>\n<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "basildon_gov_uk",
@@ -291,7 +301,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "bathnes_gov_uk",
@@ -368,7 +379,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy wasy of finding your UPRN is to search for your address on the <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">FindMyAddress service</a> which displays the UPRN in the result.</p>"
   },
   {
     "id": "blackburn_gov_uk",
@@ -380,7 +392,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "blackpool_gov_uk",
@@ -417,7 +430,8 @@
     ],
     "default_params": {
       "municipality": "BLAENAU GWENT"
-    }
+    },
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "bolsover_gov_uk",
@@ -509,7 +523,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>The UPRN code can be found by setting and selecting your address in the <a href=\"https://onlineforms.bradford.gov.uk/ufs/collectiondates.eb\" target=\"_blank\" rel=\"noopener\">Bradford household bin collection dates web page</a> and saving your address for later.  The UPRN will then be stored in the COLLECTIONDATES cookie</p>\n<p>in your browser.</p>\n<p>Alternatively, search for your address on the <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">FindMyAddress service</a> which displays the UPRN in the result.</p>"
   },
   {
     "id": "braintree_gov_uk",
@@ -636,7 +651,8 @@
         "type": "String",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Use your postcode as postcode argument</p>"
   },
   {
     "id": "iapp_itouchvision_com",
@@ -656,7 +672,8 @@
     ],
     "default_params": {
       "municipality": "BUCKINGHAMSHIRE"
-    }
+    },
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "burnley_gov_uk",
@@ -849,7 +866,8 @@
         "type": "String",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Find the parameter of your address using <a href=\"https://my.charnwood.gov.uk/\" target=\"_blank\" rel=\"noopener\">https://my.charnwood.gov.uk/</a> and write them exactly like on the web page.</p>"
   },
   {
     "id": "chelmsford_gov_uk",
@@ -861,7 +879,8 @@
         "type": "String",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>You can find your collection round by visiting <a href=\"https://www.chelmsford.gov.uk/bins-and-recycling/check-your-collection-day\" target=\"_blank\" rel=\"noopener\">https://www.chelmsford.gov.uk/bins-and-recycling/check-your-collection-day</a> and entering in your address details.</p>"
   },
   {
     "id": "cherwell_gov_uk",
@@ -931,7 +950,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Search for your address on the <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">FindMyAddress service</a> which displays the UPRN in the result.</p>"
   },
   {
     "id": "chorley_gov_uk",
@@ -965,7 +985,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Use your postcode as the <code>postcode</code> argument and your Unique Property Reference Number (UPRN) as the <code>uprn</code> argument.</p>\n<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>\n<p>Alternatively use the developer inspection tools (right click inspect / F12) to inspect the select address <code>select</code> item. The <code>value</code> of the of the <code>option</code> item containing your address is your <code>uprn</code></p>"
   },
   {
     "id": "doncaster_gov_uk",
@@ -989,7 +1010,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>The UPRN code can be found in the network request when entering your postcode and selecting your address on the <a href=\"https://myaccount.york.gov.uk/bin-collections\" target=\"_blank\" rel=\"noopener\">York Waste Collection Calendar page</a>. You should look for a request like <code>https://waste-api.york.gov.uk/api/GetBinCollectionLocationForUprn/010093236548</code> the last segment is your UPRN code.</p>"
   },
   {
     "id": "colchester_gov_uk",
@@ -1013,7 +1035,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Go to <a href=\"https://www.conwy.gov.uk/en/Resident/Recycling-and-Waste/Check-my-collection-day.aspx\" target=\"_blank\" rel=\"noopener\">https://www.conwy.gov.uk/en/Resident/Recycling-and-Waste/Check-my-collection-day.aspx</a>, enter your postcode and click 'Submit'. In the list of addresses that appears, right click your address and select 'Copy Link' or 'Copy Link Address'. Paste this URL somewhere - the last element of this URL is your UPRN: https://www.conwy.gov.uk/Contensis-Forms/erf/collection-result-soap-xmas2025.asp?ilangid=1&uprn={UPRN}</p>\n<p>Another way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "cornwall_gov_uk",
@@ -1059,7 +1082,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>\n<p>USRN map: <a href=\"https://uprn.uk/usrn-map\" target=\"_blank\" rel=\"noopener\">https://uprn.uk/usrn-map</a></p>"
   },
   {
     "id": "croydon_gov_uk",
@@ -1110,7 +1134,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Use your postcode as the <code>postcode</code> argument and your Unique Property Reference Number (UPRN) as the <code>uprn</code> argument.</p>\n<p>You can see your UPRN in the address bar after searching your address here: <a href=\"https://www.stroud.gov.uk/my-house\" target=\"_blank\" rel=\"noopener\">https://www.stroud.gov.uk/my-house</a></p>\n<p>Another easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "darlington_gov_uk",
@@ -1122,7 +1147,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>You can find your UPRN in your address bar after searching your address (<a href=\"https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/\" target=\"_blank\" rel=\"noopener\">https://www.darlington.gov.uk/bins-waste-and-recycling/collection-day-lookup/</a>) and clicking one of the 'Print <code>CALENDER_TYPE</code> calendar' button.</p>\n<p>Another easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "dartford_gov_uk",
@@ -1146,7 +1172,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>To discover your Unique Property Reference Number (UPRN), go to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and enter your address details.</p>"
   },
   {
     "id": "chiltern_gov_uk",
@@ -1170,7 +1197,8 @@
         "type": "int",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>The premises_id can be found in the URL when looking up your</p>\n<p>bin collection days at <a href=\"https://secure.derby.gov.uk/binday/\" target=\"_blank\" rel=\"noopener\">Derby City Councils bin day page</a>.</p>"
   },
   {
     "id": "dorset_gov_uk",
@@ -1182,7 +1210,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to https://www.findmyaddress.co.uk/ and entering in your address details.</p>"
   },
   {
     "id": "dover_gov_uk",
@@ -1194,7 +1223,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>You can find your UPRN when visiting the <a href=\"https://collections.dover.gov.uk/\" target=\"_blank\" rel=\"noopener\">https://collections.dover.gov.uk/</a> website and searching for your address. You can now see your UPRN in the address bar of your browser. e.g. <code>https://collections.dover.gov.uk/property/200002423404</code>, where <code>200002423404</code> is the UPRN.</p>"
   },
   {
     "id": "dudley_gov_uk",
@@ -1242,7 +1272,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "east_ayrshire_gov_uk",
@@ -1358,7 +1389,8 @@
         "type": "string | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "east_renfrewshire_gov_uk",
@@ -1443,7 +1475,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>You can see your uprn in your url bar when after selecting your address at <a href=\"https://eastleigh.gov.uk/waste-bins-and-recycling/collection-dates\" target=\"_blank\" rel=\"noopener\">https://eastleigh.gov.uk/waste-bins-and-recycling/collection-dates</a></p>\n<p>An other way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "elmbridge_gov_uk",
@@ -1496,7 +1529,8 @@
         "type": "string | integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Search for your address on the <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">FindMyAddress service</a> which displays the UPRN in the result.</p>"
   },
   {
     "id": "exeter_gov_uk",
@@ -1596,7 +1630,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>\n<p>Alternatively you can inspect your browsers traffic in the network section of the developer tools (F12 or right click -> inspect element) and look for a request to <code>https://digital.flintshire.gov.uk/FCC_BinDay/Home/Details2/200001744973</code> where <code>200001744973</code> is the UPRN.</p>"
   },
   {
     "id": "folkestone_hythe_gov_uk",
@@ -1608,7 +1643,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Your UPRN is displayed on the council web site underneath your address when it displays your bin collection schedule.</p>\n<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "fylde_gov_uk",
@@ -1630,7 +1666,8 @@
         "type": "string | int",
         "required": false
       }
-    ]
+    ],
+    "hint": "<p>1. <em>*Register for the Fylde Waste Portal</em>*</p>\n<p>Visit <a href=\"https://waste.fylde.gov.uk/\" target=\"_blank\" rel=\"noopener\">https://waste.fylde.gov.uk/</a> and create an account if you haven't already.</p>\n<p>2. <em>*Add your property</em>*</p>\n<p>After logging in, you'll need to add your property to your account.</p>\n<p>3. <em>*Use your credentials</em>*</p>\n<p>Use the email address and password you registered with in the configuration above.</p>"
   },
   {
     "id": "gateshead_gov_uk",
@@ -1642,7 +1679,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Search for your address on the <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">FindMyAddress service</a> which displays the UPRN in the result.</p>\n<p>Residential Addresses only. Some flat blocks are managed by trade waste companies.</p>"
   },
   {
     "id": "ics_gedling_gov_uk",
@@ -1667,7 +1705,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>The UPRN code can be found by entering your postcode or address on the</p>\n<p>[Glasgow City Council Bin Collections page</p>\n<p>](https://onlineservices.glasgow.gov.uk/forms/RefuseAndRecyclingWebApplication/AddressSearch.aspx).  When on the address list click the 'select' link for your address then on the calendar page look in the browser address bar for your UPRN code e.g. https://onlineservices.glasgow.gov.uk/forms/RefuseAndRecyclingWebApplication/CollectionsCalendar.aspx?UPRN=YOURUPRNSHOWNHERE.</p>"
   },
   {
     "id": "gosport_gov_uk",
@@ -1696,7 +1735,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Find the UPRN of your address using <a href=\"https://www.findmyaddress.co.uk/search\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/search</a>.</p>"
   },
   {
     "id": "gwynedd_gov_uk",
@@ -1708,7 +1748,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Go to <a href=\"https://diogel.gwynedd.llyw.cymru/Daearyddol/en/ChwilioCyfeiriad\" target=\"_blank\" rel=\"noopener\">https://diogel.gwynedd.llyw.cymru/Daearyddol/en/ChwilioCyfeiriad</a> and search for your address and select it. The last element of your URL is your UPRN: https://diogel.gwynedd.llyw.cymru/Daearyddol/en/LleDwinByw/Index/{UPRN}</p>\n<p>Another way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "fccenvironment_co_uk",
@@ -1764,7 +1805,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Search for your address on the <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">FindMyAddress service</a> which displays the UPRN in the result.</p>\n<p>Residential Addresses only. Some flat blocks are managed by trade waste companies.</p>"
   },
   {
     "id": "hartlepool_gov_uk",
@@ -1776,7 +1818,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to find your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "hastings_gov_uk",
@@ -1788,7 +1831,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to find your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "waste_havant_gov_uk",
@@ -1839,7 +1883,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Use your postcode as the <code>postcode</code> argument and your Unique Property Reference Number (UPRN) as the <code>uprn</code> argument.</p>\n<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "highland_gov_uk",
@@ -1856,7 +1901,8 @@
         "type": "Boolean",
         "required": false
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>\n<p>Or by going to uprn.uk and entering your postcode.</p>"
   },
   {
     "id": "hinckley_bosworth_gov_uk",
@@ -1880,7 +1926,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to find your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "hull_gov_uk",
@@ -1892,7 +1939,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "huntingdonshire_gov_uk",
@@ -1904,7 +1952,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>The UPRN code can be found in the network request when entering your postcode and selecting your address on the <a href=\"https://www.huntingdonshire.gov.uk/refuse-calendar/\" target=\"_blank\" rel=\"noopener\">Huntingdonshire Waste Collection Calendar page</a>. You should look for a request like <code>https://www.huntingdonshire.gov.uk/refuse-calendar/100090123510</code> the last segment is your UPRN code.</p>"
   },
   {
     "id": "iapp_itouchvision_com",
@@ -1924,7 +1973,8 @@
     ],
     "default_params": {
       "municipality": "HYNDBURN"
-    }
+    },
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "islington_gov_uk",
@@ -2002,7 +2052,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Use your postcode as the <code>postcode</code> argument and your Unique Property Reference Number (UPRN) as the <code>uprn</code> argument.</p>\n<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "lancaster_gov_uk",
@@ -2105,7 +2156,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>The property_id can be found in the URL when looking up your</p>\n<p>bin collection days at <a href=\"https://lisburn.isl-fusion.com\" target=\"_blank\" rel=\"noopener\">Lisburn and Castlereagh bin collection days</a>.</p>"
   },
   {
     "id": "liverpool_gov_uk",
@@ -2129,7 +2181,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "barnet_gov_uk",
@@ -2177,7 +2230,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Select your address on <a href=\"https://environmentservices.camden.gov.uk\" target=\"_blank\" rel=\"noopener\">https://environmentservices.camden.gov.uk</a>. You get redirected to your collection overview. The URL contains your UPRN (<code>https://environmentservices.camden.gov.uk/property/{UPRN}</code>)</p>\n<p>An other way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "harrow_gov_uk",
@@ -2189,7 +2243,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "havering_gov_uk",
@@ -2201,7 +2256,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "hounslow_gov_uk",
@@ -2379,7 +2435,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>The UPRN code can be found by entering your postcode or address on the</p>\n<p>[Maldon District Council address lookup page</p>\n<p>](https://maldon.suez.co.uk/maldon/AddressLookup/LookupAddresses). Enter your postcode and click 'lookup address', then select your address from the drop down list and click 'Next'. Look at the web address (in your browsers address bar) of the page you are now on and it will look like https://maldon.suez.co.uk/maldon/ServiceSummary?uprn=YOURUPRNHERE, the numbers after 'uprn=' are your addresses's UPRN use this in your config.</p>"
   },
   {
     "id": "roundlookup_uk",
@@ -2423,7 +2480,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>The UPRN code can be found in the page by entering your postcode on the</p>\n<p><a href=\"https://www.mansfield.gov.uk/xfp/form/1327\" target=\"_blank\" rel=\"noopener\">Mansfield District Council Bin Collections</a> page.  When your collection schedule is showm, your uprn is shown in the url. For example:</p>\n<p>portal.mansfield.gov.uk/MDCWhiteSpaceWebService/WhiteSpaceWS.asmx/GetCollectionByUPRNAndDate?apiKey=mDc-wN3-B0f-f4P&UPRN=<code>100031399487</code>&coldate=08/09/2023</p>\n<p>Alternatively, you can An easy way to find your Unique Property Reference Number (UPRN)  by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering your address details.</p>"
   },
   {
     "id": "medway_gov_uk",
@@ -2467,7 +2525,8 @@
     ],
     "default_params": {
       "municipality": "MENDIP"
-    }
+    },
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "mid_devon_gov_uk",
@@ -2511,7 +2570,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Search for your collection schedule on the address on the <a href=\"https://www.midsussex.gov.uk/waste-recycling/bin-collection/\" target=\"_blank\" rel=\"noopener\">Mid-Sussex District Council</a> site to see how they format your address. Preferred approach is to copy the address as displayed. If that doesn't work, the individual components can be supplied. General rule seems to be <code>HOUSE_NAME, HOUSE_NUMBER, STREET, POSTCODE</code> but it can vary for multi-occupancy buildings, house names where there are no numbers, house names where there are also house numbers, etc, so you may need to adjust which parts of the address are used for each argument.</p>"
   },
   {
     "id": "midandeastantrim_gov_uk",
@@ -2523,7 +2583,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "ics_recollect",
@@ -2568,7 +2629,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "mole_valley_gov_uk",
@@ -2597,7 +2659,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk\" target=\"_blank\" rel=\"noopener\">Find My Address</a> and entering your address details.</p>"
   },
   {
     "id": "moray_gov_uk",
@@ -2626,7 +2689,8 @@
         "type": "String",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Find your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "newark_sherwooddc_gov_uk",
@@ -2682,7 +2746,8 @@
     ],
     "default_params": {
       "municipality": "NEWPORT"
-    }
+    },
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "north_ayrshire_gov_uk",
@@ -2706,7 +2771,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Fill in your address details at <a href=\"https://www.nelincs.gov.uk/find-my-address/\" target=\"_blank\" rel=\"noopener\">North East Lincolnshire Council's Find My Address</a>, the Unique Property Reference Number (UPRN) will be shown in the URL field when you see your collection schedule. (e.g. <code>https://www.nelincs.gov.uk/?s=DN40+1JU&uprn=11043243</code> where <code>11043243</code> is the UPRN).</p>\n<p>Another easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "northherts_gov_uk",
@@ -2762,7 +2828,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>The easiest way to get the source arguments is to look at the url of the web page that displays your collection schedule. The url has the format:</p>\n<p><code>www.northlanarkshire.gov.uk/bin-collection-dates/UPRN/USRN</code></p>\n<p>Alternatively, an easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>\n<p>Your Unique Street Reference Number (USRN) can be found by searching for your address at  <a href=\"https://uprn.uk/\" target=\"<em>blank\" rel=\"noopener\">https://uprn.uk/</a> and viewing the _Data Associations</em> section.</p>"
   },
   {
     "id": "northlincs_gov_uk",
@@ -2774,7 +2841,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "north_norfolk_gov_uk",
@@ -2798,7 +2866,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "nsomerset_gov_uk",
@@ -2840,7 +2909,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>The UPRN code can be found found using https://uprn.uk/</p>"
   },
   {
     "id": "northyorks_craven_gov_uk",
@@ -2852,7 +2922,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>You can find your Unique Property Reference Number (UPRN) by visiting the <a href=\"https://www.northyorks.gov.uk/bin-calendar/lookup\" target=\"_blank\" rel=\"noopener\">North Yorkshire Council - Craven</a> website and entering your address details. You should now see your collection dates. Your UPRN will be in the URL of the page. For example, if the URL is <code>https://www.northyorks.gov.uk/bin-calendar/Craven/results/10095432934</code>, then your UPRN is <code>10095432934</code>.</p>\n<p>An other way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "northyorks_hambleton_gov_uk",
@@ -2864,7 +2935,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "northyorks_harrogate_gov_uk",
@@ -2876,7 +2948,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "richmondshire_gov_uk",
@@ -2900,7 +2973,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>You can find your Unique Property Reference Number (UPRN) by visiting the <a href=\"https://www.northyorks.gov.uk/bin-calendar/lookup\" target=\"_blank\" rel=\"noopener\">North Yorkshire Council - Ryedale</a> website and entering your address details. You should now see your collection dates. You UPRN will be in the URL of the page. For example, if the URL is <code>https://www.northyorks.gov.uk/bin-calendar/Ryedale/results/10002317948</code>, then your UPRN is <code>10002317948</code>.</p>\n<p>An other way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "northyorks_scarborough_gov_uk",
@@ -2912,7 +2986,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>You can find your Unique Property Reference Number (UPRN) by visiting the <a href=\"https://www.northyorks.gov.uk/bin-calendar/lookup\" target=\"_blank\" rel=\"noopener\">North Yorkshire Council - Scarborough</a> website and entering your address details. You should now see your collection dates. You UPRN will be in the URL of the page. For example, if the URL is <code>https://www.northyorks.gov.uk/bin-calendar/Scarborough/results/100050497178</code>, then your UPRN is <code>100050497178</code>.</p>\n<p>An other way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "northyorks_selby_gov_uk",
@@ -2924,7 +2999,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>You can find your Unique Property Reference Number (UPRN) by visiting the <a href=\"https://www.northyorks.gov.uk/bin-calendar/lookup\" target=\"_blank\" rel=\"noopener\">North Yorkshire Council - Selby</a> website and entering your address details. You should now see your collection dates. You UPRN will be in the URL of the page. For example, if the URL is <code>https://www.northyorks.gov.uk/bin-calendar/Selby/results/10013454353</code>, then your UPRN is <code>10013454353</code>.</p>\n<p>An other way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "norwich_gov_uk",
@@ -2958,7 +3034,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>The UPRN code can be found in the network request when entering your</p>\n<p>postcode and selecting your address on the [Nottingham City Council</p>\n<p>Bin Reminders</p>\n<p>page](https://www.nottinghamcity.gov.uk/binreminders). You should look</p>\n<p>for a request ending in <code>bincollections2/api/collection/<some numbers></code> the last segment is your UPRN</p>\n<p>code.</p>"
   },
   {
     "id": "oadby_wigston_gov_uk",
@@ -2970,7 +3047,8 @@
         "type": "String",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>You can check <a href=\"https://my.oadby-wigston.gov.uk/\" target=\"_blank\" rel=\"noopener\">https://my.oadby-wigston.gov.uk/</a>. The address should exactly match the autocomplete suggestion.</p>"
   },
   {
     "id": "oldham_gov_uk",
@@ -3162,7 +3240,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Use your Unique Property Reference Number (UPRN) as the <code>uprn</code> argument.</p>\n<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "rother_gov_uk",
@@ -3174,7 +3253,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Use your address to search for your bin days on the council's website <a href=\"https://www.rother.gov.uk/findmynearest/\" target=\"_blank\" rel=\"noopener\">rother.gov.uk/findmynearest</a>. The UPRN will be displayed above the bin collection days.</p>"
   },
   {
     "id": "apps_imactivate_com",
@@ -3216,7 +3296,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to https://www.findmyaddress.co.uk/ and entering in your address details.</p>\n<p>Otherwise you can search your address on (rotherham.gov.uk)[https://www.rotherham.gov.uk/homepage/333/bin-collection-dates]. When you see your next collections, the uprn can be found in the url as <code>address</code>.</p>"
   },
   {
     "id": "royalgreenwich_gov_uk",
@@ -3250,7 +3331,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to https://www.findmyaddress.co.uk/ and entering in your address details.</p>"
   },
   {
     "id": "runnymede_gov_uk",
@@ -3262,7 +3344,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Find the UPRN of your address using <a href=\"https://www.findmyaddress.co.uk/search\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/search</a>.</p>"
   },
   {
     "id": "rushcliffe_gov_uk",
@@ -3279,7 +3362,8 @@
         "type": "String",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Find the parameter of your address using <a href=\"https://selfservice.rushcliffe.gov.uk/renderform.aspx?t=1242&k=86BDCD8DE8D868B9E23D10842A7A4FE0F1023CCA\" target=\"_blank\" rel=\"noopener\">https://selfservice.rushcliffe.gov.uk/renderform.aspx?t=1242&k=86BDCD8DE8D868B9E23D10842A7A4FE0F1023CCA</a> and write them exactly like on the web page.</p>"
   },
   {
     "id": "rushmoor_gov_uk",
@@ -3291,7 +3375,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Find the UPRN of your address using <a href=\"https://www.findmyaddress.co.uk/search\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/search</a>.</p>"
   },
   {
     "id": "salford_gov_uk",
@@ -3303,7 +3388,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>The UPRN code can be found by entering your postcode on the</p>\n<p>[Salford City Council bin collections days page</p>\n<p>](https://www.salford.gov.uk/bins-and-recycling/bin-collection-days/).  After selecting your address from the list and waiting for the new page to load, the uprn will be shown in the address bar.</p>"
   },
   {
     "id": "sandwell_gov_uk",
@@ -3332,7 +3418,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>You can find your UPRN by searching your address on <a href=\"FindMyAddress.co.uk\" target=\"_blank\" rel=\"noopener\">FindMyAddress.co.uk</a>.</p>"
   },
   {
     "id": "iapp_itouchvision_com",
@@ -3352,7 +3439,8 @@
     ],
     "default_params": {
       "municipality": "SEDGEMOOR"
-    }
+    },
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "sefton_gov_uk",
@@ -3398,7 +3486,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "solihull_gov_uk",
@@ -3415,7 +3504,8 @@
         "type": "bool",
         "required": false
       }
-    ]
+    ],
+    "hint": "<p>You can see the uprn in the address bar after searching your address in the <a href=\"https://digital.solihull.gov.uk/BinCollectionCalendar/\" target=\"_blank\" rel=\"noopener\">Solihull Council Bincollection Form</a>.</p>\n<p>another easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "iapp_itouchvision_com",
@@ -3435,7 +3525,8 @@
     ],
     "default_params": {
       "municipality": "SOMERSET"
-    }
+    },
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "iapp_itouchvision_com",
@@ -3455,7 +3546,8 @@
     ],
     "default_params": {
       "municipality": "SOMERSET COUNTY"
-    }
+    },
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "iapp_itouchvision_com",
@@ -3475,7 +3567,8 @@
     ],
     "default_params": {
       "municipality": "SOMERSET WEST AND TAUNTON"
-    }
+    },
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "scambs_gov_uk",
@@ -3504,7 +3597,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>The UPRN code for your property is not easy to extract from the South Derbyshire District Council website so we recommend using <a href=\"https://www.findmyaddress.co.uk/search\" target=\"_blank\" rel=\"noopener\">FindMyAddress</a>. Search using your address and it will return the UPRN for your property to use with this integration.</p>"
   },
   {
     "id": "southglos_gov_uk",
@@ -3516,7 +3610,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Search for your address on the <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">FindMyAddress service</a> which displays the UPRN in the result.</p>"
   },
   {
     "id": "fccenvironment_co_uk",
@@ -3553,7 +3648,8 @@
         "type": "String",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Use your postcode as postcode argument</p>"
   },
   {
     "id": "southkesteven_gov_uk",
@@ -3585,7 +3681,8 @@
     ],
     "default_params": {
       "municipality": "SOUTH SOMERSET"
-    }
+    },
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "sstaffs_gov_uk",
@@ -3614,7 +3711,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "southampton_gov_uk",
@@ -3679,7 +3777,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>The UPRN code can be found in the page by entering your postcode on the</p>\n<p><a href=\"https://www.staffordbc.gov.uk/about-my-area\" target=\"_blank\" rel=\"noopener\">Stafford Borough Council 'About My Area'</a> page</p>\n<p>Enter your postcode and then select your house from the list, then the UPRN is the final part of</p>\n<p>the URL that you are re-directed to.</p>\n<p>For example, for post-code ST16 3ES, house number 6, you are re-directed to</p>\n<p>https://www.staffordbc.gov.uk/address/100031780029</p>\n<p>The UPRN is 100031780029</p>"
   },
   {
     "id": "stevenage_gov_uk",
@@ -3719,7 +3818,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>The UPRN code can be found in the page by entering your postcode on the</p>\n<p>[Stockport Bin Collections page</p>\n<p>](https://www.stockport.gov.uk/find-your-collection-day/).</p>\n<p>Select your house from the drop-down, then the UPRN is the final part of</p>\n<p>the URL that you are re-directed to.</p>\n<p>For example, for post-code SK6 3AA, house number 25, you are re-directed to</p>\n<p>https://myaccount.stockport.gov.uk/bin-collections/show/10090543805</p>\n<p>The UPRN is 10090543805</p>"
   },
   {
     "id": "stockton_gov_uk",
@@ -3731,7 +3831,8 @@
         "type": "Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">Find My Address</a> and providing your address details.</p>\n<p>Alternatively you can use the browser inspection tools. In network traffic the last response after entering the postcode and pressing <code>Find address</code> returns JSON containing the UPRN for all addresses in this postcode range.</p>"
   },
   {
     "id": "stoke_gov_uk",
@@ -3772,7 +3873,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Use your postcode as the <code>postcode</code> argument and your Unique Property Reference Number (UPRN) as the <code>uprn</code> argument.</p>\n<p>You can see your UPRN in the address bar after searching your address here: <a href=\"https://www.stroud.gov.uk/my-house\" target=\"_blank\" rel=\"noopener\">https://www.stroud.gov.uk/my-house</a></p>\n<p>Another easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "sunderland_gov_uk",
@@ -3826,7 +3928,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Go to <a href=\"https://waste-services.sutton.gov.uk/waste\" target=\"_blank\" rel=\"noopener\">https://waste-services.sutton.gov.uk/waste</a> and select your location. Your address bar should show the internal ID of your address. Use this ID as the source argument. (e.g. <code>https://waste-services.sutton.gov.uk/waste/4721996</code> the ID is <code>4721996</code>)</p>"
   },
   {
     "id": "swale_gov_uk",
@@ -3906,7 +4009,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Visit the <a href=\"https://www.teignbridge.gov.uk/recycling-and-waste/forms/download-your-collection-calendar/\" target=\"_blank\" rel=\"noopener\">Teignbridge collection calendar</a> page, enter your postcode and select your address. Your UPRN can be found at <a href=\"https://www.findmyaddress.co.uk\" target=\"_blank\" rel=\"noopener\">Find My Address</a>.</p>\n<p>Collection types:</p>\n<ul>\n<li><em>*Food waste container</em>*</li>\n<li><em>*Black box</em>* (recycling)</li>\n<li><em>*Green box</em>* (glass)</li>\n<li><em>*Sack for paper</em>*</li>\n<li><em>*Refuse - black bin</em>*</li>\n</ul>"
   },
   {
     "id": "telford_gov_uk",
@@ -3948,7 +4052,8 @@
     ],
     "default_params": {
       "municipality": "TEST VALLEY"
-    }
+    },
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "tewkesbury_gov_uk",
@@ -4012,7 +4117,8 @@
         "type": "String",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Find the parameter of your address using <a href=\"https://www.thurrock.gov.uk/household-bin-collection-days/normal-collections-and-public-holidays\" target=\"_blank\" rel=\"noopener\">https://www.thurrock.gov.uk/household-bin-collection-days/normal-collections-and-public-holidays</a> and write them exactly like on the web page.</p>"
   },
   {
     "id": "tmbc_gov_uk",
@@ -4089,7 +4195,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>\n<p>Alternatively, you can find your UPRN by inspecting the source code of the Vale of Glamorgan Council's waste collection page after entering your postcode.</p>"
   },
   {
     "id": "wakefield_gov_uk",
@@ -4137,7 +4244,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk\" target=\"_blank\" rel=\"noopener\">Find My Address</a> and entering your address details.</p>"
   },
   {
     "id": "warrington_gov_uk",
@@ -4173,7 +4281,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>1. Open the Watford bin collections page.</p>\n<p>2. Enter your postcode.</p>\n<p>3. Select your address.</p>\n<p>4. In browser developer tools, inspect the <code>runLookup</code> request payload.</p>\n<p>5. Use the value from <code>formValues.Address.address.value</code> (this is typically also the UPRN used by this source).</p>"
   },
   {
     "id": "waverley_gov_uk",
@@ -4229,7 +4338,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>The UPRN code can be found by entering your postcode or address on</p>\n<p>[Find My Address</p>\n<p>](https://www.findmyaddress.co.uk/search) and selecting your address from the available list. The UPRN is then shown in yellow text on the address marker.</p>"
   },
   {
     "id": "westberks_gov_uk",
@@ -4346,7 +4456,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>\n<p>Or by inspection the webtraffic of your browser while filling out the form you will see a request to <a href=\"https://api.westnorthants.digital/openapi/v1/unified-waste-collections/28058314\" target=\"_blank\" rel=\"noopener\">https://api.westnorthants.digital/openapi/v1/unified-waste-collections/28058314</a> where <code>28058314</code> is your UPRN.</p>"
   },
   {
     "id": "westoxon_gov_uk",
@@ -4358,7 +4469,8 @@
         "type": "String",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Visit <a href=\"https://www.westoxon.gov.uk/bins-and-recycling/check-your-collection-day/\" target=\"_blank\" rel=\"noopener\">https://www.westoxon.gov.uk/bins-and-recycling/check-your-collection-day/</a> and search for your address, write it exactly as autocompleted by the input form.</p>"
   },
   {
     "id": "westsuffolk_gov_uk",
@@ -4450,7 +4562,8 @@
     ],
     "default_params": {
       "municipality": "WINCHESTER"
-    }
+    },
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "rbwm_gov_uk",
@@ -4575,7 +4688,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Use your Unique Property Reference Number (UPRN) as the <code>uprn</code> argument.</p>\n<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>\n<p>Alternatively use the developer inspection tools (right click inspect / F12) to inspect the select address <code>select</code> item. The <code>value</code> of the of the <code>option</code> item containing your address is your <code>uprn</code></p>"
   },
   {
     "id": "roundlookup_uk",
@@ -4607,7 +4721,8 @@
         "type": "String | Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
   },
   {
     "id": "wyre_gov_uk",
