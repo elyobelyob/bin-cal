@@ -576,7 +576,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Visit the <a href=\"https://www.boston.gov.uk/article/27449/Your-Waste-Collections\" target=\"_blank\" rel=\"noopener\">Boston Borough Council waste collections page</a>, enter your postcode and property name or number, and use the same values here.</p>\n<p>Note: this source returns the next scheduled collection date per bin type. Home Assistant will refresh the data automatically to keep the dates current.</p>"
   },
   {
     "id": "bracknell_forest_gov_uk",
@@ -991,7 +992,8 @@
         "type": "integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>1. Visit <a href=\"https://cheltenham-host01.oncreate.app/w/webpage/collection-lookup\" target=\"_blank\" rel=\"noopener\">https://cheltenham-host01.oncreate.app/w/webpage/collection-lookup</a></p>\n<p>2. Enter your postcode and select your address from the dropdown.</p>\n<p>3. Once your bin schedule loads, note the numeric <em>*property ID</em>* \u2014 it will be visible in the address selection form. Typical values are 5-digit numbers (e.g. <code>56299</code>).</p>\n<p>Alternatively, open your browser's developer tools (F12 \u2192 Network tab), enter your postcode, select your address, and look for a POST request. The property ID is the numeric value submitted in the form payload.</p>"
   },
   {
     "id": "cherwell_gov_uk",
@@ -1517,7 +1519,8 @@
         "type": "String",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Go to <a href=\"https://collectiondates.eastlothian.gov.uk/waste-collection-schedule\" target=\"<em>blank\" rel=\"noopener\">https://collectiondates.eastlothian.gov.uk/waste-collection-schedule</a> and enter your postcode. Select your address from the dropdown. Use the </em><em>exact address text</em>* shown in the dropdown (commas and extra spaces are fine, they'll be normalised).</p>"
   },
   {
     "id": "east_northamptonshire_gov_uk",
@@ -1645,7 +1648,8 @@
         "type": "string",
         "required": false
       }
-    ]
+    ],
+    "hint": "<p>Search for your property on the <a href=\"https://www.enfield.gov.uk/services/rubbish-and-recycling/find-my-collection-day\" target=\"_blank\" rel=\"noopener\">Enfield Council collection-day page</a>. If address matching is ambiguous, find your UPRN at <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">FindMyAddress.co.uk</a>.</p>"
   },
   {
     "id": "eppingforestdc_gov_uk",
@@ -1875,7 +1879,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>1. Go to <a href=\"https://www.gosport.gov.uk/refuserecyclingdays\" target=\"_blank\" rel=\"noopener\">https://www.gosport.gov.uk/refuserecyclingdays</a> and enter your postcode.</p>\n<p>2. Your postcode is the first argument.</p>\n<p>3. Select your address from the dropdown. The number shown at the end of the address text is your UPRN (e.g. <code>37020212</code>).</p>"
   },
   {
     "id": "great_yarmouth_gov_uk",
@@ -2013,7 +2018,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Visit <a href=\"https://waste.havant.gov.uk/\" target=\"_blank\" rel=\"noopener\">https://waste.havant.gov.uk/</a> and register an account, you will be prompted to enter your address.</p>"
   },
   {
     "id": "herefordshire_gov_uk",
@@ -2078,7 +2084,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Get your Unique Property Reference Number (UPRN) by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering your address details.</p>"
   },
   {
     "id": "horsham_gov_uk",
@@ -2370,7 +2377,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way of finding your UPRN is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">FindMyAddress service</a> and entering in your address details.</p>"
   },
   {
     "id": "bexley_gov_uk",
@@ -2407,7 +2415,7 @@
         "required": true
       }
     ],
-    "hint": "<p>Select your address on <a href=\"https://environmentservices.camden.gov.uk\" target=\"_blank\" rel=\"noopener\">https://environmentservices.camden.gov.uk</a>. You get redirected to your collection overview. The URL contains your UPRN (<code>https://environmentservices.camden.gov.uk/property/{UPRN}</code>)</p>\n<p>An other way to discover your Unique Property Reference Number (UPRN) is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering in your address details.</p>"
+    "hint": "<p>Camden now expects the property's Unique Property Reference Number (UPRN) directly.</p>\n<p>You can look up the UPRN via a public address service such as <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a>.</p>"
   },
   {
     "id": "hackney_gov_uk",
@@ -2424,7 +2432,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Get your Unique Property Reference Number (UPRN) by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering your address details.</p>"
   },
   {
     "id": "harrow_gov_uk",
@@ -2486,7 +2495,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Get your Unique Property Reference Number (UPRN) by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering your address details.</p>"
   },
   {
     "id": "lewisham_gov_uk",
@@ -2562,7 +2572,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Get your Unique Property Reference Number (UPRN) by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering your address details.</p>"
   },
   {
     "id": "southwark_gov_uk",
@@ -2574,7 +2585,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>An easy way of finding your UPRN is by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">FindMyAddress service</a> and entering in your address details.</p>"
   },
   {
     "id": "tower_hamlets_gov_uk",
@@ -2586,7 +2598,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Get your Unique Property Reference Number (UPRN) by going to <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a> and entering your address details.</p>"
   },
   {
     "id": "apps_imactivate_com",
@@ -3380,7 +3393,8 @@
         "type": "string",
         "required": false
       }
-    ]
+    ],
+    "hint": "<p>Go to <a href=\"https://www.pendle.gov.uk/binday\" target=\"_blank\" rel=\"noopener\">Pendle Borough Council bin collection day</a>, enter your postcode, and use the address text returned by the council.</p>\n<p>If Home Assistant reports multiple matching collection zones for the address, set <code>collection_zone</code> to one of the suggested values.</p>"
   },
   {
     "id": "peterborough_gov_uk",
@@ -3799,7 +3813,8 @@
         "type": "integer | string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>1. Visit <a href=\"https://sevenoaks-dc-host01.oncreate.app/w/webpage/waste-collection-day\" target=\"_blank\" rel=\"noopener\">https://sevenoaks-dc-host01.oncreate.app/w/webpage/waste-collection-day</a></p>\n<p>2. Enter your postcode (with the space) and select your address from the dropdown.</p>\n<p>3. Once your collection day loads, note the numeric <em>*property id</em>* \u2014 it is the <code>id=</code> value at the end of the resulting page URL (e.g. <code>...&id=51621</code>).</p>"
   },
   {
     "id": "sheffield_gov_uk",
@@ -4049,7 +4064,8 @@
         "type": "Integer",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>1. Go to <a href=\"https://wasteservices.southlanarkshire.gov.uk/PublicDashboard\" target=\"_blank\" rel=\"noopener\">https://wasteservices.southlanarkshire.gov.uk/PublicDashboard</a>.</p>\n<p>2. Your <em>*UPRN</em>* can be found using the <a href=\"https://www.findmyaddress.co.uk/search\" target=\"_blank\" rel=\"noopener\">FindMyAddress</a> or <a href=\"https://uprn.uk\" target=\"_blank\" rel=\"noopener\">UPRN.uk</a> lookup tools - search for your full address and note the UPRN shown.</p>\n<p>Alternatively, after entering your postcode on the South Lanarkshire portal and selecting your property, you can inspect the property dropdown option (right-click > Inspect Element) and use the numeric value in the <code>value=</code> attribute of the selected <code><option></code> tag.</p>"
   },
   {
     "id": "southribble_gov_uk",
@@ -4141,7 +4157,8 @@
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Visit <a href=\"https://spelthorne-self.achieveservice.com/service/Waste_Collections\" target=\"_blank\" rel=\"noopener\">https://spelthorne-self.achieveservice.com/service/Waste_Collections</a>, enter your postcode and select your address. The UPRN is the numeric identifier associated with your property.</p>\n<p>Alternatively, find your UPRN at <a href=\"https://www.findmyaddress.co.uk/\" target=\"_blank\" rel=\"noopener\">https://www.findmyaddress.co.uk/</a>.</p>"
   },
   {
     "id": "stalbans_gov_uk",
