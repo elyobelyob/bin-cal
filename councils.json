@@ -1477,7 +1477,17 @@
       {
         "name": "uprn",
         "type": "string",
-        "required": true
+        "required": false
+      },
+      {
+        "name": "postcode",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "address",
+        "type": "string",
+        "required": false
       }
     ]
   },
