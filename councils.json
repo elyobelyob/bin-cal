@@ -1777,7 +1777,7 @@
       {
         "name": "uprn",
         "type": "string",
-        "required": false
+        "required": true
       }
     ]
   },
