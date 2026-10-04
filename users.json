@@ -65,5 +65,15 @@
     },
     "added": "2026-09-26",
     "last_updated": "2026-10-04"
+  },
+  "bfc2052f": {
+    "council_id": "eastriding_gov_uk",
+    "council_title": "East Riding of Yorkshire Council",
+    "args": {
+      "postcode": "HU16 5BJ",
+      "uprn": "32"
+    },
+    "added": "2026-10-04",
+    "last_updated": "2026-10-04"
   }
 }
