@@ -85,5 +85,14 @@
     },
     "added": "2026-10-04",
     "last_updated": "2026-10-06"
+  },
+  "0b2b7b86": {
+    "council_id": "northnorthants_gov_uk",
+    "council_title": "North Northamptonshire council",
+    "args": {
+      "uprn": "100031046551"
+    },
+    "added": "2026-10-06",
+    "last_updated": "2026-10-06"
   }
 }
