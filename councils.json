@@ -1112,11 +1112,17 @@
     "title": "City of Doncaster Council",
     "args": [
       {
-        "name": "uprn",
+        "name": "postcode",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "address",
         "type": "string",
         "required": true
       }
-    ]
+    ],
+    "hint": "<p>Open the council's <a href=\"https://doncaster-wasterecycling.oncreate.app/w/webpage/bin-query\" target=\"_blank\" rel=\"noopener\">bin lookup</a>, enter your postcode and, if you like, your house number or name, and use the same values as <code>postcode</code> and <code>address</code>.</p>"
   },
   {
     "id": "york_gov_uk",
@@ -5212,9 +5218,9 @@
     ]
   },
   {
-    "id": "ics_barrowbc_gov_uk",
+    "id": "ics_westmorlandandfurness_gov_uk",
     "module": "ics",
-    "title": "Westmorland & Furness Council, Barrow area",
+    "title": "Westmorland & Furness Council",
     "args": [
       {
         "name": "url",
@@ -5222,20 +5228,7 @@
         "required": true
       }
     ],
-    "hint": "<ul>\n<li>Go to <a href=\"https://ww.barrowbc.gov.uk/bins-recycling-and-street-cleaning/waste-collection-schedule\" target=\"_blank\" rel=\"noopener\">https://ww.barrowbc.gov.uk/bins-recycling-and-street-cleaning/waste-collection-schedule</a> and select your location.</li>\n<li>Right click -> copy the url of the <code>Add to iCalendar</code> link.</li>\n<li>Use this link as the <code>url</code> parameter. (If you know your UPRN, you can just replace the last part of the url with it.)</li>\n<li>if you want to shorten your entry names use the <code>regex</code> line from the second example (<code>Grey lidded bins for General waste</code> will show up as <code>Grey</code>)</li>\n</ul>"
-  },
-  {
-    "id": "ics_southlakeland_gov_uk",
-    "module": "ics",
-    "title": "Westmorland & Furness Council, South Lakeland area",
-    "args": [
-      {
-        "name": "url",
-        "type": "string",
-        "required": true
-      }
-    ],
-    "hint": "<ul>\n<li>Go to <a href=\"https://www.southlakeland.gov.uk/bins-and-recycling/collection-calendar/\" target=\"_blank\" rel=\"noopener\">https://www.southlakeland.gov.uk/bins-and-recycling/collection-calendar/</a> and select your location.</li>\n<li>Rightclick -> copy the URL of the <code>Import these dates into your calendar</code> link.</li>\n<li>Use this link as the <code>url</code> parameter.</li>\n</ul>"
+    "hint": "<ul>\n<li>Go to <a href=\"https://www.westmorlandandfurness.gov.uk/bins-recycling-and-street-cleaning/waste-collection-schedule\" target=\"_blank\" rel=\"noopener\">https://www.westmorlandandfurness.gov.uk/bins-recycling-and-street-cleaning/waste-collection-schedule</a>, enter your postcode and select your address.</li>\n<li>Right click -> copy the link address of the <code>Add to iCalendar</code> link. It looks like <code>https://www.westmorlandandfurness.gov.uk/bins-recycling-and-street-cleaning/waste-collection-schedule/download/<UPRN></code>.</li>\n<li>Use this link as the <code>url</code> parameter. (If you know your UPRN, you can just replace the last part of the url with it.)</li>\n<li>This works for all former districts (Barrow-in-Furness, Eden and South Lakeland). The old <code>barrowbc.gov.uk</code> and <code>southlakeland.gov.uk</code> calendar links no longer work.</li>\n<li>The calendar covers about one year and contains a reminder entry <code>Download your bin collection calendar</code> at its end.</li>\n</ul>"
   },
   {
     "id": "wigan_gov_uk",
@@ -5310,14 +5303,14 @@
     "title": "Wirral Council",
     "args": [
       {
-        "name": "postcode",
+        "name": "address_value",
         "type": "string",
         "required": true
       },
       {
-        "name": "address_value",
+        "name": "postcode",
         "type": "string",
-        "required": true
+        "required": false
       }
     ]
   },
