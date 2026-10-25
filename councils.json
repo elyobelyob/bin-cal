@@ -4633,12 +4633,17 @@
     "title": "Swansea Council",
     "args": [
       {
+        "name": "post_code",
+        "type": "string",
+        "required": true
+      },
+      {
         "name": "street_name",
         "type": "string",
         "required": true
       },
       {
-        "name": "post_code",
+        "name": "uprn",
         "type": "string",
         "required": true
       }
