@@ -94,5 +94,14 @@
     },
     "added": "2026-10-06",
     "last_updated": "2026-11-06"
+  },
+  "dd918cd2": {
+    "council_id": "bathnes_gov_uk",
+    "council_title": "Bath & North East Somerset Council",
+    "args": {
+      "uprn": "100120000991"
+    },
+    "added": "2026-11-06",
+    "last_updated": "2026-11-06"
   }
 }
