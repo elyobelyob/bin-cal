@@ -103,5 +103,14 @@
     },
     "added": "2026-11-06",
     "last_updated": "2026-11-16"
+  },
+  "79cf9add": {
+    "council_id": "ealing_gov_uk",
+    "council_title": "Ealing Council",
+    "args": {
+      "uprn": "12092494"
+    },
+    "added": "2026-11-17",
+    "last_updated": "2026-11-17"
   }
 }
